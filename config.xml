@@ -4,7 +4,7 @@
 	id		= "com.phonegap.getting.started"
 	version 	= "1.0.0">
 
-	<name>IAMAPP</name>
+	<name>IAMDesk</name>
 
 	<description>
 		
@@ -15,7 +15,8 @@
 		Mathias Maier
 	</author>
 
-	<icon src="icon.png" gap:role="default" /> 
+	<icon src="icon.png" gap:role="default" />
+	<gap:splash src="splash.gif" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 

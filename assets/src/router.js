@@ -107,8 +107,10 @@ define([
             Util.bodyClass('laptop_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             laptopView.laptopFirstLevel();
             // remove zooming for first Level
-            this.myScroll.destroy();
-            this.myScroll = null;
+            if(this.myScroll != null){ 
+                this.myScroll.destroy();
+                this.myScroll = null;
+            }
         },
         
         laptopSecondLevel: function(id){
@@ -132,8 +134,10 @@ define([
             Util.bodyClass('camera_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             cameraView.cameraFirstLevel();
             // remove zooming for first Level
-            this.myScroll.destroy();
-            this.myScroll = null;
+            if(this.myScroll != null){ 
+                this.myScroll.destroy();
+                this.myScroll = null;
+            }
         
         },
         
@@ -158,8 +162,10 @@ define([
             Util.bodyClass('smartphone_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             smartphoneView.smartphoneFirstLevel();
             // remove zooming for first Level
-            this.myScroll.destroy();
-            this.myScroll = null;
+            if(this.myScroll != null){ 
+                this.myScroll.destroy();
+                this.myScroll = null;
+            }
         },
         
         smartphoneSecondLevel: function(id){
@@ -179,8 +185,10 @@ define([
             Util.bodyClass('tablet_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             tabletView.tabletFirstLevel();
             // remove zooming for first Level
-            this.myScroll.destroy();
-            this.myScroll = null;
+            if(this.myScroll != null){ 
+                this.myScroll.destroy();
+                this.myScroll = null;
+            }
         },
         
         tabletSecondLevel: function(id){
@@ -205,8 +213,10 @@ define([
             var kind = 'overview';
             mapView.mapFirstLevel(kind); 
             // remove zooming for first Level
-            this.myScroll.destroy();
-            this.myScroll = null;
+            if(this.myScroll != null){ 
+                this.myScroll.destroy();
+                this.myScroll = null;
+            }
         },
         
         mapSecondLevel: function(house){
@@ -227,7 +237,7 @@ define([
             datesView.datesFirstLevel();
             
             // remove zooming for first Level
-            if(this.myScroll != null){ // errors wenn man vom secondlevel zurück springt!!
+            if(this.myScroll != null){ 
                 this.myScroll.destroy();
                 this.myScroll = null;
             }
@@ -249,8 +259,10 @@ define([
             Util.bodyClass('calculator_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             calculatorView.calculatorFirstLevel();
             // remove zooming for first Level
-            this.myScroll.destroy();
-            this.myScroll = null;
+            if(this.myScroll != null){ 
+                this.myScroll.destroy();
+                this.myScroll = null;
+            }
         },
         
         calculatorSecondLevel: function(id){
@@ -274,8 +286,10 @@ define([
             Util.bodyClass('dvd_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             dvdView.dvdFirstLevel();
             // remove zooming for first Level
-            this.myScroll.destroy();
-            this.myScroll = null;
+            if(this.myScroll != null){ 
+                this.myScroll.destroy();
+                this.myScroll = null;
+            }
         },
         
         dvdSecondLevel: function(id){
@@ -294,8 +308,10 @@ define([
             Util.bodyClass('contacts_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             contactsView.contactsFirstLevel(); 
             // remove zooming for first Level
-            this.myScroll.destroy();
-            this.myScroll = null;
+            if(this.myScroll != null){ 
+                this.myScroll.destroy();
+                this.myScroll = null;
+            }
         },
         
         contactsSecondLevel: function(id){
