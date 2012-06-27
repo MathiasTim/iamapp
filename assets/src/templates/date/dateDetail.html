@@ -1,0 +1,24 @@
+<div id="date_content">
+    <div class="backnavi clearfix">
+        <a href="#dates"><img src="src/img/dates/back_white.png" alt="zurück" title="zurück" /></a>
+        <a href="#home"><img src="src/img/dates/home_white.png" alt="schreibtisch" title="schreibtisch" /></a>
+    </div>
+    <div id="inner_content">
+        <h1><%=model.title %></h1>
+        <p>
+        <% if (model.start_date != model.end_date) { %>
+            vom <b><%=model.start_date %>,</b> <%=model.start_time %>
+            &nbsp; bis &nbsp;
+            <b><%=model.end_date %>,</b> <%=model.end_time %>
+        <% } else { %>
+            am <b><%=model.start_date %>,</b>
+            <%=model.start_time %>&nbsp;-&nbsp;<%=model.end_time %>
+        <% } %>
+        </p>
+        <p class="clearfix">
+            <img class="fright" src="<%=model.icon %>" />
+            <b>Beschreibung:</b> <br /> 
+            <%=model.description %>
+        </p>
+    </div>
+</div>

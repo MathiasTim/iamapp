@@ -1,0 +1,2763 @@
+*{padding:0; margin:0;}
+
+div.ui-content{
+    padding:0px;
+    overflow: visible;
+}
+
+#subnavi {
+    padding:5px 20px;
+}
+
+#subnavi.ui-controlgroup {
+    margin-bottom: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.home_button{
+    position:absolute;
+    z-index:999;
+    background:white;
+    top:0;
+    right:0;
+    padding:3px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * *
+ * CLEARFIX
+ * * * * * * * * * * * * * * * * * * * * * */
+ 
+.clearfix:after {  /* für Firefox, IE8, Opera, Safari, etc. */
+    content: ".";  
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+ 
+* + html .clearfix { /* für IE7 */
+    display: inline-block;
+}
+ 
+* html .clearfix { /* für IE6 */
+    height: 1%;
+}
+
+
+
+  /*=================================================== */
+  /*                 LOADING SCREEN                     */
+  /*=================================================== */
+  #loading-data{
+      text-align:center;
+      padding:50px;
+      color:black;
+  }  
+
+
+  /*=================================================== */
+  /*                 DESK                               */
+  /*=================================================== */
+
+  .ui-page {
+    background: url('../img/calculator/calc_bg_pattern.png') repeat top left;
+  }
+
+  body.home #main.low_resolution {
+     background-image:url('../img/desk/low/background.jpg');
+  }
+  
+  body.home #main.high_resolution {
+     background-image:url('../img/desk/high/background.jpg');
+  }
+  
+  body.home #main {
+     -webkit-transform:translate3d(0,0,0);
+     overflow: hidden;
+     background-repeat: no-repeat;
+  }
+  
+  body.home .ui-body-c img{
+      -webkit-transform:translate3d(0,0,0);
+      float:left;
+      position:absolute;
+  }
+  
+  body.home .tablet{
+      width:34%;
+      top: 33%;
+      left: 28%;
+      z-index:2;
+  }
+  
+  body.home .block{
+      width: 32%;
+      top: -1%;
+      left: -1%;
+  }
+
+  body.home .polaroid{
+      width: 20%;
+      top: 71%;
+      left: 18%;
+  }
+  
+  body.home .stellenanzeige{
+      width: 21%;
+      top: 71%;
+      left: 50%;
+  }
+
+  body.home .kaffee{
+      width: 16%;
+      top: 46%;
+      left: 13%;
+  }  
+
+  body.home .apfel{
+      width: 13%;
+      top: 36%;
+      left: 3%;
+  }  
+
+  body.home .dvd{
+      width: 15%;
+      top: 12%;
+      left: 46%;
+      z-index:2;
+  }
+
+  body.home .kamera{
+      width: 21%;
+      top: 66%;
+      left: 1%;
+      z-index:2;
+  }
+  
+  body.home .laptop{
+      width: 46%;
+      top: -7%;
+      left: 59%;
+      z-index:2;
+  }
+
+  body.home .taschenrechner_block{
+      width: 31%;
+      top: 53%;
+      left: 72%;
+      z-index:2;
+  }
+
+  body.home .smartphone{
+      width: 13%;
+      top: 74%;
+      left: 38%;
+      z-index:2;
+  }
+
+  body.home .map{
+      width: 28%;
+      top: 1%;
+      left: 30%;
+  }
+
+  body.home .tickets{
+      width: 22%;
+      top: 46%;
+      left: 61%;
+  }
+
+  /*=================================================== */
+  /*                 LAPTOP GUI                         */
+  /*=================================================== */
+
+  #lpt_main_container{ 
+     width:100%; height:100%;
+     position:fixed;
+     background-color:#000;
+     background-image:url('../img/laptop/lpt_bg.jpg');
+     background-position:bottom;
+     background-repeat:repeat-x;
+  }
+  #lpt_center_container{
+     position: relative;
+     top: 15px;
+     margin: 0 auto;
+     padding-top: 10px ,10px;
+     width: 800px;
+	 font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	 font-size:1em;
+	 color:#0F0;
+  }
+
+  .lpt_folders{
+     position:absolute;
+     top: 7%;
+     left: 8%;
+     width:42%;
+     height:37%;
+     z-index:2;
+  }
+   
+  .lpt_ordner{
+     float:left;
+     width:32%;
+     z-index:2;
+  }
+      
+  
+  
+  .lpt_text_ordner{
+     position:absolute;
+     width:25%;
+     padding-left:3%;
+     padding-top:21%;
+     text-align:center;
+     color:#FFF;    
+     z-index:3; 
+  }
+  
+  .lpt_menu1_container{
+     position:absolute;
+     overflow:hidden;        
+     width:28%;
+     height:39%;
+     z-index:2;
+     left:6%;
+     top:44%;
+  }  
+  .lpt_menu1{
+     position:absolute;
+     width:100%;
+     z-index:3;
+     top:100%;
+  } 
+  
+  .lpt_menu2_container{
+     position:absolute;
+     overflow:hidden;        
+     width:28%;
+     height:39%;
+     z-index:2;
+     left:36%;
+     top:44%;
+  }     
+  .lpt_menu2{
+     position:absolute;
+     width:100%;
+     height:95%;
+     z-index:3;
+     background-image: url('../img/laptop/lpt_menu2.png');
+     background-repeat:no-repeat;
+     background-size: 100% 100%;     
+     opacity: 0;
+     right:100%;
+  } 
+  
+  .lpt_menue_theme{
+    margin-left: 12%;
+    margin-top: 7%;
+    color:#333;    
+  }
+  
+  a.lpt_menu_link:link{
+    color:#333;
+    text-decoration:none;
+  }
+  a.lpt_menu_link:visited{
+    color:#333;
+    text-decoration:none;
+  }
+  a.lpt_menu_link:hover{
+    color:#333;
+    text-decoration:none;
+  }  
+  
+  a.lpt_folder_link:link{
+    color:#FFF; 
+    text-decoration:none;
+  }
+  a.lpt_folder_link:visited{
+    color:#FFF; 
+    text-decoration:none;
+  }
+  a.lpt_folder_link:hover{
+    color:#FFF; 
+    text-decoration:none;
+  }    
+
+
+  .lpt_text_menu1_projekt, .lpt_text_menu1_info, .lpt_text_menu1_shutdown {
+     position:absolute;
+     width:100%;
+     color:#333;    
+     z-index:3; 
+  }
+  .lpt_text_menu1_projekt{ margin-left:20%; margin-top:8%; }
+  .lpt_text_menu1_info{ margin-left:20%; margin-top:25%; }
+  .lpt_text_menu1_shutdown{ margin-left:20%; margin-top:82%; }      
+  
+   
+  .lpt_taskbar_start{ 
+    width: 25%;
+    position:absolute; 
+    z-index:3; 
+    left:5%; 
+    top:85.4%; 
+
+ 	/*background-image: url('../img/laptop/start_btn.png');  
+    background-size: 100% ;
+ 	background-repeat: no-repeat; */
+  }
+  .lpt_taskbar_menu{ 
+    width: 20%;
+    font-weight:bold;
+    position:absolute; 
+    z-index:2; 
+    left:12%; 
+    top:86.5%; 
+    color:#333;  
+  }  
+  
+  .lpt_taskbar_time{ 
+    width: 20%;
+    font-weight:bold;
+    position:absolute; 
+    z-index:2; 
+    left:81.5%; 
+    top:86.5%; 
+    color:#333;  
+  }  
+ 
+  .img_laptop{
+    position:relative;
+    width:100%;
+  }
+  .img_ordner, img_menu1, img_menu2{
+    position:absolute;
+    width:100%;
+  } 
+
+
+  /*===================================================	*/
+  /*                 CAMERA GUI 					  	*/
+  /*===================================================	*/
+   
+  .cam_main_container{ 
+	width:100%; height:100%;
+	position:fixed;
+    background-image:url('../img/laptop/lpt_bg.jpg');
+    background-position:bottom;
+    background-repeat:repeat-x;
+    background-size: auto 100% ;
+    
+  }
+  .cam_center_container{
+     position: relative;
+     margin: 0 auto;
+     padding-top: 10px ,10px;
+     width: 800px;
+  }
+
+  
+  .cam_button_info_container, .cam_button_up_container, .cam_button_down_container, .cam_button_power_container, .cam_button_pattern_container {
+	 position:absolute;
+	 width:15%;
+	 height:13.2%;
+	 overflow:hidden;	 
+	 left:1.5%;
+	 z-index:2;	 
+  }
+  .cam_button_info_container 	{ top: 5%;  } 
+  .cam_button_up_container 		{ top: 20%; }
+  .cam_button_down_container 	{ top: 35%; }
+  .cam_button_pattern_container { top: 51%; }
+  .cam_button_power_container 	{ top: 56%; }
+  
+  .cam_button_info 			{ position:absolute; width:100%;	z-index:3; 				}  
+  .cam_button_info:active	{ position:absolute; width:100%; 	top: -100%; z-index:3; 	}  
+  .cam_button_up 			{ position:absolute; width:100%;	z-index:3; 				}  
+  .cam_button_up:active 	{ position:absolute; width:100%; 	top: -100%; z-index:3; 	}    
+  .cam_button_down 			{ position:absolute; width:100%;	z-index:3; 				}  
+  .cam_button_down:active 	{ position:absolute; width:100%; 	top: -100%; z-index:3; 	}    
+  .cam_button_power 		{ position:absolute; width:100%;	z-index:3; 				}  
+  .cam_button_power:active 	{ position:absolute; width:100%; 	top: -100%; z-index:3; 	}            
+  
+  .cam_button_info_container  a { outline: none; }
+  
+  
+  .cam_display{
+	 position:absolute;
+	 width:82%;
+	 height:80%;
+	 z-index:2;
+	 left:18%;
+	 top:5%;
+  }  
+  
+  .cam_display_play{
+  	 position:absolute;
+	 width:8%;
+	 z-index:2;
+	 left:6%;
+	 top:5%;
+  }
+  
+  .cam_display_content_container{
+	 position:absolute;
+	 overflow:hidden;
+	 width:85%;
+	 height:65%;
+	 z-index:2;
+	 left:5.8%;
+	 top:17%;
+  } 
+  
+  .cam_display_content{
+	 position:absolute;
+	 top: 0%;
+	 width:93.5%;
+	 height:100%;
+	 z-index:3;
+  }   
+  
+  .cam_theme   {
+	 float:left;
+	 width:100%;
+	 height:25%;
+	 z-index:2;	
+	 background-image: url('../img/cam/cam_theme1.png');
+	 background-repeat:no-repeat;
+	 background-size: 100% 90%;
+  }
+  .cam_theme a {
+  	 text-decoration: none;
+	 color:#CCC;  	 
+  }
+ 
+	  .cam_theme_icon{
+		 position:absolute;
+		 width:16%;	
+	  }
+	  .cam_theme_topic_txt{
+		 position:absolute;
+		 color:#333;
+		 width:60%;
+		 left: 24%;	
+         padding-top: 4%;
+		 	  
+	  }	  
+	  .cam_theme_count_txt{
+		 position:absolute;
+		 color:#333;
+		 font-weight:bold;
+		 width:40%;
+		 left: 68%;		
+		 text-align:center; 
+         padding-top: 4%; 
+	  }	               
+
+  .cam_display_info{
+	 position:absolute;
+	 top: 82%;
+	 left:80%;
+	 color:#CCC;
+	font-style:normal;	 
+  } 
+
+
+  .cam_bg{
+  	position:relative;
+	width:100%;
+  }
+  .cam_img, .cam_img_Bup, .cam_img_Bdown{
+  	position:absolute;
+	width:100%;
+  }  
+  
+  
+  /*=================================================== */
+  /*                 CALCULATOR GUI                     */
+  /*=================================================== */
+ 
+  .calc_main_container{ 
+     width:100%; height:100%;
+     position:fixed;
+     background-image:url('../img/calculator/calc_bg_pattern.png');  
+     background-repeat:repeat;
+     
+     
+  }
+  .calc_center_container{
+     position: relative;
+     top: 15px;
+     margin: 0 auto;
+     padding-top: 10px ,10px;
+     width: 800px;
+  }
+  
+  .calc_content{
+     position:absolute;
+     width:90%;
+     height:70%;
+     top: 15%;
+     left: 5%;
+     z-index:2;
+     text-align:center;
+     
+  } 
+  
+  .calc_element_template{
+    list-style:none;
+  }
+  
+  .calc_element_template li {
+    float:left;
+    width:33%;
+    
+  }
+  
+  .calc_element_template li img{
+     width:80%;
+  }
+  .calc_clear{
+     clear:both;
+  }  
+
+
+ 
+  .calc_navigation_back, .calc_navigation_info {
+     position:absolute;
+     width:13%;
+     top: 81%;   
+     z-index:3;
+  }
+  .calc_navigation_back { left:8%;}  
+  .calc_navigation_info{ left:80%;}  
+  
+  .img_bg{
+    position:relative;
+    width:100%;
+  }  
+  
+  .img_content{
+    position:absolute;
+    width:100%;
+  }  
+  
+  
+ /*===================================================  */
+ /*                 DATES GUI                           */
+ /*===================================================  */  
+ 
+ body.dates_first_level .ui-body-c,
+ body.dates_second_level .ui-body-c {
+     background: url('../img/calculator/calc_bg_pattern.png') repeat top left;   
+ }
+ 
+ body.dates_first_level #main,
+ body.dates_second_level #main {
+     overflow-y: scroll;
+ }
+ 
+ body.dates_first_level #date_content,
+ body.dates_second_level #date_content {
+     padding: 20px;
+ }
+ 
+ body.dates_first_level .headline {
+     padding-bottom: 0.5em;
+ }
+ 
+ body.dates_first_level .headline h1 {
+    float: left;
+    color: #222222;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    text-shadow: 1px 1px 1px #000000;
+    padding-bottom: 0.15em;
+ }
+ 
+ body.dates_first_level .headline .backnavi {
+     float: right;
+     text-align: right;
+     padding-top: 0.4em;
+ }
+ 
+ body.dates_first_level .headline .backnavi img {
+    width: 4em;
+ }
+ 
+ body.dates_first_level ul#date-listning {
+     margin: 0;
+ }
+ 
+ body.dates_first_level .ui-btn-up-c {
+     background: rgba(238,238,238,0.6);
+     background-image: -moz-linear-gradient(top,  rgba(255,255,255,0.6) 0%, rgba(241,241,241,0.6) 100%); /* FF3.6+ */
+     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(241,241,241,0.6))); /* Chrome,Safari4+ */
+     background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* Chrome10+,Safari5.1+ */
+     background-image: -o-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* Opera 11.10+ */
+     background-image: -ms-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* IE10+ */
+     background-image: linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#99f1f1f1',GradientType=0 ); /* IE6-9 */
+ }
+ 
+ body.dates_first_level .ui-btn-hover-c{
+     background: rgba(223,223,223,0.6);
+     background-image: -moz-linear-gradient(top,  rgba(246,246,246,0.6) 0%, rgba(224,224,224,0.6) 100%); /* FF3.6+ */
+     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,246,246,0.6)), color-stop(100%,rgba(224,224,224,0.6))); /* Chrome,Safari4+ */
+     background-image: -webkit-linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(224,224,224,0.6) 100%); /* Chrome10+,Safari5.1+ */
+     background-image: -o-linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(224,224,224,0.6) 100%); /* Opera 11.10+ */
+     background-image: -ms-linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(224,224,224,0.6) 100%); /* IE10+ */
+     background-image: linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(224,224,224,0.6) 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99f6f6f6', endColorstr='#99e0e0e0',GradientType=0 ); /* IE6-9 */
+ }
+ 
+ body.dates_first_level .ui-li-desc {
+     margin-top: 0;
+     margin-bottom: 0.1em;
+ }
+ 
+ body.dates_first_level .ui-li-heading {
+     font-size: 1.5em;
+     margin-top: 0;
+     margin-bottom: 0.2em;
+ }
+ 
+ body.dates_first_level .ui-li-divider {
+     margin-top: 0.2em;
+ }
+ 
+ body.dates_second_level .backnavi {
+     text-align: right;
+     background:#111;
+     background-image:-webkit-gradient(linear,left top,left bottom,from(#3c3c3c),to(#111));
+     background-image:-webkit-linear-gradient(#3c3c3c,#111);
+     background-image:-moz-linear-gradient(#3c3c3c,#111);
+     background-image:-ms-linear-gradient(#3c3c3c,#111);
+     background-image:-o-linear-gradient(#3c3c3c,#111);
+     background-image:linear-gradient(#3c3c3c,#111);
+     padding: 10px 20px;
+     -webkit-border-top-left-radius: 0.6em;
+     -webkit-border-top-right-radius: 0.6em;
+     -moz-border-top-left-radius: 0.6em;
+     -moz-border-top-right-radius: 0.6em;
+     border-top-left-radius: 0.6em;
+     border-top-right-radius: 0.6em;
+ }
+ 
+ body.dates_second_level .backnavi a {
+     line-height: 0;
+     display: block;
+     float: left;
+     margin-right: .8em;
+ }
+ 
+ body.dates_second_level .backnavi img {
+     width: 2em;
+ }
+ 
+ body.dates_second_level #inner_content {
+     background: rgba(238,238,238,0.6);
+     background-image: -moz-linear-gradient(top,  rgba(255,255,255,0.6) 0%, rgba(241,241,241,0.6) 100%); /* FF3.6+ */
+     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(241,241,241,0.6))); /* Chrome,Safari4+ */
+     background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* Chrome10+,Safari5.1+ */
+     background-image: -o-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* Opera 11.10+ */
+     background-image: -ms-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* IE10+ */
+     background-image: linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#99f1f1f1',GradientType=0 ); /* IE6-9 */
+     padding: 10px 20px 20px;
+     -webkit-border-bottom-left-radius: 0.6em;
+     -webkit-border-bottom-right-radius: 0.6em;
+     -moz-border-bottom-left-radius: 0.6em;
+     -moz-border-bottom-right-radius: 0.6em;
+     border-bottom-left-radius: 0.6em;
+     border-bottom-right-radius: 0.6em;
+ }
+ 
+ body.dates_second_level p {
+     margin-bottom: 0.8em;
+ }
+ 
+ body.dates_second_level img.fleft {
+     float: left;
+     margin: 0 .8em .8em 0;
+     max-width: 30%;
+ }
+ 
+ body.dates_second_level img.fright {
+     float: right;
+     margin: 0  0 .8em .8em;
+     max-width: 30%;
+ }
+ 
+ 
+  /*=================================================== */
+  /*                 MAP GUI                            */
+  /*=================================================== */  
+  
+  body.map_first_level #content,
+  body.map_second_level #content {
+      padding:20px;
+  }
+  
+  body.map_first_level .ui-body-c,
+  body.map_second_level .ui-body-c {
+      background: url('../img/calculator/calc_bg_pattern.png') repeat top left; 
+  }
+  
+  body.map_first_level #inner-content,
+  body.map_second_level #inner-content {
+      background: rgba(200,200,200,0.5);
+      background-image: -moz-linear-gradient(top,  rgba(255,255,255,0.8) 0%, rgba(241,241,241,0.8) 100%); 
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.8)), color-stop(100%,rgba(241,241,241,0.8)));
+      background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
+      background-image: -o-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%);
+      background-image: -ms-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
+      background-image: linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#99f1f1f1',GradientType=0 ); 
+      padding: 20px;
+      -webkit-border-radius: 0.6em;
+      -moz-border-radius: 0.6em;
+      border-radius: 0.6em;
+      text-align: center;
+  }
+  
+  body.map_first_level #inner-content img,
+  body.map_second_level #inner-content img {
+      width: 100%;
+  }
+  
+  /*=================================================== */
+  /*                 TABLET GUI                             */
+  /*=================================================== */  
+  
+  body.tablet_first_level .ui-body-c {
+      background: url('../img/calculator/calc_bg_pattern.png') repeat top left; 
+      text-shadow: 0px 0px 0px;
+  }
+  
+  body.tablet_first_level #tbl_content {
+      position: relative;
+      margin: 0 auto;
+      padding-top: 10px;
+      width: 800px;
+  }
+  
+  body.tablet_first_level #tbl_content .background-image {
+      position: absolute;
+  }
+  
+  body.tablet_first_level #tbl_content .background-image img {
+      width: 100%;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content {
+      position: relative;
+      padding-top: 6.1%;
+      padding-left: 6.19%;
+      padding-right: 8.7%;
+  }
+  body.tablet_first_level #tbl_content .inner-content .header,
+  body.tablet_second_level #tbl_content .inner-content .header {
+        position: relative;
+        font-size: 1.0em;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .collapsed,
+  body.tablet_second_level #tbl_content .inner-content .header .collapsed {
+        background: -moz-linear-gradient(top, rgba(255,255,255,0.25) 0%, rgba(188,188,188,0.25) 8%, rgba(251,251,251,0.25) 76%, rgba(255,255,255,1) 80%, rgba(0,0,0,0.1) 81%, rgba(122,122,122,0) 97%, rgba(145,145,145,0) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.25)), color-stop(8%,rgba(188,188,188,0.25)), color-stop(76%,rgba(251,251,251,0.25)), color-stop(80%,rgba(255,255,255,1)), color-stop(81%,rgba(0,0,0,0.1)), color-stop(97%,rgba(122,122,122,0)), color-stop(100%,rgba(145,145,145,0))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0.25) 0%,rgba(188,188,188,0.25) 8%,rgba(251,251,251,0.25) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.1) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, rgba(255,255,255,0.25) 0%,rgba(188,188,188,0.25) 8%,rgba(251,251,251,0.25) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.1) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, rgba(255,255,255,0.25) 0%,rgba(188,188,188,0.25) 8%,rgba(251,251,251,0.25) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.1) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* IE10+ */
+        background: linear-gradient(top, rgba(255,255,255,0.25) 0%,rgba(188,188,188,0.25) 8%,rgba(251,251,251,0.25) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.1) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* W3C */
+        padding-bottom: 0.8em;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+  }
+  
+  @media (max-width: 767px) {
+      body.tablet_first_level #tbl_content .inner-content .header,
+      body.tablet_second_level #tbl_content .inner-content .header {
+          font-size: 0.8em;
+      }
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .left,
+  body.tablet_second_level #tbl_content .inner-content .header .left {
+        float: left;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .right,
+  body.tablet_second_level #tbl_content .inner-content .header .right {
+        float: right;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .icon,
+  body.tablet_second_level #tbl_content .inner-content .header .icon {
+        line-height: 0;
+        margin: 0 0.3em;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .icon img,
+  body.tablet_second_level #tbl_content .inner-content .header .icon img {
+        height: 1.0em;
+        vertical-align: middle;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .time,
+  body.tablet_second_level #tbl_content .inner-content .header .time {
+        font-weight: bold;
+        color: #6b6b6b;
+        text-shadow: 0 -1px 0px #444444;
+        vertical-align: middle;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open,
+  body.tablet_second_level #tbl_content .inner-content .header .open {
+        display:none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(188,188,188,1) 8%, rgba(251,251,251,1) 76%, rgba(255,255,255,1) 80%, rgba(0,0,0,0.3) 81%, rgba(122,122,122,0) 97%, rgba(145,145,145,0) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(8%,rgba(188,188,188,1)), color-stop(76%,rgba(251,251,251,1)), color-stop(80%,rgba(255,255,255,1)), color-stop(81%,rgba(0,0,0,0.3)), color-stop(97%,rgba(122,122,122,0)), color-stop(100%,rgba(145,145,145,0))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(188,188,188,1) 8%,rgba(251,251,251,1) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.3) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(188,188,188,1) 8%,rgba(251,251,251,1) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.3) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(188,188,188,1) 8%,rgba(251,251,251,1) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.3) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* IE10+ */
+        background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(188,188,188,1) 8%,rgba(251,251,251,1) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.3) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* W3C */
+        padding-bottom: 0.8em;
+        padding-top: 5px;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu {
+        float: left;
+        width: 32.8%;
+        border-right: 1px solid rgba(0,0,0,0.3);
+        border-left: 1px solid rgba(255,255,255,0.5);
+        text-align: center;
+        font-size: 0.8em;
+        color: #6b6b6b;
+        margin: 0.4em 0 0.8em;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu a,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu a {
+        color: #6b6b6b;
+        text-decoration: none;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu.last,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu.last {
+        border-right: 0px ;
+  }
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu.first,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu.first {
+        border-left: 0px ;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu .icon img,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu .icon img {
+        height: auto;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .content,
+  body.tablet_second_level #tbl_content .inner-content .content {
+      padding: 1% 2% 2%;
+      
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list {
+      list-style: none;
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li {
+      float: left;
+      text-align: center;
+      font-size: 0.7em;
+      width: 11.2%;
+      margin-right: 3%;
+      margin-bottom: 2%
+  }
+  
+  @media (max-width: 767px) {
+      body.tablet_first_level ul#tbl_first_level_list li {
+          width: 22%;
+      }
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: normal;
+      display: block;
+      max-width: 100%;
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li a .label {
+      background-color: rgba(0,0,0,0.6);
+      -webkit-border-radius: 0.6em;
+      -moz-border-radius: 0.6em;
+      border-radius: 0.6em;
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+  }
+  body.tablet_first_level ul#tbl_first_level_list li a .label span {
+      padding: 0.2em 0.5em 0.1em 0.55em;
+      display: block;
+      white-space: nowrap;
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li a .icon {
+      display: block;
+      padding-top: 5%;
+      padding-left: 10%;
+      padding-bottom: 3%;
+      padding-right: 10%;
+  }
+  
+  @media (max-width: 767px) {
+      body.tablet_first_level ul#tbl_first_level_list li a .icon {
+          padding-top: 5%;
+          padding-left: 20%;
+          padding-bottom: 3%;
+          padding-right: 20%;
+      }
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li a .icon img {
+      width:100%;
+  }
+  
+  
+  body.tablet_second_level .ui-body-c {
+      background: url('../img/tablet/tbl_background.png') no-repeat top left;
+      background-size: 100% 100%;
+      text-shadow: 0px 0px 0px;
+  }
+
+
+  /*=================================================== */
+  /*                 DVD GUI                             */
+  /*=================================================== */  
+
+.dvd_first_level {
+	background: url("../img/calculator/calc_bg_pattern.png") repeat scroll left top transparent;
+}
+
+.ui-body-c {
+	background: none;
+}
+
+#dvd_page {
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
+.dvd_full {
+	height: 100%;
+}
+
+#dvd_links {
+	position: absolute;
+	top: 68.5%;
+	left: 1.4%;
+	width: 100%;
+	height: 12.5%;
+}
+
+
+#dvd_back {
+	position: absolute; 
+	left: 93%;
+	top: 89%;
+	height: 10%;
+	width: 10%;
+}
+
+#dvd_info {
+	position: absolute; 
+	left: 90%;
+	top: 0%;
+	height: 13%;
+	width: 13%;
+}
+
+#dvd_links div {
+	padding-top: 3%;
+	height: 122%;
+	background: rgba(200, 200, 200, 0.5);
+	text-align: center;
+	float: left;
+	margin-right: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+#dvd_links div:last-child {
+	margin-right: 0%;
+}
+
+
+a.linkDVD {
+	text-shadow: none !important;
+	color: #fff !important;
+	text-decoration: none;
+	font-size: 35px;
+}
+
+@media (max-height: 780px) {
+	a.linkDVD {
+	font-size: 31px;
+	}
+}
+
+@media (max-width: 1070px) {
+	a.linkDVD {
+	font-size: 31px;
+	}
+}
+
+@media (max-height: 690px) {
+	a.linkDVD {
+	font-size: 25px;
+	}
+}
+
+@media (max-width: 960px) {
+	a.linkDVD {
+	font-size: 25px;
+	}
+}
+
+@media (max-height: 600px) {
+	a.linkDVD {
+	font-size: 21px;
+	}
+}
+
+@media (max-width: 960px) {
+	a.linkDVD {
+	font-size: 21px;
+	}
+}
+
+@media (max-height: 450px) {
+	a.linkDVD {
+	font-size: 15px;
+	}
+}
+
+@media (max-width: 620px) {
+	a.linkDVD {
+	font-size: 15px;
+	}
+}
+
+@media (max-height: 350px) {
+	a.linkDVD {
+		font-size: 9px;
+	}
+}
+
+@media (max-width: 480px) {
+	a.linkDVD {
+		font-size: 9px;
+	}
+}
+
+*{padding:0; margin:0;}
+
+div.ui-content{
+    padding:0px;
+    overflow: visible;
+}
+
+#subnavi {
+    padding:5px 20px;
+}
+
+#subnavi.ui-controlgroup {
+    margin-bottom: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.home_button{
+    position:absolute;
+    z-index:999;
+    background:white;
+    top:0;
+    right:0;
+    padding:3px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * *
+ * CLEARFIX
+ * * * * * * * * * * * * * * * * * * * * * */
+ 
+.clearfix:after {  /* für Firefox, IE8, Opera, Safari, etc. */
+    content: ".";  
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+ 
+* + html .clearfix { /* für IE7 */
+    display: inline-block;
+}
+ 
+* html .clearfix { /* für IE6 */
+    height: 1%;
+}
+
+
+
+  /*=================================================== */
+  /*                 LOADING SCREEN                     */
+  /*=================================================== */
+  #loading-data{
+      text-align:center;
+      padding:50px;
+      color:black;
+  }  
+
+
+  /*=================================================== */
+  /*                 DESK                               */
+  /*=================================================== */
+
+  .ui-page {
+    background: url('../img/calculator/calc_bg_pattern.png') repeat top left;
+  }
+
+  body.home #main.low_resolution {
+     background-image:url('../img/desk/low/background.jpg');
+  }
+  
+  body.home #main.high_resolution {
+     background-image:url('../img/desk/high/background.jpg');
+  }
+  
+  body.home #main {
+     -webkit-transform:translate3d(0,0,0);
+     overflow: hidden;
+     background-repeat: no-repeat;
+  }
+  
+  body.home .ui-body-c img{
+      -webkit-transform:translate3d(0,0,0);
+      float:left;
+      position:absolute;
+  }
+  
+  body.home .tablet{
+      width:34%;
+      top: 33%;
+      left: 28%;
+      z-index:2;
+  }
+  
+  body.home .block{
+      width: 32%;
+      top: -1%;
+      left: -1%;
+  }
+
+  body.home .polaroid{
+      width: 20%;
+      top: 71%;
+      left: 18%;
+  }
+  
+  body.home .stellenanzeige{
+      width: 21%;
+      top: 71%;
+      left: 50%;
+  }
+
+  body.home .kaffee{
+      width: 16%;
+      top: 46%;
+      left: 13%;
+  }  
+
+  body.home .apfel{
+      width: 13%;
+      top: 36%;
+      left: 3%;
+  }  
+
+  body.home .dvd{
+      width: 15%;
+      top: 12%;
+      left: 46%;
+      z-index:2;
+  }
+
+  body.home .kamera{
+      width: 21%;
+      top: 66%;
+      left: 1%;
+      z-index:2;
+  }
+  
+  body.home .laptop{
+      width: 46%;
+      top: -7%;
+      left: 59%;
+      z-index:2;
+  }
+
+  body.home .taschenrechner_block{
+      width: 31%;
+      top: 53%;
+      left: 72%;
+      z-index:2;
+  }
+
+  body.home .smartphone{
+      width: 13%;
+      top: 74%;
+      left: 38%;
+      z-index:2;
+  }
+
+  body.home .map{
+      width: 28%;
+      top: 1%;
+      left: 30%;
+  }
+
+  body.home .tickets{
+      width: 22%;
+      top: 46%;
+      left: 61%;
+  }
+
+  /*=================================================== */
+  /*                 LAPTOP GUI                         */
+  /*=================================================== */
+
+  #lpt_main_container{ 
+     width:100%; height:100%;
+     position:fixed;
+     background-color:#000;
+     background-image:url('../img/laptop/lpt_bg.jpg');
+     background-position:bottom;
+     background-repeat:repeat-x;
+  }
+  #lpt_center_container{
+     position: relative;
+     top: 15px;
+     margin: 0 auto;
+     padding-top: 10px ,10px;
+     width: 800px;
+	 font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	 font-size:1em;
+	 color:#0F0;
+  }
+
+  .lpt_folders{
+     position:absolute;
+     top: 7%;
+     left: 8%;
+     width:42%;
+     height:37%;
+     z-index:2;
+  }
+   
+  .lpt_ordner{
+     float:left;
+     width:32%;
+     z-index:2;
+  }
+      
+  
+  
+  .lpt_text_ordner{
+     position:absolute;
+     width:25%;
+     padding-left:3%;
+     padding-top:21%;
+     text-align:center;
+     color:#FFF;    
+     z-index:3; 
+  }
+  
+  .lpt_menu1_container{
+     position:absolute;
+     overflow:hidden;        
+     width:28%;
+     height:39%;
+     z-index:2;
+     left:6%;
+     top:44%;
+  }  
+  .lpt_menu1{
+     position:absolute;
+     width:100%;
+     z-index:3;
+     top:100%;
+  } 
+  
+  .lpt_menu2_container{
+     position:absolute;
+     overflow:hidden;        
+     width:28%;
+     height:39%;
+     z-index:2;
+     left:36%;
+     top:44%;
+  }     
+  .lpt_menu2{
+     position:absolute;
+     width:100%;
+     height:95%;
+     z-index:3;
+     background-image: url('../img/laptop/lpt_menu2.png');
+     background-repeat:no-repeat;
+     background-size: 100% 100%;     
+     opacity: 0;
+     right:100%;
+  } 
+  
+  .lpt_menue_theme{
+    margin-left: 12%;
+    margin-top: 7%;
+    color:#333;    
+  }
+  
+  a.lpt_menu_link:link{
+    color:#333;
+    text-decoration:none;
+  }
+  a.lpt_menu_link:visited{
+    color:#333;
+    text-decoration:none;
+  }
+  a.lpt_menu_link:hover{
+    color:#333;
+    text-decoration:none;
+  }  
+  
+  a.lpt_folder_link:link{
+    color:#FFF; 
+    text-decoration:none;
+  }
+  a.lpt_folder_link:visited{
+    color:#FFF; 
+    text-decoration:none;
+  }
+  a.lpt_folder_link:hover{
+    color:#FFF; 
+    text-decoration:none;
+  }    
+
+
+  .lpt_text_menu1_projekt, .lpt_text_menu1_info, .lpt_text_menu1_shutdown {
+     position:absolute;
+     width:100%;
+     color:#333;    
+     z-index:3; 
+  }
+  .lpt_text_menu1_projekt{ margin-left:20%; margin-top:8%; }
+  .lpt_text_menu1_info{ margin-left:20%; margin-top:25%; }
+  .lpt_text_menu1_shutdown{ margin-left:20%; margin-top:82%; }      
+  
+   
+  .lpt_taskbar_start{ 
+    width: 25%;
+    position:absolute; 
+    z-index:3; 
+    left:5%; 
+    top:85.4%; 
+
+ 	/*background-image: url('../img/laptop/start_btn.png');  
+    background-size: 100% ;
+ 	background-repeat: no-repeat; */
+  }
+  .lpt_taskbar_menu{ 
+    width: 20%;
+    font-weight:bold;
+    position:absolute; 
+    z-index:2; 
+    left:12%; 
+    top:86.5%; 
+    color:#333;  
+  }  
+  
+  .lpt_taskbar_time{ 
+    width: 20%;
+    font-weight:bold;
+    position:absolute; 
+    z-index:2; 
+    left:81.5%; 
+    top:86.5%; 
+    color:#333;  
+  }  
+ 
+  .img_laptop{
+    position:relative;
+    width:100%;
+  }
+  .img_ordner, img_menu1, img_menu2{
+    position:absolute;
+    width:100%;
+  } 
+
+
+  /*===================================================	*/
+  /*                 CAMERA GUI 					  	*/
+  /*===================================================	*/
+   
+  .cam_main_container{ 
+	width:100%; height:100%;
+	position:fixed;
+    background-image:url('../img/laptop/lpt_bg.jpg');
+    background-position:bottom;
+    background-repeat:repeat-x;
+    background-size: auto 100% ;
+    
+  }
+  .cam_center_container{
+     position: relative;
+     margin: 0 auto;
+     padding-top: 10px ,10px;
+     width: 800px;
+  }
+
+  
+  .cam_button_info_container, .cam_button_up_container, .cam_button_down_container, .cam_button_power_container, .cam_button_pattern_container {
+	 position:absolute;
+	 width:15%;
+	 height:13.2%;
+	 overflow:hidden;	 
+	 left:1.5%;
+	 z-index:2;	 
+  }
+  .cam_button_info_container 	{ top: 5%;  } 
+  .cam_button_up_container 		{ top: 20%; }
+  .cam_button_down_container 	{ top: 35%; }
+  .cam_button_pattern_container { top: 51%; }
+  .cam_button_power_container 	{ top: 56%; }
+  
+  .cam_button_info 			{ position:absolute; width:100%;	z-index:3; 				}  
+  .cam_button_info:active	{ position:absolute; width:100%; 	top: -100%; z-index:3; 	}  
+  .cam_button_up 			{ position:absolute; width:100%;	z-index:3; 				}  
+  .cam_button_up:active 	{ position:absolute; width:100%; 	top: -100%; z-index:3; 	}    
+  .cam_button_down 			{ position:absolute; width:100%;	z-index:3; 				}  
+  .cam_button_down:active 	{ position:absolute; width:100%; 	top: -100%; z-index:3; 	}    
+  .cam_button_power 		{ position:absolute; width:100%;	z-index:3; 				}  
+  .cam_button_power:active 	{ position:absolute; width:100%; 	top: -100%; z-index:3; 	}            
+  
+  .cam_button_info_container  a { outline: none; }
+  
+  
+  .cam_display{
+	 position:absolute;
+	 width:82%;
+	 height:80%;
+	 z-index:2;
+	 left:18%;
+	 top:5%;
+  }  
+  
+  .cam_display_play{
+  	 position:absolute;
+	 width:8%;
+	 z-index:2;
+	 left:6%;
+	 top:5%;
+  }
+  
+  .cam_display_content_container{
+	 position:absolute;
+	 overflow:hidden;
+	 width:85%;
+	 height:65%;
+	 z-index:2;
+	 left:5.8%;
+	 top:17%;
+  } 
+  
+  .cam_display_content{
+	 position:absolute;
+	 top: 0%;
+	 width:93.5%;
+	 height:100%;
+	 z-index:3;
+  }   
+  
+  .cam_theme   {
+	 float:left;
+	 width:100%;
+	 height:25%;
+	 z-index:2;	
+	 background-image: url('../img/cam/cam_theme1.png');
+	 background-repeat:no-repeat;
+	 background-size: 100% 90%;
+  }
+  .cam_theme a {
+  	 text-decoration: none;
+	 color:#CCC;  	 
+  }
+ 
+	  .cam_theme_icon{
+		 position:absolute;
+		 width:16%;	
+	  }
+	  .cam_theme_topic_txt{
+		 position:absolute;
+		 color:#333;
+		 width:60%;
+		 left: 24%;	
+         padding-top: 4%;
+		 	  
+	  }	  
+	  .cam_theme_count_txt{
+		 position:absolute;
+		 color:#333;
+		 font-weight:bold;
+		 width:40%;
+		 left: 68%;		
+		 text-align:center; 
+         padding-top: 4%; 
+	  }	               
+
+  .cam_display_info{
+	 position:absolute;
+	 top: 82%;
+	 left:80%;
+	 color:#CCC;
+	font-style:normal;	 
+  } 
+
+
+  .cam_bg{
+  	position:relative;
+	width:100%;
+  }
+  .cam_img, .cam_img_Bup, .cam_img_Bdown{
+  	position:absolute;
+	width:100%;
+  }  
+  
+  
+  /*=================================================== */
+  /*                 CALCULATOR GUI                     */
+  /*=================================================== */
+ 
+  .calc_main_container{ 
+     width:100%; height:100%;
+     position:fixed;
+     background-image:url('../img/calculator/calc_bg_pattern.png');  
+     background-repeat:repeat;
+     
+     
+  }
+  .calc_center_container{
+     position: relative;
+     top: 15px;
+     margin: 0 auto;
+     padding-top: 10px ,10px;
+     width: 800px;
+  }
+  
+  .calc_content{
+     position:absolute;
+     width:90%;
+     height:70%;
+     top: 15%;
+     left: 5%;
+     z-index:2;
+     text-align:center;
+     
+  } 
+  
+  .calc_element_template{
+    list-style:none;
+  }
+  
+  .calc_element_template li {
+    float:left;
+    width:33%;
+    
+  }
+  
+  .calc_element_template li img{
+     width:80%;
+  }
+  .calc_clear{
+     clear:both;
+  }  
+
+
+ 
+  .calc_navigation_back, .calc_navigation_info {
+     position:absolute;
+     width:13%;
+     top: 81%;   
+     z-index:3;
+  }
+  .calc_navigation_back { left:8%;}  
+  .calc_navigation_info{ left:80%;}  
+  
+  .img_bg{
+    position:relative;
+    width:100%;
+  }  
+  
+  .img_content{
+    position:absolute;
+    width:100%;
+  }  
+  
+  
+ /*===================================================  */
+ /*                 DATES GUI                           */
+ /*===================================================  */  
+ 
+ body.dates_first_level .ui-body-c,
+ body.dates_second_level .ui-body-c {
+     background: url('../img/calculator/calc_bg_pattern.png') repeat top left;   
+ }
+ 
+ body.dates_first_level #main,
+ body.dates_second_level #main {
+     overflow-y: scroll;
+ }
+ 
+ body.dates_first_level #date_content,
+ body.dates_second_level #date_content {
+     padding: 20px;
+ }
+ 
+ body.dates_first_level .headline {
+     padding-bottom: 0.5em;
+ }
+ 
+ body.dates_first_level .headline h1 {
+    float: left;
+    color: #222222;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    text-shadow: 1px 1px 1px #000000;
+    padding-bottom: 0.15em;
+ }
+ 
+ body.dates_first_level .headline .backnavi {
+     float: right;
+     text-align: right;
+     padding-top: 0.4em;
+ }
+ 
+ body.dates_first_level .headline .backnavi img {
+    width: 4em;
+ }
+ 
+ body.dates_first_level ul#date-listning {
+     margin: 0;
+ }
+ 
+ body.dates_first_level .ui-btn-up-c {
+     background: rgba(238,238,238,0.6);
+     background-image: -moz-linear-gradient(top,  rgba(255,255,255,0.6) 0%, rgba(241,241,241,0.6) 100%); /* FF3.6+ */
+     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(241,241,241,0.6))); /* Chrome,Safari4+ */
+     background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* Chrome10+,Safari5.1+ */
+     background-image: -o-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* Opera 11.10+ */
+     background-image: -ms-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* IE10+ */
+     background-image: linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#99f1f1f1',GradientType=0 ); /* IE6-9 */
+ }
+ 
+ body.dates_first_level .ui-btn-hover-c{
+     background: rgba(223,223,223,0.6);
+     background-image: -moz-linear-gradient(top,  rgba(246,246,246,0.6) 0%, rgba(224,224,224,0.6) 100%); /* FF3.6+ */
+     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,246,246,0.6)), color-stop(100%,rgba(224,224,224,0.6))); /* Chrome,Safari4+ */
+     background-image: -webkit-linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(224,224,224,0.6) 100%); /* Chrome10+,Safari5.1+ */
+     background-image: -o-linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(224,224,224,0.6) 100%); /* Opera 11.10+ */
+     background-image: -ms-linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(224,224,224,0.6) 100%); /* IE10+ */
+     background-image: linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(224,224,224,0.6) 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99f6f6f6', endColorstr='#99e0e0e0',GradientType=0 ); /* IE6-9 */
+ }
+ 
+ body.dates_first_level .ui-li-desc {
+     margin-top: 0;
+     margin-bottom: 0.1em;
+ }
+ 
+ body.dates_first_level .ui-li-heading {
+     font-size: 1.5em;
+     margin-top: 0;
+     margin-bottom: 0.2em;
+ }
+ 
+ body.dates_second_level .backnavi {
+     text-align: right;
+     background:#111;
+     background-image:-webkit-gradient(linear,left top,left bottom,from(#3c3c3c),to(#111));
+     background-image:-webkit-linear-gradient(#3c3c3c,#111);
+     background-image:-moz-linear-gradient(#3c3c3c,#111);
+     background-image:-ms-linear-gradient(#3c3c3c,#111);
+     background-image:-o-linear-gradient(#3c3c3c,#111);
+     background-image:linear-gradient(#3c3c3c,#111);
+     padding: 10px 20px;
+     -webkit-border-top-left-radius: 0.6em;
+     -webkit-border-top-right-radius: 0.6em;
+     -moz-border-top-left-radius: 0.6em;
+     -moz-border-top-right-radius: 0.6em;
+     border-top-left-radius: 0.6em;
+     border-top-right-radius: 0.6em;
+ }
+ 
+ body.dates_second_level .backnavi a {
+     line-height: 0;
+     display: block;
+     float: left;
+     margin-right: .8em;
+ }
+ 
+ body.dates_second_level .backnavi img {
+     width: 2em;
+ }
+ 
+ body.dates_second_level #inner_content {
+     background: rgba(238,238,238,0.6);
+     background-image: -moz-linear-gradient(top,  rgba(255,255,255,0.6) 0%, rgba(241,241,241,0.6) 100%); /* FF3.6+ */
+     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(241,241,241,0.6))); /* Chrome,Safari4+ */
+     background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* Chrome10+,Safari5.1+ */
+     background-image: -o-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* Opera 11.10+ */
+     background-image: -ms-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* IE10+ */
+     background-image: linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(241,241,241,0.6) 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#99f1f1f1',GradientType=0 ); /* IE6-9 */
+     padding: 10px 20px 20px;
+     -webkit-border-bottom-left-radius: 0.6em;
+     -webkit-border-bottom-right-radius: 0.6em;
+     -moz-border-bottom-left-radius: 0.6em;
+     -moz-border-bottom-right-radius: 0.6em;
+     border-bottom-left-radius: 0.6em;
+     border-bottom-right-radius: 0.6em;
+ }
+ 
+ body.dates_second_level p {
+     margin-bottom: 0.8em;
+ }
+ 
+ body.dates_second_level img.fleft {
+     float: left;
+     margin: 0 .8em .8em 0;
+     max-width: 30%;
+ }
+ 
+ body.dates_second_level img.fright {
+     float: right;
+     margin: 0  0 .8em .8em;
+     max-width: 30%;
+ }
+ 
+ 
+  /*=================================================== */
+  /*                 MAP GUI                            */
+  /*=================================================== */  
+  
+  body.map_first_level #content,
+  body.map_second_level #content {
+      padding:20px;
+  }
+  
+  body.map_first_level .ui-body-c,
+  body.map_second_level .ui-body-c {
+      background: url('../img/calculator/calc_bg_pattern.png') repeat top left; 
+  }
+  
+  body.map_first_level #inner-content,
+  body.map_second_level #inner-content {
+      background: rgba(200,200,200,0.5);
+      background-image: -moz-linear-gradient(top,  rgba(255,255,255,0.8) 0%, rgba(241,241,241,0.8) 100%); 
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.8)), color-stop(100%,rgba(241,241,241,0.8)));
+      background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
+      background-image: -o-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%);
+      background-image: -ms-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
+      background-image: linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#99f1f1f1',GradientType=0 ); 
+      padding: 20px;
+      -webkit-border-radius: 0.6em;
+      -moz-border-radius: 0.6em;
+      border-radius: 0.6em;
+      text-align: center;
+  }
+  
+  body.map_first_level #inner-content img,
+  body.map_second_level #inner-content img {
+      width: 100%;
+  }
+  
+  /*=================================================== */
+  /*                 TABLET GUI                             */
+  /*=================================================== */  
+  
+  body.tablet_first_level .ui-body-c {
+      background: url('../img/calculator/calc_bg_pattern.png') repeat top left; 
+      text-shadow: 0px 0px 0px;
+  }
+  
+  body.tablet_first_level #tbl_content {
+      position: relative;
+      margin: 0 auto;
+      padding-top: 10px;
+      width: 800px;
+  }
+  
+  body.tablet_first_level #tbl_content .background-image {
+      position: absolute;
+  }
+  
+  body.tablet_first_level #tbl_content .background-image img {
+      width: 100%;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content {
+      position: relative;
+      padding-top: 6.1%;
+      padding-left: 6.19%;
+      padding-right: 8.7%;
+  }
+  body.tablet_first_level #tbl_content .inner-content .header,
+  body.tablet_second_level #tbl_content .inner-content .header {
+        position: relative;
+        font-size: 1.0em;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .collapsed,
+  body.tablet_second_level #tbl_content .inner-content .header .collapsed {
+        background: -moz-linear-gradient(top, rgba(255,255,255,0.25) 0%, rgba(188,188,188,0.25) 8%, rgba(251,251,251,0.25) 76%, rgba(255,255,255,1) 80%, rgba(0,0,0,0.1) 81%, rgba(122,122,122,0) 97%, rgba(145,145,145,0) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.25)), color-stop(8%,rgba(188,188,188,0.25)), color-stop(76%,rgba(251,251,251,0.25)), color-stop(80%,rgba(255,255,255,1)), color-stop(81%,rgba(0,0,0,0.1)), color-stop(97%,rgba(122,122,122,0)), color-stop(100%,rgba(145,145,145,0))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0.25) 0%,rgba(188,188,188,0.25) 8%,rgba(251,251,251,0.25) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.1) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, rgba(255,255,255,0.25) 0%,rgba(188,188,188,0.25) 8%,rgba(251,251,251,0.25) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.1) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, rgba(255,255,255,0.25) 0%,rgba(188,188,188,0.25) 8%,rgba(251,251,251,0.25) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.1) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* IE10+ */
+        background: linear-gradient(top, rgba(255,255,255,0.25) 0%,rgba(188,188,188,0.25) 8%,rgba(251,251,251,0.25) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.1) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* W3C */
+        padding-bottom: 0.8em;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+  }
+  
+  @media (max-width: 767px) {
+      body.tablet_first_level #tbl_content .inner-content .header,
+      body.tablet_second_level #tbl_content .inner-content .header {
+          font-size: 0.8em;
+      }
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .left,
+  body.tablet_second_level #tbl_content .inner-content .header .left {
+        float: left;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .right,
+  body.tablet_second_level #tbl_content .inner-content .header .right {
+        float: right;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .icon,
+  body.tablet_second_level #tbl_content .inner-content .header .icon {
+        line-height: 0;
+        margin: 0 0.3em;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .icon img,
+  body.tablet_second_level #tbl_content .inner-content .header .icon img {
+        height: 1.0em;
+        vertical-align: middle;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .time,
+  body.tablet_second_level #tbl_content .inner-content .header .time {
+        font-weight: bold;
+        color: #6b6b6b;
+        text-shadow: 0 -1px 0px #444444;
+        vertical-align: middle;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open,
+  body.tablet_second_level #tbl_content .inner-content .header .open {
+        display:none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(188,188,188,1) 8%, rgba(251,251,251,1) 76%, rgba(255,255,255,1) 80%, rgba(0,0,0,0.3) 81%, rgba(122,122,122,0) 97%, rgba(145,145,145,0) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(8%,rgba(188,188,188,1)), color-stop(76%,rgba(251,251,251,1)), color-stop(80%,rgba(255,255,255,1)), color-stop(81%,rgba(0,0,0,0.3)), color-stop(97%,rgba(122,122,122,0)), color-stop(100%,rgba(145,145,145,0))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(188,188,188,1) 8%,rgba(251,251,251,1) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.3) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(188,188,188,1) 8%,rgba(251,251,251,1) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.3) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(188,188,188,1) 8%,rgba(251,251,251,1) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.3) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* IE10+ */
+        background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(188,188,188,1) 8%,rgba(251,251,251,1) 76%,rgba(255,255,255,1) 80%,rgba(0,0,0,0.3) 81%,rgba(122,122,122,0) 97%,rgba(145,145,145,0) 100%); /* W3C */
+        padding-bottom: 0.8em;
+        padding-top: 5px;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu {
+        float: left;
+        width: 32.8%;
+        border-right: 1px solid rgba(0,0,0,0.3);
+        border-left: 1px solid rgba(255,255,255,0.5);
+        text-align: center;
+        font-size: 0.8em;
+        color: #6b6b6b;
+        margin: 0.4em 0 0.8em;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu a,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu a {
+        color: #6b6b6b;
+        text-decoration: none;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu.last,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu.last {
+        border-right: 0px ;
+  }
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu.first,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu.first {
+        border-left: 0px ;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .header .open .servicemenu .icon img,
+  body.tablet_second_level #tbl_content .inner-content .header .open .servicemenu .icon img {
+        height: auto;
+  }
+  
+  body.tablet_first_level #tbl_content .inner-content .content,
+  body.tablet_second_level #tbl_content .inner-content .content {
+      padding: 1% 2% 2%;
+      
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list {
+      list-style: none;
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li {
+      float: left;
+      text-align: center;
+      font-size: 0.7em;
+      width: 11.2%;
+      margin-right: 3%;
+      margin-bottom: 2%
+  }
+  
+  @media (max-width: 767px) {
+      body.tablet_first_level ul#tbl_first_level_list li {
+          width: 22%;
+      }
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: normal;
+      display: block;
+      max-width: 100%;
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li a .label {
+      background-color: rgba(0,0,0,0.6);
+      -webkit-border-radius: 0.6em;
+      -moz-border-radius: 0.6em;
+      border-radius: 0.6em;
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+  }
+  body.tablet_first_level ul#tbl_first_level_list li a .label span {
+      padding: 0.2em 0.5em 0.1em 0.55em;
+      display: block;
+      white-space: nowrap;
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li a .icon {
+      display: block;
+      padding-top: 5%;
+      padding-left: 10%;
+      padding-bottom: 3%;
+      padding-right: 10%;
+  }
+  
+  @media (max-width: 767px) {
+      body.tablet_first_level ul#tbl_first_level_list li a .icon {
+          padding-top: 5%;
+          padding-left: 20%;
+          padding-bottom: 3%;
+          padding-right: 20%;
+      }
+  }
+  
+  body.tablet_first_level ul#tbl_first_level_list li a .icon img {
+      width:100%;
+  }
+  
+  
+  body.tablet_second_level .ui-body-c {
+      background: url('../img/tablet/tbl_background.png') no-repeat top left;
+      background-size: 100% 100%;
+      text-shadow: 0px 0px 0px;
+  }
+
+
+  /*=================================================== */
+  /*                 DVD GUI                             */
+  /*=================================================== */  
+#dvd_one {
+	width: 100%;
+	height: 100%;
+}
+
+.dvd_first_level {
+	background: url("../img/calculator/calc_bg_pattern.png") repeat scroll left top transparent;
+}
+
+.ui-body-c {
+	background: none;
+}
+
+#dvd_page {
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
+.dvd_full {
+	height: 100%;
+}
+
+#dvd_links {
+	position: absolute;
+	top: 68.5%;
+	left: 1.4%;
+	width: 100%;
+	height: 12.5%;
+}
+
+
+#dvd_back {
+	position: absolute; 
+	left: 93%;
+	top: 89%;
+	height: 10%;
+	width: 10%;
+}
+
+#dvd_info {
+	position: absolute; 
+	left: 90%;
+	top: 0%;
+	height: 13%;
+	width: 13%;
+}
+
+#dvd_links a {
+	padding-top: 3%;
+	height: 122%;
+	background: rgba(200, 200, 200, 0.5);
+	text-align: center;
+	float: left;
+	margin-right: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+#dvd_links a:last-child {
+	margin-right: 0%;
+}
+
+
+a.linkDVD {
+	text-shadow: none !important;
+	color: #fff !important;
+	text-decoration: none;
+	font-size: 35px;
+}
+
+@media (max-height: 780px) {
+	a.linkDVD {
+	font-size: 31px;
+	}
+}
+
+@media (max-width: 1070px) {
+	a.linkDVD {
+	font-size: 31px;
+	}
+}
+
+@media (max-height: 690px) {
+	a.linkDVD {
+	font-size: 25px;
+	}
+}
+
+@media (max-width: 960px) {
+	a.linkDVD {
+	font-size: 25px;
+	}
+}
+
+@media (max-height: 600px) {
+	a.linkDVD {
+	font-size: 21px;
+	}
+}
+
+@media (max-width: 960px) {
+	a.linkDVD {
+	font-size: 21px;
+	}
+}
+
+@media (max-height: 450px) {
+	a.linkDVD {
+	font-size: 15px;
+	}
+}
+
+@media (max-width: 620px) {
+	a.linkDVD {
+	font-size: 15px;
+	}
+}
+
+@media (max-height: 350px) {
+	a.linkDVD {
+		font-size: 9px;
+	}
+}
+
+@media (max-width: 480px) {
+	a.linkDVD {
+		font-size: 9px;
+	}
+}
+
+
+/***************************************/
+/*			SMARTPHONE GUI 			   */
+/***************************************/
+
+	.smartphone_first_level {
+		background: url("../img/calculator/calc_bg_pattern.png") repeat scroll left top transparent;
+	}
+
+	#smartphone_page {
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	}
+	
+	.smartphone_full {
+	height: 100%;
+	}
+
+	#smartphone_links {
+	position: absolute;
+	top: 15.3%;
+	left:9.5%;
+	width: 81.6%;
+	height: 63%;
+
+	}
+	
+	#contacts_links {
+	position: absolute;
+	top: 15.3%;
+	left:9.5%;
+	width: 81.6%;
+	height: 63%;
+
+	}
+	
+	#contacts_links h1 {
+	text-shadow: none;
+	padding-left: 40%;
+
+	}
+
+
+	}
+	
+	#contacts_links ul {
+		position:absolute;
+		height: 50%;
+		width: 40%;
+	}
+	
+	#contacts_links ul li{
+		height: 20%;
+		width: 40%;
+	}
+	
+	#smartphone_back {
+		position: absolute; 
+		left: 10.8%;
+		top: 78.7%;
+		height: 7%;
+		width: 5%;
+
+	}
+	
+	#smartphone_info {
+		position: absolute; 
+		left: 85.7%;
+		top: 78.7%;
+		height: 7%;
+		width: 5%;
+
+	}
+	
+	#smartphone_links div {
+	background-position: center;
+	
+	padding-top: 2%;
+	height: 22.7%;
+	width: 14.5%;
+	text-align: center;
+	float: left;
+	margin-right: 1%;
+	padding-left: 2%;
+	padding-right: 1%;
+
+	}
+	
+	#smartphone_links img {
+		height: 100%;
+		width: 100%;
+	}
+	
+	#smartphone_links div:last-child {
+		margin-right: 0%;
+	}
+	
+	 body.contacts_first_level .ui-body-c,
+ 	 body.contacts_second_level .ui-body-c {
+     background: url('../img/calculator/calc_bg_pattern.png') repeat top left;   
+ }
+ 
+ 	.toggle_container {
+ 		position: absolute;
+ 		height: 65%;
+ 		width: 48%;
+ 		top: 14%;
+ 		left: 42.5%;
+ 		padding-left: 7%;
+	 	padding-top: 10%;
+	 	background-color: #fff;
+	 	border-radius: 5%;
+	 	opacity: 0.8;
+ 	}
+ 	.toggle_container p {
+
+	 	text-shadow: none;
+	 	font-size: 15px;
+	 	line-height: 2;
+	 	
+ 	}
+ 
+ 	#contacts-listning {
+ 		box-shadow: none !important;
+ 	}
+ 
+	
+	
+	a.linkSmartphone {
+		text-shadow: none !important;
+		color: #fff !important;
+		text-decoration: none;
+		font-size: 35px;
+	}
+	
+	@media (max-height: 780px) {
+	a.linkSmartphone {
+	font-size: 31px;
+	}
+	}
+	
+	@media (max-width: 1070px) {
+		a.linkSmartphone {
+		font-size: 31px;
+		}
+	}
+	
+	@media (max-height: 690px) {
+		a.linkSmartphone {
+		font-size: 25px;
+		}
+	}
+	
+	@media (max-width: 960px) {
+		a.linkSmartphone {
+		font-size: 25px;
+		}
+	}
+	
+	@media (max-height: 600px) {
+		a.linkSmartphone {
+		font-size: 14px;
+		}
+	}
+	
+	@media (max-width: 960px) {
+		a.linkSmartphone {
+		font-size: 14px;
+		}
+	}
+	
+	@media (max-height: 450px) {
+		a.linkSmartphone {
+		font-size: 10px;
+		}
+	}
+	
+	@media (max-width: 620px) {
+		a.linkSmartphone {
+		font-size: 10px;
+		}
+	}
+	
+	@media (max-height: 350px) {
+		a.linkSmartphone {
+			font-size: 9px;
+		}
+		
+		#links td {
+		}
+	}
+	
+	@media (max-width: 480px) {
+		a.linkSmartphone {
+			font-size: 9px;
+		}
+		#links td {
+		}
+	}
+	
+	@media (max-height: 300px) {
+		#links td {
+		}
+	}
+	
+	@media (max-width: 415px) {
+		#links td {
+		}
+	}
+	
+	@media (max-height: 240px) {
+		#links td {
+			font-size: 7px;
+		}
+	}
+	
+	@media (max-width: 330px) {
+		#links td {
+			font-size: 7px;
+		}
+	}
+
+
+
+/***************************************/
+/*			     Slider		 		   */
+/***************************************/
+
+.dvd_second_level, .dvd_third_level {
+	background-image: url(../img/calculator/calc_bg_pattern.png) !important;
+}
+
+.slider_page {
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #7db9e8 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* IE10+ */
+	background: linear-gradient(top,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* W3C */
+}
+
+#projectGallery {
+	height: 100%;
+}
+
+a.projectSquare {
+	width: 27%;
+	height: 35%;
+	display: block;
+	margin: 3%;
+	float: left;
+}
+
+a.projectSquare img {
+	width: 100%;
+	display: block;
+}
+
+.counter a {
+	text-decoration: none;
+	position: absolute;
+	bottom: 0;
+	margin-left: 3%;
+	font-weight: normal;
+	color: #333 !important;
+}
+
+
+.swipe li div, .swipe div div div {
+  margin:0 10px;
+  padding:50px 10px;
+  background: rgba(230, 230, 230, 0.4);
+  font-weight:bold;
+  color:#fff;
+  font-size:12px;
+  text-align:center;
+}
+
+.slider ul {
+	height: 90%;
+	width: 75%;
+	margin: 0 auto;
+	font-size: 0.4em;
+	background: rgba(230, 230, 230, 0.4);
+	padding: 0;
+}
+
+.slider ul li {
+	text-align: center;
+}
+
+#sliderProjectContainer {
+	position: absolute;
+	top: 15%;
+	width: 85%;
+	left: 7.5%;
+	height: 85%;
+}
+
+#slider ul {
+	width: 100%;
+	margin-top: 14%;
+	height: 65%;
+}
+
+.sliderContainer {
+	height: 100%;
+}
+
+.swipeDiv{
+	position: relative;
+}
+
+.slideText {
+	padding-right: 7%;
+	font-size: 1.4em;
+	color: #333;
+	padding-left: 2%;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-shadow: none !important;
+}
+
+@media (max-width: 550px) {
+	
+	.slideText {
+		font-size: 0.8em;
+	}
+	
+	.counter {
+		font-size: 0.8em;
+	}
+	
+}
+
+@media (max-height: 350px) {
+	
+	.slideText {
+		font-size: 0.8em;
+	}
+	
+	.counter {
+		font-size: 0.8em;
+	}
+}	
+
+.arrLeft {
+	position: absolute;
+	padding-left: 8%;
+	left: -11%;
+	top: 39%;
+	height: 12%;
+	cursor: pointer;
+	z-index: 10;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+.arrRight {
+	position: absolute;
+	padding-right: 8%;
+	right: -11%;
+	top: 39%;
+	height: 12%;
+	cursor: pointer;
+	z-index: 10;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+.counter {
+	position: absolute; 
+	top: 5%;
+	font-size: 20px;
+	right: 0;
+	text-align: left;
+	background: rgba(230, 230, 230, 0.4);
+	opacity: 0.7;
+	height: 4%;
+	width:30%;
+	text-shadow: none !important;
+	padding-bottom: 1%;
+	color: #000;
+}
+
+.counterInner {
+	position: absolute;
+	bottom: 0;
+	margin-left: 3%;
+}
+
+
+.descr {
+	position: absolute;
+	top: 5%;
+	left: 0%;
+	background-color: #eee;
+	opacity: 0.7;
+	height: 4%;
+	width: 50%;
+	background: rgba(200, 200, 200, 0.4);
+	text-shadow: none !important;
+	padding-bottom: 1%;
+}
+
+.descrInner {
+	font-size: 20px;
+	color: #000;
+	position: absolute;
+	bottom: 0;
+	margin-left: 15%;
+}
+
+
+.mediaPlayer {
+	height: 100%;
+	width: 50%;
+	margin-left: 25%;
+	position: relative;
+}
+
+.mediaPlayer_Layer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.infoContainer {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgba(230, 230, 230, 0.4);
+	text-shadow: none !important;
+}
+
+.infoHeader img {
+	width: 35%;
+	float: left;
+	margin-right: 4%;
+	margin-left: 2%;
+}
+
+.infoHeader hr {
+	margin-right: 4%;
+	margin-left: 0;
+}
+
+.infoHeader h1 {
+	padding-top: 2%;
+	font-size: 20px;
+	color: #333;
+}
+
+.infoHeader h2 {
+	padding-top: 2%;
+	font-size: 16px;
+	color: #ae3923;
+	font-weight: normal;
+}
+
+.infoText {
+	margin-left: 2%;
+	margin-top: 4%;
+	margin-right: 2%;
+}
+
+.infoFooter {
+	position: absolute;
+	width: 100%;
+	height: 7%;
+	background: rgba(230, 230, 230, 0.4);
+	bottom: 0;
+	left: 0;
+}
+
+.infoFach {
+	position: absolute;
+	left: 2%;
+	bottom: 2%;
+	text-decoration: none;
+	color: #333 !important;
+	font-size: 12px;
+}
+
+.infoBack {
+	position: absolute;
+	right: 2%;
+	bottom: 17%;
+	text-decoration: none;
+	color: #333 !important;
+}
+
+@media (max-height: 480px) {
+	.counterInner, .counter a, .infoBack {
+		font-size: 11px;
+	}
+	
+	.descrInner {
+		font-size: 11px;
+	}
+	
+	.infoText {
+		font-size: 10px;
+	}
+	
+	.infoHeader h1 {
+		font-size: 18px;	
+	}
+	
+	.infoHeader h2 {
+		font-size: 14px;	
+	}
+}
+
+@media (max-width: 640px) {
+	.counterInner, .counter a, .infoBack  {
+		font-size: 11px;
+	}
+	
+	.descrInner {
+		font-size: 11px;
+	}
+	
+	.infoText {
+		font-size: 10px;
+	}
+	
+	.infoHeader h1 {
+		font-size: 18px;	
+	}
+	
+	.infoHeader h2 {
+		font-size: 14px;	
+	}
+}
+
+@media (max-height: 320px) {
+	.counterInner, .counter a, .infoBack  {
+		font-size: 9px;
+	}
+	
+	.descrInner {
+		font-size: 9px;
+	}
+	
+	.infoText {
+		font-size: 9px;
+	}
+	
+	.infoHeader h1 {
+		font-size: 16px;	
+	}
+	
+	.infoHeader h2 {
+		font-size: 12px;	
+	}
+}
+
+@media (max-width: 450px) {
+	.counterInner, .counter a, .infoBack  {
+		font-size:9px;
+	}
+	
+	.descrInner {
+		font-size: 9px;
+	}
+	
+	.infoText {
+		font-size: 9px;
+	}
+	
+	.infoHeader h1 {
+		font-size: 16px;	
+	}
+	
+	.infoHeader h2 {
+		font-size: 12px;	
+	}
+}
+
+#projectSlider {
+	position: relative;
+}
+
+#overlay_projectinfo {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: none;
+	background: rgba(50, 50, 50, 0.5);
+	z-index: 10000;
+	text-shadow: none;
+}
+
+#sliderProject ul li {
+	display: none;
+}
+
+#sliderProject ul li:first-child {
+	display: block;
+}

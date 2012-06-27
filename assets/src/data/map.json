@@ -1,0 +1,91 @@
+[
+    {
+        "id": 1,
+        "house": "klm",
+        "server_uri": "server_uri",
+        "big_pics": "src/img/map/",
+        "floors": [
+                       {
+                           "title": "klm1",
+                           "img_uri": "klm1.png",
+                           "next": "klm2",
+                           "prev": "",
+                           "house": "klm"
+                       },
+                       {
+                           "title": "klm2",
+                           "img_uri": "klm2.png",
+                           "next": "klm3",
+                           "prev": "klm1",
+                           "house": "klm"
+                       },
+                       {
+                           "title": "klm3",
+                           "img_uri": "klm3.png",
+                           "next": "",
+                           "prev": "klm2",
+                           "house": "klm"
+                       }
+                   ]
+    },
+    {
+        "id": 2,
+        "house": "j",
+        "server_uri": "server_uri",
+        "big_pics": "src/img/map/",
+        "floors": [
+                       {
+                           "title": "j1",
+                           "img_uri": "j1.png",
+                           "next": "j2",
+                           "prev": "",
+                           "house": "j"
+                       },
+                       {
+                           "title": "j2",
+                           "img_uri": "j2.png",
+                           "next": "j3",
+                           "prev": "j1",
+                           "house": "j"
+                       },
+                       {
+                           "title": "j3",
+                           "img_uri": "j3.png",
+                           "next": "j4",
+                           "prev": "j2",
+                           "house": "j"
+                       },
+                       {
+                           "title": "j4",
+                           "img_uri": "j4.png",
+                           "next": "",
+                           "prev": "j3",
+                           "house": "j"
+                       }
+                   ]
+    },
+    {
+        "id": 3,
+        "house": "w",
+        "server_uri": "server_uri",
+        "big_pics": "src/img/map/",
+        "floors": [
+                       {
+                           "title": "w1",
+                           "img_uri": "w1.png",
+                           "next": "w2",
+                           "prev": "",
+                           "house": "w"
+                       },
+                       {
+                           "title": "w2",
+                           "img_uri": "w2.png",
+                           "next": "",
+                           "prev": "w1",
+                           "house": "w"
+                       }
+                   ]
+    }
+
+
+]

@@ -1,0 +1,21 @@
+<div id="content">
+    <div id="inner-content">
+        <p>
+            <b>(<%=floor.title %>)</b>
+            <a href="#home">home</a>
+            <a href="#map">back</a>
+            <% if (floor.prev != "") { %>
+                <a href="#map/<%=floor.house %>/<%=floor.prev %>">prev</a>
+            <% } %>
+            <% if (floor.next != "") { %>
+                <a href="#map/<%=floor.house %>/<%=floor.next %>">next</a>
+            <% } %>
+            <br />
+            <br />
+            
+             <img src="<%=pathBigPics %><%=floor.img_uri %>" />
+            
+            
+        </p>
+    </div>
+</div>
