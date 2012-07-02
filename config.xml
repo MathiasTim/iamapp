@@ -15,7 +15,15 @@
 		Mathias Maier
 	</author>
 
-	<icon src="icon.png" gap:role="default" />
+    <icon src="icon.png" gap:role="default" />
+    <icon src="icon_57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="icon_72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="icon_114.png" gap:platform="ios" width="114" height="114" />
+    
+    <icon src="icon_57.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="icon_72.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="icon_114.png" gap:platform="android" gap:density="hdpi" />
+    
 	<gap:splash src="splash.png" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
