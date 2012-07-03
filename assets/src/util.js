@@ -22,7 +22,7 @@ define([
     
     // loading screen
     var loadingScreen = function(){
-        return '<div id="loading-data">i´m running... loading data...</div>';
+        return '<div id="loading-data"></div>';
     };
     
     // split media data

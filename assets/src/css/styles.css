@@ -54,7 +54,12 @@ div.ui-content{
   #loading-data{
       text-align:center;
       padding:50px;
-      color:black;
+      background: url('../img/ajax-loader.gif') no-repeat center center;
+      background-color:#ffffff;
+      overflow:hidden;
+      position:fixed;
+      height:100%;
+      width:100%;
   }  
 
 
@@ -88,21 +93,22 @@ div.ui-content{
   
   body.home .tablet{
       width:34%;
-      top: 33%;
+      top: 35%;
       left: 28%;
       z-index:2;
   }
   
   body.home .block{
       width: 32%;
-      top: -1%;
-      left: -1%;
+      top: -3%;
+      left: -2%;
+      z-index: 2;
   }
 
   body.home .polaroid{
       width: 20%;
-      top: 71%;
-      left: 18%;
+      top: 50%;
+      left: 62%;
   }
   
   body.home .stellenanzeige{
@@ -112,22 +118,36 @@ div.ui-content{
   }
 
   body.home .kaffee{
-      width: 16%;
-      top: 46%;
-      left: 13%;
+      width: 14%;
+      top: 54%;
+      left: 17%;
+      z-index: 2;
   }  
 
   body.home .apfel{
-      width: 13%;
-      top: 36%;
-      left: 3%;
+      width: 12%;
+      top: 75%;
+      left: 25%;
+      z-index: 2;
+  }  
+  
+  body.home .postit{
+      width: 12%;
+      top: 83%;
+      left: 20%;
   }  
 
   body.home .dvd{
       width: 15%;
-      top: 12%;
-      left: 46%;
+      top: 13%;
+      left: 32%;
       z-index:2;
+  }
+
+  body.home .zettel{
+      width: 14%;
+      top: 22%;
+      left: 47%;
   }
 
   body.home .kamera{
@@ -160,14 +180,14 @@ div.ui-content{
 
   body.home .map{
       width: 28%;
-      top: 1%;
+      top: -1%;
       left: 30%;
   }
 
   body.home .tickets{
       width: 22%;
-      top: 46%;
-      left: 61%;
+      top: 43%;
+      left: 1%;
   }
 
   /*=================================================== */
@@ -1134,119 +1154,6 @@ div.ui-content{
       padding:50px;
       color:black;
   }  
-
-
-  /*=================================================== */
-  /*                 DESK                               */
-  /*=================================================== */
-
-  .ui-page {
-    background: url('../img/calculator/calc_bg_pattern.png') repeat top left;
-  }
-
-  body.home #main.low_resolution {
-     background-image:url('../img/desk/low/background.jpg');
-  }
-  
-  body.home #main.high_resolution {
-     background-image:url('../img/desk/high/background.jpg');
-  }
-  
-  body.home #main {
-     -webkit-transform:translate3d(0,0,0);
-     overflow: hidden;
-     background-repeat: no-repeat;
-  }
-  
-  body.home .ui-body-c img{
-      -webkit-transform:translate3d(0,0,0);
-      float:left;
-      position:absolute;
-  }
-  
-  body.home .tablet{
-      width:34%;
-      top: 33%;
-      left: 28%;
-      z-index:2;
-  }
-  
-  body.home .block{
-      width: 32%;
-      top: -1%;
-      left: -1%;
-  }
-
-  body.home .polaroid{
-      width: 20%;
-      top: 71%;
-      left: 18%;
-  }
-  
-  body.home .stellenanzeige{
-      width: 21%;
-      top: 71%;
-      left: 50%;
-  }
-
-  body.home .kaffee{
-      width: 16%;
-      top: 46%;
-      left: 13%;
-  }  
-
-  body.home .apfel{
-      width: 13%;
-      top: 36%;
-      left: 3%;
-  }  
-
-  body.home .dvd{
-      width: 15%;
-      top: 12%;
-      left: 46%;
-      z-index:2;
-  }
-
-  body.home .kamera{
-      width: 21%;
-      top: 66%;
-      left: 1%;
-      z-index:2;
-  }
-  
-  body.home .laptop{
-      width: 46%;
-      top: -7%;
-      left: 59%;
-      z-index:2;
-  }
-
-  body.home .taschenrechner_block{
-      width: 31%;
-      top: 53%;
-      left: 72%;
-      z-index:2;
-  }
-
-  body.home .smartphone{
-      width: 13%;
-      top: 74%;
-      left: 38%;
-      z-index:2;
-  }
-
-  body.home .map{
-      width: 28%;
-      top: 1%;
-      left: 30%;
-  }
-
-  body.home .tickets{
-      width: 22%;
-      top: 46%;
-      left: 61%;
-  }
 
   /*=================================================== */
   /*                 LAPTOP GUI                         */

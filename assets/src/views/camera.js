@@ -46,10 +46,9 @@ define([
             
             camElements=0;       
             
-
             // render loadingScreen
             $(this.el).html(Util.loadingScreen());
-            
+
             // fyi:
             // by convention, we make a private 'that' variable. 
             // 'this' is used to make the object available to the private methods                
