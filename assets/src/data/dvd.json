@@ -53,7 +53,6 @@
             {
                 "title": "Walze",
                 "media": [
-                    "image://desk.jpg",
                     "vimeo://v/31691856",
                     "youtube://v/I13ieyILMc8"
                 ],
@@ -65,7 +64,7 @@
             {
                 "title": "Walze 2",
                 "media": [
-                    "image://desk.jpg",
+                    "image://../src/img/dvd/film1.jpg",
                     "vimeo://v/31691856",
                     "youtube://v/I13ieyILMc8"
                 ],

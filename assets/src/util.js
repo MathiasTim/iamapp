@@ -37,7 +37,7 @@ define([
               
           } else if(value.match("vimeo://v/")) {
               id = value.split("vimeo://v/")[1];
-              content = '<iframe src="http://player.vimeo.com/video/' + id + '" width="80%" height="350px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
+              content = '<iframe class="vimeo-player" src="http://player.vimeo.com/video/' + id + '" width="80%" height="350px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
               return content;
               
           } else {

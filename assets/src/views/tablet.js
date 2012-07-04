@@ -15,10 +15,9 @@ define([
         dataAlreadyExist: false,
         tabletWidth: '1770', // px-Auflösung des Tablet Bildes
         tabletHeight: '1332', // px-Auflösung des Tablet Bildes
-        headerStatus: 'collapsed',
 
         events: {
-            "click .header" : "toggleHeader",
+            "click .home" : "resetTimeout",
         }, 
         
         initialize: function(){ 
@@ -77,6 +76,8 @@ define([
                     'width': width+'px',
                     'height': height+'px'
             });
+            
+            this.setTime();
         }, 
         
         
@@ -132,7 +133,6 @@ define([
             
             // render
             $(this.el).html(this.templateSecondLevel).find('#tbl_second_level_list').append( this.templateSecondLevelListItems );
-        
         },
         
         tabletThirdLevel: function(id, id2){
@@ -180,17 +180,25 @@ define([
             $(this.el).append('<b>Media:</b>' +this.templateThirdLevelListItems);
         },
         
-        
-        toggleHeader: function(){
-            var $header = $('#tbl_content .inner-content .header');
+        setTime: function(){
+            var that = this;
+            var $time = $('#tbl_content .inner-content .header .time');
             
-            if (this.headerStatus == 'collapsed') {
-                $header.find('.open').show('slideDown');
-                this.headerStatus = 'open';
-            } else {
-                $header.find('.open').hide('slideUp');
-                this.headerStatus = 'collapsed';
-            }
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var hours = ((hours < 10) ? "0" + hours : hours);
+            var minutes = ((minutes < 10) ? "0" + minutes : minutes);
+            
+            $time.html(hours + ":" + minutes);
+            
+            this.timeout = setTimeout(function(){
+                    that.setTime();
+                }, 60000);
+        },
+        
+        resetTimeout: function(){
+            clearTimeout(this.timeout);
         }
         
         

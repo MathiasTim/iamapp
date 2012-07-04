@@ -5,53 +5,19 @@ define([
     var View = Backbone.View.extend({
         
         el: '#main', // target
-        mapImage: new Image(),
-        imgWidth: 0,
-        imgHeight: 0,
-        
         template: '',
         templateSecondLevel: '',
         dataAlreadyExist: false,
+        tabletWidth: '2048', // px-Auflösung des Tablet Bildes
+        tabletHeight: '1185', // px-Auflösung des Tablet Bildes
         
         initialize: function(){
             
         },
         
         getMap: function(kind){
+            this.mapImage = new Image();
         	this.mapImage.src = "src/img/map/"+kind+".png";
-        },
-        
-        setImageSize: function(){
-            var img = $(this.el).find('img');
-            
-            var iW = window.innerWidth - img.offset().left;
-        	var iH = window.innerHeight - img.offset().top;
-        	var w = this.imgWidth;
-        	var h = this.imgHeight;
-        	
-        	var dW = iW / w;
-        	var dH = iH / h;
-        	
-        	var min = Math.min(dW, dH);
-        	
-            var width = w*min - 40;
-            var height = h*min - 40;
-            
-        	img.width(width);
-            img.height(height);
-            img.css('visibility', 'visible');
-        },
-        
-        checkComplete: function(){
-            var that = this;
-            
-            if(this.mapImage.complete) {
-                this.setImageSize();
-            } else {
-                setTimeout(function(){
-                    that.checkComplete();
-                }, 1000);
-            }
         },
         
         mapFirstLevel: function(kind){
@@ -63,15 +29,6 @@ define([
             this.getMap(kind);
             
             $(this.el).html(this.template).trigger('create').find('#inner-content').append(this.mapImage);
-            $(this.el).find('img').css('visibility', 'hidden').width('auto').height('auto');
-            this.mapImage.onload = getImageSize;
-            
-            var that = this;
-            function getImageSize(){
-                that.imgWidth = this.width;
-                that.imgHeight = this.height;
-                that.checkComplete();
-            }
         },
         
         mapSecondLevel: function(house){
@@ -108,25 +65,40 @@ define([
             var that = this;
             this.templateSecondLevel = '';
             
+            this.getDimensions();
+            
             // loop 
             this.collection.each( function(model){                       
                 if(model.get('house') === house){                            
                     var first_floor = model.attributes.floors[0];
                     // pathes
-                    var pathBigPics = model.attributes.big_pics;
-                    var serverUri = model.attributes.server_uri;
-                    that.templateSecondLevel = _.template(templateSecondLevel, { floor: first_floor, pathBigPics: pathBigPics } );
+                    if(Util.resolutionType === 'high'){
+                        var subdir = 'high';
+                    } else{
+                        var subdir = 'low';
+                    }
+                    var pathPics = model.attributes.pics+subdir;
+                    that.templateSecondLevel = _.template(templateSecondLevel, { floor: first_floor, pathPics: pathPics } );
                 }
             });
             
             // render
             $(this.el).html(this.templateSecondLevel);
+            
+            // set content size
+            var $map_content = $(this.el).find('#map_content');
+            $map_content.css({
+                    'width': this.width+'px',
+                    'height': this.height+'px'
+            });
         },
         
         
         mapThirdLevel: function(house, floor_title){
             // render loadingScreen
             $(this.el).html(Util.loadingScreen());
+            
+            this.getDimensions();
             
             // clear templates
             this.templateSecondLevel = '';
@@ -135,20 +107,48 @@ define([
             var house = this.collection.where({house: house});
             
             // pathes
-            var pathBigPics = house[0].attributes.big_pics;
-            var serverUri = house[0].attributes.server_uri;
+            // pathes
+            if(Util.resolutionType === 'high'){
+                var subdir = 'high';
+            } else{
+                var subdir = 'low';
+            }
+            var pathPics = house[0].attributes.pics+subdir;
             
             // find the floor
             var that = this;
             _.each(house[0].attributes.floors, function(floor){ 
                 if(floor.title === floor_title){
-                    that.templateSecondLevel = _.template(templateSecondLevel, { floor: floor, pathBigPics: pathBigPics } );
+                    that.templateSecondLevel = _.template(templateSecondLevel, { floor: floor, pathPics: pathPics } );
                }
             }); 
             
             // render site
             $(this.el).html(this.templateSecondLevel);
+            
+            // set content size
+            var $map_content = $(this.el).find('#map_content');
+            $map_content.css({
+                    'width': this.width+'px',
+                    'height': this.height+'px'
+            });
         },
+        
+        
+        getDimensions: function() {
+            // calculate width & height for the tablet image
+            var deviceWidth = window.innerWidth;
+            var deviceHeight = window.innerHeight;
+            
+            var dW = deviceWidth/this.tabletWidth;
+            var dH = deviceHeight/this.tabletHeight;
+            var min = Math.min(dW, dH);
+            
+            this.width = this.tabletWidth*min - 40; // padding!
+            this.height = this.tabletHeight*min - 40;
+            
+            
+        }
         
     });
     

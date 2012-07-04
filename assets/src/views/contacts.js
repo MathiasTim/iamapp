@@ -1,6 +1,6 @@
 define([
-    'jquery', 'underscore', 'backbone', 'models/contacts', 'text!templates/contacts/contacts.html', 'collections/contacts', 'text!templates/contacts/contactsListItems.html', 'text!templates/contacts/contactsDetail.html'
-], function($, _, Backbone, modelContacts, template, CollectionContacts, contactsListItem, contactsDetail) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'models/contacts', 'text!templates/contacts/contacts.html', 'collections/contacts', 'text!templates/contacts/contactsListItems.html', 'text!templates/contacts/contactsDetail.html'
+], function($,$$, _, Backbone, modelContacts, template, CollectionContacts, contactsListItem, contactsDetail) {
         
     var View = Backbone.View.extend({
         
@@ -12,15 +12,15 @@ define([
         toggleContainer: function() {
         $('.toggle_container').hide();
 		$('.trigger').click( function() {
-			window.console.log("trigger");
+
 			var trig = $(this);
 			if ( trig.hasClass('trigger_active') ) {
-			trig.next('.toggle_container').hide();
-			trig.removeClass('trigger_active');
+			
+			trig.next('.toggle_container').fadeIn('slow');
 			} else {
-			$('.trigger_active').next('.toggle_container').slideToggle('fast');
+			$('.trigger_active').next('.toggle_container').fadeOut('slow');
 			$('.trigger_active').removeClass('trigger_active');
-			trig.next('.toggle_container').slideToggle('fast');
+			trig.next('.toggle_container').fadeIn('fast');
 			trig.addClass('trigger_active');
 			};
 			return false;
@@ -94,7 +94,11 @@ define([
             $(this.ul).append(this.contactsListItem).listview('refresh');   // refresh is almost the same like 'create', the difference is that the markup already exists
             this.setContacts();
             this.toggleContainer();
-            //$(".headline").fitText(8.5).trigger('create');
+           
+           //fit texts
+           $(".linkSmartphone").fitText(1.0);
+           $(".toggle_container").fitText(1.0);
+           $(".trigger").fitText(2.0);
         }
         
     });

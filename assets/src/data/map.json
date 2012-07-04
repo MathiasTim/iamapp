@@ -3,7 +3,7 @@
         "id": 1,
         "house": "klm",
         "server_uri": "server_uri",
-        "big_pics": "src/img/map/",
+        "pics": "src/img/map/",
         "floors": [
                        {
                            "title": "klm1",
@@ -32,7 +32,7 @@
         "id": 2,
         "house": "j",
         "server_uri": "server_uri",
-        "big_pics": "src/img/map/",
+        "pics": "src/img/map/",
         "floors": [
                        {
                            "title": "j1",
@@ -68,7 +68,7 @@
         "id": 3,
         "house": "w",
         "server_uri": "server_uri",
-        "big_pics": "src/img/map/",
+        "pics": "src/img/map/",
         "floors": [
                        {
                            "title": "w1",

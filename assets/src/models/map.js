@@ -8,7 +8,7 @@ define([
             id: 0,
             house: "house",
             server_uri: "server_uri",
-            big_pics: "big_pics",
+            pics: "pics",
             floors: [
                            {
                                title: "title",

@@ -1,0 +1,44 @@
+/*=================================================== */
+/*                 MAP GUI                            */
+/*=================================================== */  
+
+body.map_first_level #content,
+body.map_second_level #map_content {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+body.map_first_level .ui-body-c,
+body.map_second_level .ui-body-c {
+    background: url('../img/calculator/calc_bg_pattern.png') repeat top left; 
+}
+
+body.map_first_level #inner-content,
+body.map_second_level #inner-content {
+    background: rgba(200,200,200,0.4);
+    background-image: -moz-linear-gradient(top,  rgba(255,255,255,0.8) 0%, rgba(241,241,241,0.8) 100%); 
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.8)), color-stop(100%,rgba(241,241,241,0.8)));
+    background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
+    background-image: -o-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%);
+    background-image: -ms-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
+    background-image: linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#99f1f1f1',GradientType=0 ); 
+    -webkit-border-radius: 0.6em;
+    -moz-border-radius: 0.6em;
+    border-radius: 0.6em;
+    text-align: center;
+}
+
+body.map_first_level #inner-content img,
+body.map_second_level #inner-content img {
+    width: 100%;
+}
+
+body.map_second_level #map_navi {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+

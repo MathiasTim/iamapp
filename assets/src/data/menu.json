@@ -54,7 +54,7 @@
         "category": "smartphone",
         "menu": [
             [
-                "App-Entwicklung",
+                "App Entwicklung",
                 17,
                 "../img/smartphone/apps.png"
             ],
@@ -147,27 +147,27 @@
     {
         "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
         "icon_path": "/sites/default/files/",
-        "category": "zeichenblock",
+        "category": "drawings",
         "menu": [
             [
                 "Analog-Druck",
-                12,
-                "ok_8.png"
+                17,
+                "zb_s_06.png"
             ],
             [
                 "Scribbles",
-                9,
-                "ok_9.png"
+                17,
+                "zb_s_03.png"
             ],
             [
                 "Storyboards",
-                11,
-                "ok_10.png"
+                17,
+                "zb_s_05.png"
             ],
             [
                 "Zeichnungen",
-                10,
-                "ok_11.png"
+                17,
+                "zb_s_04.png"
             ]
         ]
     },

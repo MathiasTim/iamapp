@@ -54,7 +54,6 @@ define([
 			
 			// count slider length
 			listLength = $("#sliderProject li").length;
-			$(".counterInner").html("Seite "+1+" von "+listLength);
 			
 			// set container width and height
 			$(".slider_page").css("width", pageWidth)
@@ -91,7 +90,7 @@ define([
                     }
                   
             });   
-
+			
           	this.initPageSize();
           	
             // render
@@ -225,6 +224,7 @@ define([
             
 			$(this.el).html(Slider.slider2Init());    
             $(this.sliderProject).append(this.templateThirdLevelListItems);	 
+           
             this.initPageSize();
 
 			this.setDVD();  

@@ -25,7 +25,7 @@
     <icon src="icon_72.png" gap:platform="android" gap:density="mdpi" />
     <icon src="icon_114.png" gap:platform="android" gap:density="hdpi" />
     
-	<gap:splash src="loadingscreen_960x640.png" />
+	<gap:splash src="splash.png" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 

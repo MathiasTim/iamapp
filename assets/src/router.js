@@ -1,6 +1,6 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'views/home', 'views/laptop', 'views/camera', 'views/dates', 'views/smartphone', 'views/tablet', 'views/map', 'views/calculator', 'views/dvd', 'views/contacts'
-], function($, $$, _, Backbone, Util, Slider, CollectionMenu, homeView, laptopView, cameraView, datesView, smartphoneView, tabletView, mapView, calculatorView, dvdView, contactsView) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'views/home', 'views/laptop', 'views/camera', 'views/dates', 'views/smartphone', 'views/tablet', 'views/map', 'views/calculator', 'views/dvd', 'views/contacts', 'views/drawings'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, homeView, laptopView, cameraView, datesView, smartphoneView, tabletView, mapView, calculatorView, dvdView, contactsView, drawingsView) {
    
     
     var Router = Backbone.Router.extend({
@@ -62,6 +62,11 @@ define([
             'dvd/:id': 'dvdSecondLevel', 
             'dvd/:id/:id2': 'dvdThirdLevel', 
             
+            // drawings
+            'drawings': 'drawingsFirstLevel', 
+            'drawings/:id': 'drawingsSecondLevel', 
+            'drawings/:id/:id2': 'drawingsThirdLevel', 
+            
             // contacts
             'contacts': 'contactsFirstLevel',
             'contacts/:id': 'contactsSecondLevel',
@@ -71,7 +76,7 @@ define([
         },
         
         // all settable helperclasses
-        bodyClasses: ['home', 'laptop_first_level', 'laptop_second_level', 'laptop_third_level', 'camera_first_level', 'camera_second_level', 'camera_third_level', 'calculator_first_level', 'calculator_second_level', 'calculator_third_level', 'smartphone_first_level', 'smartphone_second_level', 'smartphone_third_level', 'tablet_first_level', 'tablet_second_level', 'tablet_third_level', 'map_first_level', 'map_second_level', 'dates_first_level', 'dates_second_level', 'dvd_first_level', 'dvd_second_level', 'dvd_third_level', 'contacts_first_level', 'contacts_second_level'],
+        bodyClasses: ['home', 'laptop_first_level', 'laptop_second_level', 'laptop_third_level', 'camera_first_level', 'camera_second_level', 'camera_third_level', 'calculator_first_level', 'calculator_second_level', 'calculator_third_level', 'smartphone_first_level', 'smartphone_second_level', 'smartphone_third_level', 'tablet_first_level', 'tablet_second_level', 'tablet_third_level', 'map_first_level', 'map_second_level', 'dates_first_level', 'dates_second_level', 'dvd_first_level', 'dvd_second_level', 'dvd_third_level', 'contacts_first_level', 'contacts_second_level', 'drawings_first_level', 'drawings_second_level', 'drawings_third_level'],
         
         
         // routing functions
@@ -301,6 +306,34 @@ define([
             Util.bodyClass('dvd_third_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             dvdView.dvdThirdLevel(id, id2);            
         },
+        
+        
+        // drawings
+        ///////////////////////////////////////////
+        drawingsFirstLevel: function(){
+            
+            // play sound
+            this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/block_klick.mp3" type="audio/mp3" /></audio>');
+
+            Util.bodyClass('drawings_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
+            drawingsView.drawingsFirstLevel();
+            // remove zooming for first Level
+            if(this.myScroll != null){ 
+                this.myScroll.destroy();
+                this.myScroll = null;
+            }
+        },
+        
+        drawingsSecondLevel: function(id){
+            Util.bodyClass('drawings_second_level', this.bodyClasses); // need to set (and unset any other) body class for default css
+            drawingsView.drawingsSecondLevel(id);            
+        },
+
+        drawingsThirdLevel: function(id, id2){
+            Util.bodyClass('drawings_third_level', this.bodyClasses); // need to set (and unset any other) body class for default css
+            drawingsView.drawingsThirdLevel(id, id2);            
+        },
+        
         
         // contacts
         ///////////////////////////////////////////        
