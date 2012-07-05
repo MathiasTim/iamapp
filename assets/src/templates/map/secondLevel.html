@@ -1,16 +1,36 @@
 <div id="map_content">
-    <div id="map_navi">
-        <b>(<%=floor.title %>)</b>
-        <a href="#home">home</a>
-        <a href="#map">back</a>
-        <% if (floor.prev != "") { %>
-            <a href="#map/<%=floor.house %>/<%=floor.prev %>">prev</a>
-        <% } %>
-        <% if (floor.next != "") { %>
-            <a href="#map/<%=floor.house %>/<%=floor.next %>">next</a>
-        <% } %>
-    </div>
     <div id="inner-content">
+        <div id="mapnavi-inner">
+            <% if (floor.next != "") { %>
+                <div class="button">
+                    <a href="#map/<%=floor.house %>/<%=floor.next %>">stockwerk hoch</a>
+                </div>
+            <% } %>
+            <% if (floor.prev != "") { %>
+                <div class="button">
+                    <a href="#map/<%=floor.house %>/<%=floor.prev %>">stockwerk runter</a>
+                </div>
+            <% } %>
+        </div>
          <img src="<%=pathPics %>/<%=floor.img_uri %>" />
+    </div>
+    <div id="mapnavi-top">
+        <div class="button">
+            <a class="<% if (floor.house == 'klm') { %>active<% } %>" href="#map/klm">klm</a>
+        </div>
+        <div class="button">
+            <a class="<% if (floor.house == 'j') { %>active<% } %>" href="#map/j">j</a>
+        </div>
+        <div class="button">
+            <a class="<% if (floor.house == 'w') { %>active<% } %>" href="#map/w">w</a>
+        </div>
+    </div>
+    <div id="mapnavi-bottom">
+        <div class="button">
+            <a href="#map">übersicht</a>
+        </div>
+        <div class="button">
+            <a href="#home">desk</a>
+        </div>
     </div>
 </div>

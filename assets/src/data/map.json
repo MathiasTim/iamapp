@@ -1,5 +1,13 @@
 [
     {
+        "id": 10,
+        "house": "overview",
+        "server_uri": "server_uri",
+        "pics": "src/img/map/",
+        "floors": [],
+        "img_uri": "overview.png"
+    },
+    {
         "id": 1,
         "house": "klm",
         "server_uri": "server_uri",

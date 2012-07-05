@@ -133,7 +133,6 @@ define([
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
-                                                                                         
                               that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, id:id, subId:subId++ } );                     
                           
                         });  

@@ -215,8 +215,7 @@ define([
             this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/flyer_klick.mp3" type="audio/mp3" /></audio>');
             
             Util.bodyClass('map_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
-            var kind = 'overview';
-            mapView.mapFirstLevel(kind); 
+            mapView.mapFirstLevel(); 
             // remove zooming for first Level
             if(this.myScroll != null){ 
                 this.myScroll.destroy();

@@ -1,79 +1,49 @@
 [
     {
-        "id": 18,
-        "subject_description": "Impressum Sub",
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
-        "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
-        "big_pics": "/sites/default/files/styles/large/public/",
-        "projects": [
-            {
-                "title": "Adapp",
-                "media": [
-                    "image://slideshow-slider-2.jpg",
-                    "image://slideshow-slider-3.jpg",
-                    "image://desk_0.jpg"
-                ],
-                "authors": "Martin Kolb<br/>Mathias Maier",
-                "uri": "adapp.fornax.uberspace.de",
-                "icon_uri": "logo4.png",
-                "term": "2011",
-                "project_description": "Eine Anwendung fÃ¼r mobile EndgerÃ¤te (Handys und Tablets mit OS Android, auch als Mobile Website fÃ¼r andere OS), die Angebote, Rabatte, Sonderangebote, etc.. dem Konsumenten gebÃ¼ndelt und zielgerichtet anbietet."
-            }
-        ]
-    },
-    {
-        "id": 19,
+        "id": 3,
         "subject_description": "",
         "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
         "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
         "big_pics": "/sites/default/files/styles/large/public/",
         "projects": [
             {
-                "title": "Adapp",
+                "title": "Monstrous Wildlife",
                 "media": [
-                    "image://slideshow-slider-2.jpg",
-                    "image://slideshow-slider-3.jpg",
-                    "image://desk_0.jpg"
+                    "vimeo://v/13621353"
                 ],
-                "authors": "Martin Kolb<br/>Mathias Maier",
-                "uri": "adapp.fornax.uberspace.de",
-                "icon_uri": "logo4.png",
-                "term": "2011",
-                "project_description": "Eine Anwendung fÃ¼r mobile EndgerÃ¤te (Handys und Tablets mit OS Android, auch als Mobile Website fÃ¼r andere OS), die Angebote, Rabatte, Sonderangebote, etc.. dem Konsumenten gebÃ¼ndelt und zielgerichtet anbietet."
-            }
-        ]
-    },
-    {
-        "id": 17,
-        "subject_description": "Apps bla blubb....",
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
-        "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
-        "big_pics": "/sites/default/files/styles/large/public/",
-        "projects": [
-            {
-                "title": "Walze",
-                "media": [
-                    "vimeo://v/31691856",
-                    "youtube://v/I13ieyILMc8"
-                ],
-                "uri": "http://walze.is/awesome/",
-                "icon_uri": "film1.png",
-                "term": "2011 - 2012",
-                "project_description": "WALZE is an audiovisual sequencer, which maps midi-patterns on circular paths as a visual analogy to sound-loops. Circles can be nested into each other to create polyrythmics und complex sound structures. </br> The smart circle-interface is used as visual projection at the same time. The audience experiences visuals which are not only matching the music, but actually creating it."
+                "authors": "Idea and Animation: Frank Robnik<br/>Speaker: David Ingram<br/>Music: Sebastian Birkl",
+                "uri": "http://vimeo.com/13621353",
+                "icon_uri": "monitor.png",
+                "term": "2010",
+                "project_description": "Monstrous Wildlife is an educational film about Graboids, which i've created for my bachelor thesis at the university of applied sciences augsburg (germany) 2010.<br/>The Graboids are based on the Tremors-Movies."
             },
             {
-                "title": "Walze 2",
+                "title": "Kurzschluss",
                 "media": [
-                    "image://../src/img/dvd/film1.jpg",
-                    "vimeo://v/31691856",
-                    "youtube://v/I13ieyILMc8"
+                    "vimeo://v/18896277",
+                    "image://Kurzschluss_Bild11.jpg",
+                    "image://Kurzschluss_Bild14.jpg"
                 ],
-                "uri": "http://walze.is/awesome/",
-                "icon_uri": "film2.png",
-                "term": "2011 - 2012",
-                "project_description": "WALZE is an audiovisual sequencer, which maps midi-patterns on circular paths as a visual analogy to sound-loops. Circles can be nested into each other to create polyrythmics und complex sound structures. </br> The smart circle-interface is used as visual projection at the same time. The audience experiences visuals which are not only matching the music, but actually creating it."
+                "authors": "Miriam Frank<br/>Georg Utz<br/>Xaver Xylophon<br/>Daniel Hatvani",
+                "uri": "xaverxylophon.de",
+                "icon_uri": "film.png",
+                "term": "2009",
+                "project_description": "A tragic robot love story.<br/>A film by Miriam Frank, Georg Utz & Xaver Xylophon<br/>Sound Daniel Hatvani<br/>Hochschule Augsburg 2009"
+            },
+            {
+                "title": "THE RETURN OF JOHN FRUM",
+                "media": [
+                    "vimeo://v/10526476",
+                    "image://THERETURNOFJOHNFRUM_25.jpg",
+                    "image://THERETURNOFJOHNFRUM_14.jpg",
+                    "image://THERETURNOFJOHNFRUM_12.jpg"
+                ],
+                "authors": "christian schlaeffer",
+                "uri": "schlaefferdesign.de/john-frum",
+                "icon_uri": "clock.png",
+                "term": "2010",
+                "project_description": "THE RETURN OF JOHN FRUM is the thesis project of christian schlaeffer at the university of applied sciences augsburg, faculty for design, 2010.<br/>2D Photoshop and After Effects<br/>3D 3dsmax and Zbrush<br/>Compositing After Effects<br/>John Frum, Messiah of polynesian Cargo Cults, returns as an astronaut and businessman to the postindustrial wasteland of the financial-service-economy. Together with a native, he sets out for a \"conquest of the useless\" â€” or something.^-^<br/>then things get confused, and what begins as a journey turns into a trip far off the boundaries of so called \"logic\" and \"meaning\".<br/>With a storyline initially based on the prophecies of the seemingly most syncretic, ridiculous and pointless religion in the world â€” though really not any more syncretic, ridiculous and pointless than any and all other religions â€” computer-aided handdrawn 2D animation and 2D-3D-hybrid background art celebrate a renaissance of the unconscious, free from the technocratic structuralism of our times.<br/>for more information and free downloadable 1080p version visit schlaefferdesign.de/john-frum"
             }
-            
         ]
     }
 ]

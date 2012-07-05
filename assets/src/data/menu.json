@@ -6,18 +6,8 @@
         "menu": [
             [
                 "Kurzfilme",
-                17,
-                ""
-            ],
-            [   
-                "Stop-Motion",
-                18,
-                ""
-            ],
-            [    
-                "Kurzfilme",
-                19,
-                ""
+                3,
+                "ok.png"
             ]
         ]
     },
@@ -28,24 +18,29 @@
         "menu": [
             [
                 "3D-Projekte",
-                17,
-                ""
+                6,
+                "garbage.png"
             ],
             [
                 "Games",
-                18,
-                ""
+                5,
+                "gamepad.png"
             ],
             [
-                "Interaktion",
-                19,
-                ""
+                "Interaktionsprojekte",
+                8,
+                "ok_0.png"
             ],
             [
-                "Web Entwicklung",
-                17,
-                ""
-            ]            
+                "Webentwicklung",
+                4,
+                "ok_1.png"
+            ],
+            [
+                "WebGL",
+                7,
+                "ok_2.png"
+            ]
         ]
     },
     {
@@ -54,14 +49,19 @@
         "category": "smartphone",
         "menu": [
             [
-                "App Entwicklung",
+                "App-Entwicklung",
                 17,
-                "../img/smartphone/apps.png"
+                "phone.png"
             ],
             [
                 "Impressum",
                 18,
-                "../img/smartphone/hs.png"
+                "ok_3.png"
+            ],
+            [
+                "Kontakt",
+                19,
+                "ok_4.png"
             ]
         ]
     },
@@ -78,47 +78,7 @@
             [
                 "Webdesign",
                 14,
-                "icon_webdesign.png"
-            ],
-            [
-                "Print-Design",
-                13,
-                "icon_printdesign.png"
-            ],
-            [
-                "Webdesign",
-                14,
-                "icon_webdesign.png"
-            ],
-            [
-                "Print-Design",
-                13,
-                "icon_printdesign.png"
-            ],
-            [
-                "Webdesign",
-                14,
-                "icon_webdesign.png"
-            ],
-            [
-                "Print-Design",
-                13,
-                "icon_printdesign.png"
-            ],
-            [
-                "Webdesign",
-                14,
-                "icon_webdesign.png"
-            ],
-            [
-                "Print-Design",
-                13,
-                "icon_printdesign.png"
-            ],
-            [
-                "Webdesign",
-                14,
-                "icon_webdesign.png"
+                "icon_webdesign_0.png"
             ]
         ]
     },
@@ -128,85 +88,42 @@
         "category": "taschenrechner",
         "menu": [
             [
-                "Mathe",
-                17,
-                "src/img/calculator/calc_math.png"
+                "CSA",
+                16,
+                "ok_6.png"
             ],
             [
-                "CSA",
-                18,
-                "src/img/calculator/calc_csa.png"
-            ],            
-            [
-                "CG",
-                19,
-                "src/img/calculator/calc_cg.png"
+                "Mathe",
+                15,
+                "ok_7.png"
             ]
         ]
     },
     {
         "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
         "icon_path": "/sites/default/files/",
-        "category": "drawings",
+        "category": "zeichenblock",
         "menu": [
             [
                 "Analog-Druck",
-                17,
-                "zb_s_06.png"
+                12,
+                "ok_8.png"
             ],
             [
                 "Scribbles",
-                17,
-                "zb_s_03.png"
+                9,
+                "ok_9.png"
             ],
             [
                 "Storyboards",
-                17,
-                "zb_s_05.png"
+                11,
+                "ok_10.png"
             ],
             [
                 "Zeichnungen",
-                17,
-                "zb_s_04.png"
+                10,
+                "ok_11.png"
             ]
         ]
-    },
-    {
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
-        "icon_path": "/sites/default/files/",
-        "category": "camera",
-        "menu": [
-            [
-                "Mensch / Emotion",
-                17,
-                "cam_icon_1.png"
-            ],
-            [
-                "Natur / Landschaft",
-                18,
-                "cam_icon_2.png"
-            ],
-            [
-                "Still / Architektur",
-                19,
-                "cam_icon_3.png"
-            ],
-            [
-                "Abstrakt / Experimentell",
-                17,
-                "cam_icon_4.png"
-            ],
-            [
-                "Composing / Digiart",
-                18,
-                "cam_icon_5.png"
-            ],
-            [
-                "Sonstiges",
-                19,
-                "cam_icon_6.png"
-            ]                                                            
-        ]
     }
-    
 ]

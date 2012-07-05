@@ -15,20 +15,66 @@ define([
             
         },
         
-        getMap: function(kind){
-            this.mapImage = new Image();
-        	this.mapImage.src = "src/img/map/"+kind+".png";
-        },
-        
-        mapFirstLevel: function(kind){
+        mapFirstLevel: function(){
             // render loadingScreen
             $(this.el).html(Util.loadingScreen());
             
-            this.template = _.template(template, {} );
+            // fyi:
+            // by convention, we make a private 'that' variable. 
+            // 'this' is used to make the object available to the private methods
+            var that = this;            
+
+            if(!this.dataAlreadyExist){
+                
+                this.collection = new CollectionMap();   
+                
+                // just fetch the data from the server once         
+                this.collection.fetch({
+                    success: function(collection) {
+                        that.renderFirstLevel();
+                        that.dataAlreadyExist = true;  
+                    },
+                    
+                    error: function(){
+                        console.log('something went wrong --> fetching data failed');
+                    }
+                }); 
+                
+            } else {
+                this.renderFirstLevel();
+            }
             
-            this.getMap(kind);
+        },
+        
+        renderFirstLevel: function(){
+            var that = this;
+            this.template = '';
             
-            $(this.el).html(this.template).trigger('create').find('#inner-content').append(this.mapImage);
+            this.getDimensions();
+            
+            // find the entry
+            var house = this.collection.where({house: 'overview'});
+            console.log(house);
+            // pathes
+            if(Util.resolutionType === 'high'){
+                var subdir = 'high';
+            } else{
+                var subdir = 'low';
+            }
+            var pathPics = house[0].attributes.pics+subdir;
+            var img_uri = house[0].attributes.img_uri;
+            
+            this.template = _.template(template,  { img_uri: img_uri, pathPics: pathPics } );
+            
+            // render
+            $(this.el).html(this.template);
+            
+            // set content size
+            var $map_content = $(this.el).find('#map_content');
+            $map_content.css({
+                    'width': this.width+'px',
+                    'height': this.height+'px'
+            });
         },
         
         mapSecondLevel: function(house){
@@ -107,7 +153,6 @@ define([
             var house = this.collection.where({house: house});
             
             // pathes
-            // pathes
             if(Util.resolutionType === 'high'){
                 var subdir = 'high';
             } else{
@@ -144,7 +189,7 @@ define([
             var dH = deviceHeight/this.tabletHeight;
             var min = Math.min(dW, dH);
             
-            this.width = this.tabletWidth*min - 40; // padding!
+            this.width = this.tabletWidth*min - 100; // padding!
             this.height = this.tabletHeight*min - 40;
             
             

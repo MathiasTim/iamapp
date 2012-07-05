@@ -2,11 +2,11 @@
 /*                 MAP GUI                            */
 /*=================================================== */  
 
-body.map_first_level #content,
+body.map_first_level #map_content,
 body.map_second_level #map_content {
     position: relative;
-    margin: 0 auto;
-    padding-top: 10px;
+    padding: 15px 0 0 15px;
+    
 }
 
 body.map_first_level .ui-body-c,
@@ -35,10 +35,73 @@ body.map_second_level #inner-content img {
     width: 100%;
 }
 
-body.map_second_level #map_navi {
+body.map_first_level #mapnavi-top,
+body.map_second_level #mapnavi-top {
     position: absolute;
-    top: 10px;
-    left: 0;
+    top: 30px;
+    right: -80px;
+}
+
+body.map_first_level #mapnavi-bottom,
+body.map_second_level #mapnavi-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: -80px;
+}
+
+body.map_second_level #mapnavi-inner {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+body.map_first_level #mapnavi-top .button,
+body.map_first_level #mapnavi-bottom .button,
+body.map_second_level #mapnavi-top .button,
+body.map_second_level #mapnavi-bottom .button {
+    width: 80px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+body.map_first_level #mapnavi-top .button a,
+body.map_first_level #mapnavi-bottom .button a,
+body.map_second_level #mapnavi-top .button a,
+body.map_second_level #mapnavi-bottom .button a {
+    background: rgba(255,255,255,0.6);
+    -webkit-border-top-right-radius: 0.6em;
+    -moz-border-top-right-radius: 0.6em;
+    border-top-right-radius: 0.6em;
+    -webkit-border-bottom-right-radius: 0.6em;
+    -moz-border-bottom-right-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+body.map_second_level #mapnavi-top .button a.active {
+    background: rgba(245,245,245,0.9);
 }
 
 
+body.map_second_level #mapnavi-inner .button {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+body.map_second_level #mapnavi-inner .button a {
+    background: rgba(55,55,55,0.6);
+    -webkit-border-radius: 0.6em;
+    -moz-border-radius: 0.6em;
+    border-radius: 0.6em;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    -moz-box-shadow:    1px 1px 2px #444;
+    -webkit-box-shadow: 1px 1px 2px #444;
+    box-shadow:         1px 1px 2px #444;
+}

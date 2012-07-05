@@ -80,10 +80,10 @@ define([
             CollectionMenu.each( function(model){                       
 
                     if(model.attributes.category === 'dvd') {                          
-                                                
+                           console.log(model.attributes);                     
                         _.each(model.attributes.menu, function(value){
                             //value[0] = menuname, value[1] = foreign key , value[2] = thumbnail-name                            
-                            that.templateFirstLevelListItems += _.template(templateFirstLevelListItems, { value: value , serverUri: model.attributes.server_uri, iconPath: model.attributes.icon_path} );
+                            that.templateFirstLevelListItems += _.template(templateFirstLevelListItems, { value: value , serverUri:model.attributes.server_uri , iconPath:model.attributes.icon_path} );
                               
                         });
                                     
@@ -154,8 +154,7 @@ define([
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
-                                                                                         
-                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, id:id, subId:subId++ } );                     
+                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.big_pics, id:id, subId:subId++ } );                     
                           
                         });  
               
@@ -216,7 +215,7 @@ define([
             _.each(project.media, function(value){ 
                   
                   //console.log(Util.splitMedia(value));                  
-                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value)} );
+                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
                   
             });             
             

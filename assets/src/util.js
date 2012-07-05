@@ -26,14 +26,25 @@ define([
     };
     
     // split media data
-    var splitMedia = function(value){
-          
+    var splitMedia = function(value, serverUri, pathSmallPic, pathBigPic){
+
           var id,
               content; 
                   
           if(value.match("image://")){
               id = value.split("image://")[1];
-              return id;
+              
+              var imagePath = null;
+              
+              if(resolutionType === 'low'){
+                  imagePath = serverUri+pathSmallPic+id;
+              } else {
+                  imagePath = serverUri+pathBigPic+id;
+              }
+              
+              content = '<img src="' + imagePath + '" alt="' + id + '" />';
+
+              return content;
               
           } else if(value.match("vimeo://v/")) {
               id = value.split("vimeo://v/")[1];
