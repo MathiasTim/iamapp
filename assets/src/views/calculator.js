@@ -1,11 +1,15 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'collections/menu', 'collections/calculator', 'text!templates/calculator/calculator.html', 'text!templates/calculator/firstLevelListItems.html', 'text!templates/calculator/secondLevelListItems.html', 'text!templates/calculator/thirdLevel.html', 'text!templates/calculator/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, CollectionMenu, CollectionCalculator, templateCalculator, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/calculator', 'text!templates/calculator/calculator.html', 'text!templates/calculator/firstLevelListItems.html', 'text!templates/calculator/secondLevelListItems.html', 'text!templates/calculator/thirdLevel.html', 'text!templates/calculator/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionCalculator, templateCalculator, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
        
         el : '#main',
         ul : '.calc_element_template',
+        
+        // Slider IDs
+        sliderContainer : '#sliderProject .slide_container',
+        sliderProject : '#slider ul',
         
         // variables
         calcElements: 0,        
@@ -58,11 +62,12 @@ define([
             // render the view            
             CollectionMenu.each( function(model){                       
 
+
                     if(model.attributes.category === 'taschenrechner') {                        
-                                                                       
+                         
                         _.each(model.attributes.menu, function(value){
                             //value[0] = menuname, value[1] = foreign key , value[2] = thumbnail-name                            
-                            that.templateFirstLevelListItems += _.template(templateFirstLevelListItems, { value: value } );
+                            that.templateFirstLevelListItems += _.template(templateFirstLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.icon_path } );
                             calcElements++;
                               
                         });
@@ -136,27 +141,42 @@ define([
                  var that = this;   
                  this.templateSecondLevelListItems = ''; 
                  
+                 // Counter SliderContainer
+                 var i = 0;
+                 
                  // loop 
                  this.collection.each( function(model){                       
-           
+           			
+           			that.templateSecondLevelListItems += "<li>";
+           			
                     if(model.get('id') === id){                            
                         
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
-                                                                                         
-                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, id:id, subId:subId++ } );                     
-                          
+                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.big_pics, id:id, subId:subId++ } );                     
+	                        
+	                        i++;
+	                        if (i == 6) {
+	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        }
                         });  
-              
+                        
+              			that.templateSecondLevelListItems += "</li>";
                     }
     
                   
                  });                      
-                                   
                  
+                 // render Medien Slider
+            	 $(this.el).html(Slider.sliderInit());    
+                
                  // render                     
-                 $(this.el).html(that.templateSecondLevelListItems);
+                 $(this.sliderContainer).html(that.templateSecondLevelListItems);
+            	 
+            	 $(this.el).append(Slider.sliderPageSize());	 
+            	 
+            	 $(this.el).append(Slider.sliderSet());
             
         },
         
@@ -201,8 +221,14 @@ define([
             });             
             
             // render site
-            $(this.el).html(this.templateThirdLevel);
-            $(this.el).append('<b>Media:</b>' +this.templateThirdLevelListItems);
+            
+			$(this.el).html(Slider.slider2Init());    
+            $(this.sliderProject).append(this.templateThirdLevelListItems);	 
+           
+			$(this.el).append(Slider.sliderPageSize());	 
+            	 
+            $(this.el).append(Slider.slider2Set());	 
+			$(this.el).append(Slider.setInfo(pathBigPics, serverUri));
 
         },
         

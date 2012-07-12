@@ -6,9 +6,11 @@ define([
        
         el : '#main',
         div : '#dvd_links',
-        sliderContainer1 : '#sliderProject .slide1',
-        sliderContainer2 : '#sliderProject .slide2',
+        
+        // Slider IDs
+        sliderContainer : '#sliderProject .slide_container',
         sliderProject : '#slider ul',
+        
         templateFirstLevelListItems : '',
         templateSecondLevelListItems : '',
         templateThirdLevel : '',
@@ -142,40 +144,48 @@ define([
         },
         
         renderSecondLevel: function(id){
-
                  var that = this;   
                  this.templateSecondLevelListItems = ''; 
                  
+                 // Counter SliderContainer
+                 var i = 0;
+                 
                  // loop 
                  this.collection.each( function(model){                       
-           
+           			
+           			that.templateSecondLevelListItems += "<li>";
+           			
                     if(model.get('id') === id){                            
                         
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
                               that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.big_pics, id:id, subId:subId++ } );                     
-                          
+	                        
+	                        i++;
+	                        if (i == 6) {
+	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        }
                         });  
-              
+                        
+              			that.templateSecondLevelListItems += "</li>";
                     }
     
                   
                  });                      
-                                   
-                 // render MediaSlider
+                 
+                 // render Medien Slider
             	 $(this.el).html(Slider.sliderInit());    
+                
+                 // render                     
+                 $(this.sliderContainer).html(that.templateSecondLevelListItems);
             	 
-            	 this.initPageSize();
-
-				 this.setDVD();  
+            	 $(this.el).append(Slider.sliderPageSize());	 
             	 
             	 $(this.el).append(Slider.sliderSet());
                  
-                 // render                     
-                 $(this.sliderContainer1).append(that.templateSecondLevelListItems);
                  
-                 $(this.sliderContainer2).append(that.templateSecondLevelListItems);
+                 
             
         },
         
@@ -195,7 +205,7 @@ define([
             var pathBigPics = project[0].attributes.big_pics;
             var pathSmallPics = project[0].attributes.small_pics;
             var serverUri = project[0].attributes.server_uri;
-           
+                      
             // find the project
             project = project[0].attributes.projects[id2];    
             
@@ -215,7 +225,7 @@ define([
             _.each(project.media, function(value){ 
                   
                   //console.log(Util.splitMedia(value));                  
-                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
+                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics),  project: project});
                   
             });             
             
@@ -224,12 +234,10 @@ define([
 			$(this.el).html(Slider.slider2Init());    
             $(this.sliderProject).append(this.templateThirdLevelListItems);	 
            
-            this.initPageSize();
-
-			this.setDVD();  
+			$(this.el).append(Slider.sliderPageSize());	 
             	 
             $(this.el).append(Slider.slider2Set());	 
-
+			$(this.el).append(Slider.setInfo(pathBigPics, serverUri));
 
         }  
                 

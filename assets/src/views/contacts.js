@@ -30,7 +30,7 @@ define([
         setContacts: function() {
         	vinWidth = $("body").width();
 			vinHeight = $("body").height();
-			pageWidth = vinHeight * 1.3 + "px";
+			pageWidth = vinHeight * 1.45 + "px";
 			
 			$("img.full").css("height", vinHeight * 0.944);
 			$("#smartphone_page").css("width", pageWidth);

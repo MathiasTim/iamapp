@@ -1,7 +1,7 @@
 function setSmartphone() {
-				vinWidth = $("body").width();
-				vinHeight = $("body").height();
-				pageWidth = vinHeight * 1.3 + "px";
+				var vinWidth = $("body").width();
+				var vinHeight = $("body").height();
+				var pageWidth = vinHeight * 1.45 + "px";
 				
 				$("img.full").css("height", vinHeight * 0.944);
 				$("#smartphone_page").css("width", pageWidth);
@@ -15,13 +15,17 @@ function setSmartphone() {
 }	
 
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'collections/menu', 'collections/smartphone', 'text!templates/smartphone/smartphone.html', 'text!templates/smartphone/firstLevelListItems.html', 'text!templates/smartphone/secondLevelListItems.html', 'text!templates/smartphone/thirdLevel.html', 'text!templates/smartphone/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, CollectionMenu, CollectionSmartphone, templateSmartphone, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/smartphone', 'text!templates/smartphone/smartphone.html', 'text!templates/smartphone/firstLevelListItems.html', 'text!templates/smartphone/secondLevelListItems.html', 'text!templates/smartphone/thirdLevel.html', 'text!templates/smartphone/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionSmartphone, templateSmartphone, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
        
         el : '#main',
         div : '#smartphone_links',
+        
+        // Slider IDs
+        sliderContainer : '#sliderProject .slide_container',
+        sliderProject : '#slider ul',
         
         templateFirstLevelListItems : '',
         templateSecondLevelListItems : '',
@@ -70,11 +74,14 @@ define([
                     }
                   
             });   
-
+			//fit texts
+           $(".linkSmartphone").fitText(1.0);
           
             // render
             $(this.el).html( _.template( templateSmartphone, {} ));  
-            $(this.div).append( this.templateFirstLevelListItems );                  
+            $(this.div).append( this.templateFirstLevelListItems );   
+            
+                           
         }, 
         
         
@@ -125,30 +132,46 @@ define([
                  var that = this;   
                  this.templateSecondLevelListItems = ''; 
                  
+                 var i = 0;
+                 
                  // loop 
                  this.collection.each( function(model){                       
-           
+           			
+           			that.templateSecondLevelListItems += "<li>";
+           			
                     if(model.get('id') === id){                            
                         
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
-                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, id:id, subId:subId++ } );                     
-                          
+                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.big_pics, id:id, subId:subId++ } );                     
+	                        
+	                        i++;
+	                        if (i == 6) {
+	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        }
                         });  
-              
+                        
+              			that.templateSecondLevelListItems += "</li>";
                     }
     
                   
-                 });                      
+                 });                    
                                    
                  
+                 // render Medien Slider
+            	 $(this.el).html(Slider.sliderInit());    
+                
                  // render                     
-                 $(this.el).html(that.templateSecondLevelListItems);
+                 $(this.sliderContainer).html(that.templateSecondLevelListItems);
+            	 
+            	 $(this.el).append(Slider.sliderPageSize());	 
+            	 
+            	 $(this.el).append(Slider.sliderSet());
             
         },
         
-        dvdThirdLevel: function(id, id2){
+        smartphoneThirdLevel: function(id, id2){
             
             // cast string into integer
             id = parseInt(id);
@@ -188,10 +211,16 @@ define([
                   
             });             
             
-            // render site
-            $(this.el).html(this.templateThirdLevel);
-            $(this.el).append('<b>Media:</b>' +this.templateThirdLevelListItems);
+			
+			// render site
+            
+			$(this.el).html(Slider.slider2Init());    
+            $(this.sliderProject).append(this.templateThirdLevelListItems);	 
+            //this.initPageSize();
 
+			//this.setDrawings();  
+            	 
+            $(this.el).append(Slider.slider2Set());	 
         }  
                 
         

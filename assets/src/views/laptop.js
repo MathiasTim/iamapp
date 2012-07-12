@@ -1,6 +1,6 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'collections/menu', 'collections/laptop', 'text!templates/laptop/laptop.html', 'text!templates/laptop/firstLevelListItems1.html', 'text!templates/laptop/firstLevelListItems2.html','text!templates/laptop/secondLevelListItems.html', 'text!templates/laptop/thirdLevel.html', 'text!templates/laptop/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, CollectionMenu, CollectionLaptop, templateLaptop, templateFirstLevelListItems1, templateFirstLevelListItems2, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider',  'collections/menu', 'collections/laptop', 'text!templates/laptop/laptop.html', 'text!templates/laptop/firstLevelListItems1.html', 'text!templates/laptop/firstLevelListItems2.html','text!templates/laptop/secondLevelListItems.html', 'text!templates/laptop/thirdLevel.html', 'text!templates/laptop/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionLaptop, templateLaptop, templateFirstLevelListItems1, templateFirstLevelListItems2, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
         
@@ -22,7 +22,8 @@ define([
             "click .lpt_text_menu1_projekt"     	: "showMenu2",
                       
             "click .lpt_text_menu1_info"     		: "infoClicked",                                    
-            "click .lpt_text_menu1_shutdown"     	: "backwardClicked",
+            "click .lpt_text_menu1_shutdown"     	: "backwardClicked",        
+			"click .lpt_text_menu1_shutdown" 		: "lpt_resetTimeout",            
         }, 
         
         
@@ -71,7 +72,7 @@ define([
                                                                        
                         _.each(model.attributes.menu, function(value){
                             //value[0] = menuname, value[1] = foreign key , value[2] = thumbnail-name                            
-                            that.templateFirstLevelListItems1 += _.template(templateFirstLevelListItems1, { value: value } );
+                            that.templateFirstLevelListItems1 += _.template(templateFirstLevelListItems1, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.icon_path } );
                             that.templateFirstLevelListItems2 += _.template(templateFirstLevelListItems2, { value: value } );
                               
                         });                                      
@@ -85,7 +86,7 @@ define([
             $(this.divMenu).html( this.templateFirstLevelListItems2 );
              
 			// scale + align laptop container
-			var $lpt_center_container = $(this.el).find('#lpt_center_container');			
+			var $lpt_center_container = $(this.el).find('.lpt_center_container');			
 			if ( deviceHeight > 0.75*deviceWidth ){
 				$lpt_center_container.css({ 
 					'top': offsetTop+ 'px'
@@ -95,6 +96,7 @@ define([
                     'width': width+'px',
                     'height': height+'px'
             });
+            this.lpt_setTime();
                 
             // fit text atributes       
        		$(".lpt_text_ordner").fitText(0.5);
@@ -152,26 +154,42 @@ define([
                  var that = this;   
                  this.templateSecondLevelListItems = ''; 
                  
+                 // Counter SliderContainer
+                 var i = 0;
+                 
                  // loop 
                  this.collection.each( function(model){                       
-           
+           			
+           			that.templateSecondLevelListItems += "<li>";
+           			
                     if(model.get('id') === id){                            
                         
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
-                                                                                         
-                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, id:id, subId:subId++ } );                     
-                          
+                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.big_pics, id:id, subId:subId++ } );                     
+	                        
+	                        i++;
+	                        if (i == 6) {
+	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        }
                         });  
-              
+                        
+              			that.templateSecondLevelListItems += "</li>";
                     }
     
                   
                  });                      
                  
+                 // render Medien Slider
+            	 $(this.el).html(Slider.sliderInit());    
+                
                  // render                     
-                 $(this.el).html(that.templateSecondLevelListItems);
+                 $(this.sliderContainer).html(that.templateSecondLevelListItems);
+            	 
+            	 $(this.el).append(Slider.sliderPageSize());	 
+            	 
+            	 $(this.el).append(Slider.sliderSet());
             
         },
          
@@ -216,8 +234,14 @@ define([
             });             
             
             // render site
-            $(this.el).html(this.templateThirdLevel);
-            $(this.el).append('<b>Media:</b>' +this.templateThirdLevelListItems);
+            
+			$(this.el).html(Slider.slider2Init());    
+            $(this.sliderProject).append(this.templateThirdLevelListItems);	 
+           
+			$(this.el).append(Slider.sliderPageSize());	 
+            	 
+            $(this.el).append(Slider.slider2Set());	 
+			$(this.el).append(Slider.setInfo(pathBigPics, serverUri));
 
         },      
         
@@ -303,6 +327,38 @@ define([
 			 }
 		  },
 		  
+		  
+        lpt_setTime: function(){ 
+            var that = this;
+            var $lpt_time = $('.lpt_taskbar_time');
+            
+            var lpt_now = new Date();
+            var lpt_day = lpt_now.getDay();
+            var lpt_day_txt = "Mi.";
+            switch (lpt_day) {
+				case 1: lpt_day_txt = "Mo."; break;      
+				case 2: lpt_day_txt = "Di."; break;            	
+				case 3: lpt_day_txt = "Mi."; break;            	
+				case 4: lpt_day_txt = "Do."; break;            	
+				case 5: lpt_day_txt = "Fr."; break;            	
+				case 6: lpt_day_txt = "Sa."; break;     
+				case 0: lpt_day_txt = "So."; break;            		      	
+            }            
+            var lpt_hours = lpt_now.getHours();
+            var lpt_minutes = lpt_now.getMinutes();
+            var lpt_hours = ((lpt_hours < 10) ? "0" + lpt_hours : lpt_hours);
+            var lpt_minutes = ((lpt_minutes < 10) ? "0" + lpt_minutes : lpt_minutes);
+            console.log(lpt_day + " "+ lpt_day_txt + " "+ lpt_hours + ":" + lpt_minutes);
+            $lpt_time.html(lpt_day_txt + " " + lpt_hours + ":" + lpt_minutes);
+            
+            this.timeout = setTimeout(function(){
+                    that.lpt_setTime();
+                }, 60000);
+        },
+        
+        lpt_resetTimeout: function(){
+            clearTimeout(this.timeout);
+        },		  
 		  
 		  
 		  /* ############## CLICK EVENTS ############## */

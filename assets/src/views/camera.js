@@ -1,18 +1,22 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'collections/menu', 'collections/camera', 'text!templates/camera/camera.html', 'text!templates/camera/firstLevelListItems.html', 'text!templates/camera/secondLevelListItems.html', 'text!templates/camera/thirdLevel.html', 'text!templates/camera/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, CollectionMenu, CollectionCamera, templateCamera, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/camera', 'text!templates/camera/camera.html', 'text!templates/camera/firstLevelListItems.html', 'text!templates/camera/secondLevelListItems.html', 'text!templates/camera/thirdLevel.html', 'text!templates/camera/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionCamera, templateCamera, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
           
     var View = Backbone.View.extend({
         
         el: '#main', // target 
         div : '.cam_display_content',
         
+        // Slider IDs
+        sliderContainer : '#sliderProject .slide_container',
+        sliderProject : '#slider ul',
         
         // variables
 		mState : 0,  
         camElements: 0,        
 		SliderPos: 0,
         dataAlreadyExist: false,
+        busy1: false,        
         cameraWidth: '2048', 	// px-Auflösung calc 
         calculatorHeight: '1490', 	// px-Auflösung calc         
         
@@ -63,7 +67,7 @@ define([
                                                                        
                         _.each(model.attributes.menu, function(value){
                             //value[0] = menuname, value[1] = foreign key , value[2] = thumbnail-name                            
-                            that.templateFirstLevelListItems += _.template(templateFirstLevelListItems, { value: value } );
+                            that.templateFirstLevelListItems += _.template(templateFirstLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.icon_path  } );
                             camElements++;
                               
                         });
@@ -139,27 +143,43 @@ define([
                  var that = this;   
                  this.templateSecondLevelListItems = ''; 
                  
+                 var i = 0;
+                 
                  // loop 
                  this.collection.each( function(model){                       
-           
+           			
+           			that.templateSecondLevelListItems += "<li>";
+           			
                     if(model.get('id') === id){                            
                         
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
-                                                                                         
-                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, id:id, subId:subId++ } );                     
-                          
+                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.big_pics, id:id, subId:subId++ } );                     
+	                        
+	                        i++;
+	                        if (i == 6) {
+	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        }
                         });  
-              
+                        
+              			that.templateSecondLevelListItems += "</li>";
                     }
     
                   
-                 });                      
+                 });                          
                                    
                  
-                 // render                     
-                 $(this.el).html(that.templateSecondLevelListItems);
+                 // render MediaSlider
+            	 $(this.el).append(Slider.sliderInit());   
+            	 
+            	 // render                     
+                 $(this.sliderContainer).append(that.templateSecondLevelListItems);
+            	  
+            	 $(this.el).html(Slider.sliderPageSize());
+
+            	 
+            	 $(this.el).append(Slider.sliderSet());
             
         },
         
@@ -205,8 +225,11 @@ define([
             });             
             
             // render site
-            $(this.el).html(this.templateThirdLevel);
-            $(this.el).append('<b>Media:</b>' +this.templateThirdLevelListItems);
+            
+			$(this.el).html(Slider.slider2Init());    
+            $(this.sliderProject).append(this.templateThirdLevelListItems);	 
+            	 
+            $(this.el).append(Slider.slider2Set());	 
 
         },      
         
@@ -221,6 +244,7 @@ define([
         
         updateState : function( state ){
 			
+			if( !this.busy1){			
 				if ( state == "down" && mState < camElements){
 					//window.console.log("DOWN mState"+ mState + " maxElem"+camElements+ " Pos"+ SliderPos );					
 					mState++;
@@ -233,7 +257,14 @@ define([
 					mState--;
 					SliderPos += 25;
 					this.animate( SliderPos );
-				}				
+				}	
+				this.busy1 = true;
+				var that = this;
+				window.setTimeout( function(event){ // prevent autoscrolling - disable interaction for 400ms 
+			 		  that.busy1 = false; 
+			 		  console.log("slide animation done");
+		 		}, 400);					
+			}			
 									          
         },         
            

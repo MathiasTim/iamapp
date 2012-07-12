@@ -1,10 +1,10 @@
 define([
-    'jquery', 'underscore', 'backbone', 'models/dvd'
-], function($, _, Backbone, dvdModel) {
+    'jquery', 'underscore', 'backbone', 'models/drawings'
+], function($, _, Backbone, drawingsModel) {
 
     var collection = Backbone.Collection.extend({
-        model: dvdModel,
-        url: 'src/data/dvd.json'
+        model: drawingsModel,
+        url: 'src/data/drawings.json'
         //url: 'http://iamapp.multimedia.hs-augsburg.de/json/requests/index.php?q=dvd'
     });
       

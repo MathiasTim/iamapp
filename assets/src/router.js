@@ -25,8 +25,8 @@ define([
             
             // laptop
             'laptop': 'laptopFirstLevel',
-            'laptop/:id': 'smartphoneSecondLevel', 
-            'laptop/:id/:id2': 'smartphoneThirdLevel',            
+            'laptop/:id': 'laptopSecondLevel', 
+            'laptop/:id/:id2': 'laptopThirdLevel',            
             
             // camera
             'camera': 'cameraFirstLevel', 
