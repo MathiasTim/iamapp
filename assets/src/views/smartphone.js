@@ -75,12 +75,12 @@ define([
                   
             });   
 			//fit texts
-           $(".linkSmartphone").fitText(1.0);
+          
           
             // render
             $(this.el).html( _.template( templateSmartphone, {} ));  
             $(this.div).append( this.templateFirstLevelListItems );   
-            
+             $(".linkSmartphone").fitText(1.0);
                            
         }, 
         

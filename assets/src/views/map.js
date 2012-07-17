@@ -54,7 +54,7 @@ define([
             
             // find the entry
             var house = this.collection.where({house: 'overview'});
-            console.log(house);
+            
             // pathes
             if(Util.resolutionType === 'high'){
                 var subdir = 'high';

@@ -620,7 +620,6 @@ div.ui-content{
 #dvd_links div {
 	padding-top: 3%;
 	height: 122%;
-	background: rgba(200, 200, 200, 0.5);
 	text-align: center;
 	float: left;
 	margin-right: 1%;
@@ -1197,8 +1196,14 @@ div.ui-content{
 #dvd_links a {
 	padding-top: 3%;
 	height: 122%;
-	background: rgba(200, 200, 200, 0.5);
-	text-align: center;
+	background: -moz-linear-gradient(top,  rgba(76,76,76,0.9) 0%, rgba(28,28,28,0.84) 20%, rgba(43,43,43,0.78) 42%, rgba(137,137,137,0.62) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(76,76,76,0.9)), color-stop(20%,rgba(28,28,28,0.84)), color-stop(42%,rgba(43,43,43,0.78)), color-stop(100%,rgba(137,137,137,0.62))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(76,76,76,0.9) 0%,rgba(28,28,28,0.84) 20%,rgba(43,43,43,0.78) 42%,rgba(137,137,137,0.62) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(76,76,76,0.9) 0%,rgba(28,28,28,0.84) 20%,rgba(43,43,43,0.78) 42%,rgba(137,137,137,0.62) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(76,76,76,0.9) 0%,rgba(28,28,28,0.84) 20%,rgba(43,43,43,0.78) 42%,rgba(137,137,137,0.62) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(76,76,76,0.9) 0%,rgba(28,28,28,0.84) 20%,rgba(43,43,43,0.78) 42%,rgba(137,137,137,0.62) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e64c4c4c', endColorstr='#9e898989',GradientType=0 ); /* IE6-9 */
+text-align: center;
 	float: left;
 	margin-right: 1%;
 	padding-left: 1%;
@@ -1277,16 +1282,8 @@ a.linkDVD {
 	}
 }
 
-.dvd_second_level .slider_page, .dvd_third_level .slider_page {
-	background-image: url("../img/dvd/dvd_sliderbg.png") !important;	
-}	
 
-.slider_page {
-	-webkit-background-size: cover !important;
-	-moz-background-size: cover !important;
-	-o-background-size: cover !important;
-	background-size: cover !important;
-}
+
 	
 /***************************************/
 /*			SMARTPHONE GUI 			   */
@@ -1313,7 +1310,7 @@ a.linkDVD {
 		left: 8.9%;
 		width: 76.5%;
 		height: 65.6%;
-		border: 1px solid white;
+
 
 	}
 	
@@ -1323,7 +1320,7 @@ a.linkDVD {
 		left: 8.9%;
 		width: 76.5%;
 		height: 65.6%;
-		border: 1px solid white
+
 	}
 
 	
@@ -1340,10 +1337,10 @@ a.linkDVD {
 		position: absolute;
 		border-right: 5px solid black;
 		background-color: #333;
-		top: 16.2%;
-		left:10.2%;
-		height: 66.9%;
-		width: 35%;
+		top: 16%;
+		left:9%;
+		height: 65.8%;
+		width: 30.8%;
 		
 	}
 
@@ -1363,37 +1360,37 @@ a.linkDVD {
 	
 	#contacts_back {
 		position: absolute;
-		border: 1px solid white;
-		top: 83.3%;
-		left: 19%;
+		left: 10.2%;
+		top: 82.2%;
 		height: 7%;
 		width: 5%;
+	
 		
 	}
 	
 	#smartphone_back {
 		position: absolute; 
-		left: 11.8%;
-		top: 83.3%;
+		left: 10.2%;
+		top: 82.2%;
 		height: 7%;
 		width: 5%;
-		border: 1px solid white
+	
 
 	}
 	
 	#smartphone_info {
 		position: absolute; 
-		left: 91%;
-		top: 83.3%;
+		left: 80%;
+		top: 82.2%;
 		height: 7%;
 		width: 5%;
-		border: 1px solid white
+
 
 	}
 	
 	#smartphone_links div {
 		background-position: center;
-		
+		position: relative;
 		padding-top: 2%;
 		height: 22.7%;
 		width: 14.5%;
@@ -1403,6 +1400,21 @@ a.linkDVD {
 		padding-left: 2%;
 		padding-right: 1%;
 
+	}
+	
+	a.linkSmartphone {
+		text-shadow: none !important;
+		color: #fff !important;
+		text-decoration: none;
+		font-weight: bold;
+		
+	}
+	
+	.linkSmartphone{
+		position: absolute;
+		top: 10%;
+		left: 10%;
+		width: 85%;
 	}
 	
 	#smartphone_links img {
@@ -1417,7 +1429,7 @@ a.linkDVD {
 	 body.contacts_first_level .ui-body-c,
  	 body.contacts_second_level .ui-body-c {
      background: url('../img/calculator/calc_bg_pattern.png') repeat top left;   
- }
+ 	}
  
  	.toggle_container {
  		position: absolute;
@@ -1449,439 +1461,9 @@ a.linkDVD {
  
 	
 	
-	a.linkSmartphone {
-		text-shadow: none !important;
-		color: #fff !important;
-		text-decoration: none;
-		
-	}
+
 	
 
-
-/***************************************/
-/*			     Slider		 		   */
-/***************************************/
-
-.project_info_hidden {
-	display: none;
-}
-
-.dvd_second_level, .dvd_third_level {
-	background-image: url(../img/calculator/calc_bg_pattern.png) !important;
-}
-
-.slider_page {
-	height: 100%;
-	position: relative;
-	margin: 0 auto;
-	background: #1e5799; /* Old browsers */
-	background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #7db9e8 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* IE10+ */
-	background: linear-gradient(top,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* W3C */
-}
-
-#projectGallery {
-	height: 100%;
-}
-
-a.projectSquare {
-	width: 27%;
-	height: 35%;
-	display: block;
-	margin: 3%;
-	float: left;
-}
-
-a.projectSquare img {
-	width: 100%;
-	display: block;
-}
-
-
-
-.swipe li div, .swipe div div div {
-  margin:0 10px;
-  padding:50px 10px;
-  background: rgba(230, 230, 230, 0.6);
-  font-weight:bold;
-  color:#fff;
-  font-size:12px;
-  text-align:center;
-}
-
-.slider ul {
-	height: 90%;
-	width: 75%;
-	margin: 0 auto;
-	font-size: 0.4em;
-	background: rgba(230, 230, 230, 0.6);
-	padding: 0;
-}
-
-.slider ul li {
-	text-align: center;
-}
-
-#sliderProjectContainer {
-	position: absolute;
-	top: 15%;
-	width: 85%;
-	left: 7.5%;
-	height: 85%;
-}
-
-#slider ul {
-	width: 100%;
-	margin-top: 14%;
-	height: 65%;
-}
-
-.sliderContainer {
-	height: 100%;
-}
-
-.swipeDiv{
-	position: relative;
-}
-
-.slideText {
-	padding-right: 7%;
-	font-size: 1.4em;
-	color: #333;
-	padding-left: 2%;
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	text-shadow: none !important;
-}
-
-@media (max-width: 550px) {
-	
-	.slideText {
-		font-size: 0.8em;
-	}
-	
-	.counter {
-		font-size: 0.8em;
-	}
-	
-}
-
-@media (max-height: 350px) {
-	
-	.slideText {
-		font-size: 0.8em;
-	}
-	
-	.counter {
-		font-size: 0.8em;
-	}
-}	
-
-.arrLeft {
-	position: absolute;
-	padding-left: 8%;
-	left: -11%;
-	top: 39%;
-	height: 12%;
-	cursor: pointer;
-	z-index: 10;
-	padding-top: 1%;
-	padding-bottom: 1%;
-}
-
-.arrRight {
-	position: absolute;
-	padding-right: 8%;
-	right: -11%;
-	top: 39%;
-	height: 12%;
-	cursor: pointer;
-	z-index: 10;
-	padding-top: 1%;
-	padding-bottom: 1%;
-}
-
-.counter {
-	position: absolute; 
-	top: 5%;
-	font-size: 20px;
-	right: 0;
-	text-align: right;
-	background: rgba(230, 230, 230, 0.6);
-	height: 4%;
-	width:30%;
-	text-shadow: none !important;
-	padding-bottom: 1%;
-	color: #000;
-}
-
-.counterInner {
-	height: 100%;
-	width: 100%;
-}
-
-.counterInner a {
-	height: 126%;
-	display: block;
-	width: 13%;
-	float: right;
-	margin-left: 3%;
-	margin-right: 2%;
-}
-
-.counterInner a img {
-	height: 100%;
-	width: 100%;
-	margin-right: 3%;
-}
-
-.descr {
-	position: absolute;
-	top: 5%;
-	left: 0%;
-	background-color: #eee;
-	height: 4%;
-	width: 50%;
-	background: rgba(230, 230, 230, 0.6);
-	text-shadow: none !important;
-	padding-bottom: 1%;
-}
-
-.descrInner {
-	font-size: 20px;
-	color: #000;
-	position: absolute;
-	bottom: 0;
-	margin-left: 15%;
-}
-
-
-.mediaPlayer {
-	height: 100%;
-	width: 50%;
-	margin-left: 25%;
-	position: relative;
-}
-
-.mediaPlayer_Layer {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-}
-
-.infoContainer {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background: rgba(230, 230, 230, 0.9);
-	text-shadow: none !important;
-}
-
-.infoHeader img {
-	width: 35%;
-	float: left;
-	margin-right: 4%;
-	margin-left: 2%;
-}
-
-.infoHeader hr {
-	margin-right: 4%;
-	margin-left: 0;
-}
-
-.infoHeader h1 {
-	padding-top: 2%;
-	font-size: 20px;
-	color: #333;
-}
-
-.infoHeader h2 {
-	padding-top: 2%;
-	font-size: 16px;
-	color: #ae3923;
-	font-weight: normal;
-}
-
-.infoText {
-	margin-left: 2%;
-	margin-top: 4%;
-	margin-right: 2%;
-}
-
-.infoFooter {
-	position: absolute;
-	width: 100%;
-	height: 7%;
-	background: rgba(230, 230, 230, 0.4);
-	bottom: 0;
-	left: 0;
-}
-
-.infoFach {
-	position: absolute;
-	left: 2%;
-	bottom: 2%;
-	text-decoration: none;
-	color: #333 !important;
-	font-size: 12px;
-}
-
-.infoBack {
-	position: absolute;
-	right: 2%;
-	bottom: 17%;
-	text-decoration: none;
-	color: #333 !important;
-	cursor: pointer;
-}
-
-@media (max-height: 480px) {
-	.counterInner, .counter a, .infoBack {
-		font-size: 11px;
-	}
-	
-	.descrInner {
-		font-size: 11px;
-	}
-	
-	.infoText {
-		font-size: 10px;
-	}
-	
-	.infoHeader h1 {
-		font-size: 18px;	
-	}
-	
-	.infoHeader h2 {
-		font-size: 14px;	
-	}
-}
-
-@media (max-width: 640px) {
-	.counterInner, .counter a, .infoBack  {
-		font-size: 11px;
-	}
-	
-	.descrInner {
-		font-size: 11px;
-	}
-	
-	.infoText {
-		font-size: 10px;
-	}
-	
-	.infoHeader h1 {
-		font-size: 18px;	
-	}
-	
-	.infoHeader h2 {
-		font-size: 14px;	
-	}
-}
-
-@media (max-height: 320px) {
-	.counterInner, .counter a, .infoBack  {
-		font-size: 9px;
-	}
-	
-	.descrInner {
-		font-size: 9px;
-	}
-	
-	.infoText {
-		font-size: 9px;
-	}
-	
-	.infoHeader h1 {
-		font-size: 16px;	
-	}
-	
-	.infoHeader h2 {
-		font-size: 12px;	
-	}
-}
-
-@media (max-width: 450px) {
-	.counterInner, .counter a, .infoBack  {
-		font-size:9px;
-	}
-	
-	.descrInner {
-		font-size: 9px;
-	}
-	
-	.infoText {
-		font-size: 9px;
-	}
-	
-	.infoHeader h1 {
-		font-size: 16px;	
-	}
-	
-	.infoHeader h2 {
-		font-size: 12px;	
-	}
-}
-
-#projectSlider {
-	position: relative;
-}
-
-#overlay_projectinfo {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	display: none;
-	background: url(../img/calculator/calc_bg_pattern.png);
-	z-index: 10000;
-	text-shadow: none;
-}
-
-#sliderProject ul li {
-	display: none;
-}
-
-#sliderProject ul li:first-child {
-	display: block;
-}
-
-#slider_info {
-	bottom: 2%;
-    cursor: pointer;
-    height: 10%;
-    position: absolute;
-    right: 5%;
-    width: 5%;
-}
-
-#slider_info img {
-	height: 100%;
-}
-
-#sliderOverlay_back img {
-	height: 100%;
-}
-
-#sliderOverlay_back {
-	height: 142%;
-}
-
-#slider_moreinfo {
-	position: absolute;
-	bottom: 2%;
-	right: 50%;
-	height: 7%;
-	width: 5%;
-	cursor: pointer;
-}
-
-#slider_moreinfo img {
-	height: 100%;
-}
 
 
 /***************************************/
@@ -1890,14 +1472,6 @@ a.projectSquare img {
 
 .drawings_first_level {
 	background: url("../img/calculator/calc_bg_pattern.png") repeat scroll left top transparent;
-}
-
-.drawings_second_level, .drawings_third_level, .drawings_second_level #main {
-	background: url("../img/calculator/calc_bg_pattern.png") !important;
-}
-
-.drawings_second_level .slider_page, .drawings_third_level .slider_page {
-	background-image: url("../img/drawings/drawings_bg_slider.png") !important;
 }
 
 #zb_full {

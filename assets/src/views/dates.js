@@ -17,6 +17,10 @@ define([
             // render loadingScreen
             $(this.el).html(Util.loadingScreen());
             
+            $('#main').css('width', 'auto');
+            $('#main').css('height', 'auto');
+            
+            
             // fyi:
         	// by convention, we make a private 'that' variable. 
         	// 'this' is used to make the object available to the private methods

@@ -7,9 +7,12 @@ define([
         el                   : '#main', 
         locateMainElement    : $('#main'),
         deskTemplate         : '',
+        windowWidth: '',
+        windowHeight: '',
         
         events: {
             "click .apfel"     : "changeImage",
+            "click .kaffee"     : "changeImage"
         }, 
         
         initialize: function(){
@@ -17,23 +20,23 @@ define([
                     // check resolution once
                     // - resolution >= 1000 use ipad images
                     // - resolution < 1000 use iphone images
-                    var windowWidth = $(window).width();
-                    var windowHeight = $(window).height();
+                    this.windowWidth = $(window).width();
+                    this.windowHeight = $(window).height();
                     var resolution = 'low';
                     
                     if( navigator.userAgent.match(/Android/i)) {
-                        windowWidth = screen.width;
-                        windowHeight = screen.height;
+                        this.windowWidth = screen.width;
+                        this.windowHeight = screen.height;
                     } else if (
                      navigator.userAgent.match(/iPhone/i)
                      || navigator.userAgent.match(/iPad/i)
                      || navigator.userAgent.match(/iPod/i)
                      ){
-                        windowWidth = screen.height;
-                        windowHeight = screen.width;
+                        this.windowWidth = screen.height;
+                        this.windowHeight = screen.width;
                      }
                      
-                    if(windowWidth >= 1000){
+                    if(this.windowWidth >= 1000){
                         Util.resolutionType = 'high';
                         resolution = 'high';
 
@@ -48,27 +51,37 @@ define([
                         this.locateMainElement.addClass('low_resolution');
                     }
                     
-                    // set windowHeight for iScroll once
-                    this.locateMainElement.css('width', windowWidth+'px');
-                    this.locateMainElement.css('height', windowHeight+'px');
-                   
-                    console.log('used resolution: ' + resolution + ' (view/home.js)');
+                    
+                    //console.log('used resolution: ' + resolution + ' (view/home.js)');
                     
                     this.deskTemplate += _.template(templateDesk, {resolution: resolution} );
                     
         },
                 
-        render: function(){   
-              $(this.el).html( this.deskTemplate );
+        render: function(){
+            // set windowHeight for iScroll once
+            this.locateMainElement.css('width', this.windowWidth+'px');
+            this.locateMainElement.css('height', this.windowHeight+'px');
+            
+            $(this.el).html( this.deskTemplate );
         },
         
         changeImage: function(event){
             var locateClickedElement = $(event.target);
+            var whichElement = locateClickedElement.attr('class');
 
             if(Util.resolutionType === 'high'){
-                locateClickedElement.attr('src', 'src/img/desk/high/apfel_angebissen.png');
+                if(whichElement === 'kaffee'){
+                    locateClickedElement.attr('src', 'src/img/desk/high/kaffee_leer.png');
+                } else {
+                    locateClickedElement.attr('src', 'src/img/desk/high/apfel_angebissen.png');
+                }
             } else{
-                locateClickedElement.attr('src', 'src/img/desk/low/apfel_angebissen.png');
+                if(whichElement === 'kaffee'){
+                    locateClickedElement.attr('src', 'src/img/desk/low/kaffee_leer.png');
+                } else {
+                    locateClickedElement.attr('src', 'src/img/desk/low/apfel_angebissen.png');
+                }
             }
             
         }        

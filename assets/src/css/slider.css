@@ -1,0 +1,453 @@
+/***************************************/
+/*			     Slider		 		   */
+/***************************************/
+
+.slider_page {
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
+}
+
+.project_info_hidden {
+	display: none;
+}
+
+.dvd_second_level, .dvd_third_level, 
+.camera_second_level, .camera_third_level, 
+.drawings_second_level, .drawings_third_level, 
+.tablet_second_level, .tablet_third_level, 
+.smartphone_second_level, .smartphone_third_level,
+.laptop_second_level, .laptop_third_level, 
+.calculator_second_level, .calculator_third_level {
+	background: url(../img/calculator/calc_bg_pattern.png) !important;
+}
+
+.slider_page {
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
+#projectGallery {
+	height: 100%;
+}
+
+a.projectSquare {
+	display: block;
+	margin: 1% 0.5% 0 0.5%;
+	float: left;
+}
+
+a.projectSquare img {
+	width: 100%;
+	display: block;
+	border: 5px solid black;
+}
+
+.slide_container li {
+	padding-left: 6.8%;
+	padding-top: 2%;
+}
+
+.swipe li div, .swipe div div div {
+  margin:0 10px;
+  padding:50px 10px;
+  background: rgba(230, 230, 230, 0.6);
+  font-weight:bold;
+  color:#fff;
+  font-size:12px;
+  text-align:center;
+}
+
+.slider ul {
+	height: 90%;
+	width: 75%;
+	margin: 0 auto;
+	font-size: 0.4em;
+	background: rgba(243, 243, 243, 1);
+	padding: 0;
+}
+
+.slider ul li {
+	text-align: center;
+}
+
+#sliderProjectContainer {
+	position: absolute;
+	top: 20.3%;
+	width: 100%;
+	left: 0;
+	height: 85%;
+}
+
+#slider ul {
+	width: 100%;
+	margin-top: 15.6%;
+	height: 65%;
+}
+
+.sliderContainer {
+	height: 100%;
+}
+
+.swipeDiv{
+	position: relative;
+}
+
+.slideText {
+	padding-right: 7%;
+	font-size: 1.4em;
+	color: #333;
+	padding-left: 2%;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-shadow: none !important;
+}
+
+@media (max-width: 550px) {
+	
+	.slideText {
+		font-size: 0.8em;
+	}
+	
+	.counter {
+		font-size: 0.8em;
+	}
+	
+}
+
+@media (max-height: 350px) {
+	
+	.slideText {
+		font-size: 0.8em;
+	}
+	
+	.counter {
+		font-size: 0.8em;
+	}
+}	
+
+.arrLeft {
+	position: absolute;
+	padding-left: 8%;
+	left: -4%;
+	top: 39%;
+	height: 12%;
+	cursor: pointer;
+	z-index: 10;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+.arrRight {
+	position: absolute;
+	padding-right: 8%;
+	right: -4%;
+	top: 39%;
+	height: 12%;
+	cursor: pointer;
+	z-index: 10;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+.counter {
+	position: absolute; 
+	top: 5%;
+	font-size: 20px;
+	right: 0;
+	text-align: right;
+	background: rgba(230, 230, 230, 0.6);
+	height: 4%;
+	width:30%;
+	text-shadow: none !important;
+	padding-bottom: 1%;
+	color: #000;
+}
+
+.counterInner {
+	height: 100%;
+	width: 100%;
+}
+
+.counterInner a {
+	height: 126%;
+	display: block;
+	width: 13%;
+	float: right;
+	margin-left: 3%;
+	margin-right: 2%;
+}
+
+.counterInner a img {
+	height: 100%;
+	width: 100%;
+	margin-right: 3%;
+}
+
+.descr {
+	position: absolute;
+	top: 2%;
+	left: 0%;
+	background-color: #eee;
+	height: 17%;
+	width: 100%;
+	background: url(../img/slider/slider_head.jpg);
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
+	text-shadow: none !important;
+	padding-bottom: 1%;
+}
+
+.descrInner {
+	color: #000;
+	position: relative;
+	top: 34.6%;
+	left: 34%;
+	color: #9a9a9a;
+	text-transform: lowercase;
+}
+
+
+.mediaPlayer {
+	height: 100%;
+	width: 50%;
+	margin-left: 25%;
+	position: relative;
+}
+
+.mediaPlayer_Layer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.infoContainer {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgba(230, 230, 230, 0.9);
+	text-shadow: none !important;
+}
+
+.infoHeader img {
+	width: 35%;
+	float: left;
+	margin-right: 4%;
+	margin-left: 2%;
+}
+
+.infoHeader hr {
+	margin-right: 4%;
+	margin-left: 0;
+}
+
+.infoHeader h1 {
+	padding-top: 2%;
+	font-size: 20px;
+	color: #333;
+}
+
+.infoHeader h2 {
+	padding-top: 2%;
+	font-size: 16px;
+	color: #ae3923;
+	font-weight: normal;
+}
+
+.infoText {
+	margin-left: 2%;
+	margin-top: 4%;
+	margin-right: 2%;
+}
+
+.infoFooter {
+	position: absolute;
+	width: 100%;
+	height: 7%;
+	background: rgba(230, 230, 230, 0.4);
+	bottom: 0;
+	left: 0;
+}
+
+.infoFach {
+	position: absolute;
+	left: 2%;
+	bottom: 2%;
+	text-decoration: none;
+	color: #333 !important;
+	font-size: 12px;
+}
+
+.infoBack {
+	position: absolute;
+	right: 2%;
+	bottom: 17%;
+	text-decoration: none;
+	color: #333 !important;
+	cursor: pointer;
+}
+
+@media (max-height: 480px) {
+	.counterInner, .counter a, .infoBack {
+		font-size: 11px;
+	}
+	.infoText {
+		font-size: 10px;
+	}
+	
+	.infoHeader h1 {
+		font-size: 18px;	
+	}
+	
+	.infoHeader h2 {
+		font-size: 14px;	
+	}
+}
+
+@media (max-width: 640px) {
+	.counterInner, .counter a, .infoBack  {
+		font-size: 11px;
+	}
+	.infoText {
+		font-size: 10px;
+	}
+	
+	.infoHeader h1 {
+		font-size: 18px;	
+	}
+	
+	.infoHeader h2 {
+		font-size: 14px;	
+	}
+}
+
+@media (max-height: 320px) {
+	.counterInner, .counter a, .infoBack  {
+		font-size: 9px;
+	}
+	.infoText {
+		font-size: 9px;
+	}
+	
+	.infoHeader h1 {
+		font-size: 16px;	
+	}
+	
+	.infoHeader h2 {
+		font-size: 12px;	
+	}
+}
+
+@media (max-width: 450px) {
+	.counterInner, .counter a, .infoBack  {
+		font-size:9px;
+	}
+	.infoText {
+		font-size: 9px;
+	}
+	
+	.infoHeader h1 {
+		font-size: 16px;	
+	}
+	
+	.infoHeader h2 {
+		font-size: 12px;	
+	}
+}
+
+#projectSlider {
+	position: relative;
+}
+
+#overlay_projectinfo {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: none;
+	background: url(../img/calculator/calc_bg_pattern.png);
+	z-index: 10000;
+	text-shadow: none;
+}
+
+#sliderProject ul li {
+	display: none;
+}
+
+#sliderProject ul li:first-child {
+	display: block;
+}
+
+#slider_info {
+	bottom: 2%;
+    cursor: pointer;
+    height: 10%;
+    position: absolute;
+    right: 5%;
+    width: 5%;
+}
+
+#slider_info img {
+	height: 100%;
+}
+
+#sliderOverlay_back img {
+	height: 100%;
+}
+
+#sliderOverlay_back {
+	height: 142%;
+}
+
+#slider_moreinfo {
+	position: absolute;
+	bottom: 2%;
+	right: 50%;
+	height: 7%;
+	width: 5%;
+	cursor: pointer;
+}
+
+#slider_moreinfo img {
+	height: 100%;
+}
+
+#slider_home {
+	position: absolute;
+	top: 37%;
+	width: 5%;
+	height: 5%;
+	left: 94%;
+	z-index: 10000;
+}
+
+#slider_back {
+	position: absolute;
+	top: 28%;
+	width: 5%;
+	height: 5%;
+	left: 94%;
+	z-index: 10000;
+}
+
+#slider_back img, #slider_home img {
+	width: 100%;
+}
+
+.arrLeft.arr_project {
+	left: -8%;
+	top: 49%;
+	height: 10%;
+}
+
+.arrRight.arr_project {
+	right: -8%;
+	top: 49%;
+	height: 10%;
+}
+
+

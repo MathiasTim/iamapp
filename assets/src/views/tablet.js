@@ -1,16 +1,16 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'collections/menu', 'collections/tablet', 'text!templates/tablet/firstLevel.html', 'text!templates/tablet/secondLevel.html', 'text!templates/tablet/firstLevelListItems.html', 'text!templates/tablet/secondLevelListItems.html', 'text!templates/tablet/thirdLevel.html', 'text!templates/tablet/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, CollectionMenu, CollectionTablet, templateFirstLevel, templateSecondLevel, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/tablet', 'text!templates/tablet/firstLevel.html', 'text!templates/tablet/firstLevelListItems.html', 'text!templates/tablet/secondLevelListItems.html', 'text!templates/tablet/thirdLevel.html', 'text!templates/tablet/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionTablet, templateFirstLevel, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
        
         el: '#main',
+        sliderContainer: '#sliderProject .slide_container',
+        sliderProject: '#slider ul',
+        
         templateFirstLevel: '',
         templateFirstLevelListItems: '',
-        templateSecondLevel: '',
-        templateSecondLevelListItems: '',
-        templateThirdLevel: '',
-        templateThirdLevelListItems: '',
+        
         collection: '',
         dataAlreadyExist: false,
         tabletWidth: '1770', // px-Auflösung des Tablet Bildes
@@ -50,7 +50,13 @@ define([
             // 'this' is used to make the object available to the private methods                
             var that = this;
             
-            this.templateFirstLevel = _.template(templateFirstLevel, {} );
+            if(Util.resolutionType === 'high'){
+                var resolution = 'high';
+            } else{
+                var resolution = 'low';
+            }
+            
+            this.templateFirstLevel = _.template(templateFirstLevel, {resolution: resolution } );
             this.templateFirstLevelListItems = '';
                         
             // baue menüliste
@@ -117,23 +123,40 @@ define([
         
         
         renderSecondLevel: function(id){
-            this.templateSecondLevel = _.template(templateSecondLevel, {} );
             this.templateSecondLevelListItems = ''; 
             
             var that = this;
             // loop 
+            var i = 0;
             this.collection.each( function(model){                       
-                if(model.get('id') === id){                            
+                if(model.get('id') === id){ 
+                    that.templateSecondLevelListItems += "<li>";
                     var subId = 0;
                     _.each(model.attributes.projects, function(value){ 
-                          that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, id:id, subId:subId++ } );                     
-                    });  
+                        if(Util.resolutionType === 'high'){
+                            var iconPath = model.attributes.big_pics;
+                        } else{
+                            var iconPath = model.attributes.small_pics;
+                        }
+                        that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, id:id, subId:subId++, serverUri:model.attributes.server_uri, iconPath:iconPath } );                     
+                        i++;
+                        if (i == 6) {
+                            that.templateSecondLevelListItems += "</li><li>";
+                        }
+                    });
+                    that.templateSecondLevelListItems += "</li>";
                 }
             });
             
+            // render Medien Slider
+            $(this.el).html(Slider.sliderInit());    
+            
             // render
-            $(this.el).html(this.templateSecondLevel).find('#tbl_second_level_list').append( this.templateSecondLevelListItems );
+            $(this.sliderContainer).html(that.templateSecondLevelListItems);
+            $(this.el).append(Slider.sliderPageSize());	 
+            $(this.el).append(Slider.sliderSet());
         },
+        
         
         tabletThirdLevel: function(id, id2){
             
@@ -160,25 +183,28 @@ define([
             this.templateThirdLevelListItems = '';
          
             // unique data   
-            this.templateThirdLevel += _.template(templateThirdLevel, {project: project} );            
+            this.templateThirdLevel += _.template(templateThirdLevel, {project: project } );            
+            
+            console.log(project);
             
             // fyi:
             // by convention, we make a private 'that' variable. 
             // 'this' is used to make the object available to the private methods
             var that = this;
              
-            // media loop                  
+            // media loop
             _.each(project.media, function(value){ 
-                  
-                  //console.log(Util.splitMedia(value));                  
-                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value)} );
-                  
-            });             
+                    that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value), project: project} );
+            });
             
             // render site
-            $(this.el).html(this.templateThirdLevel);
-            $(this.el).append('<b>Media:</b>' +this.templateThirdLevelListItems);
+            $(this.el).html(Slider.slider2Init());
+            $(this.sliderProject).append(this.templateThirdLevelListItems);
+            
+            $(this.el).append(Slider.slider2Set());
+            $(this.el).append(Slider.setInfo(pathBigPics, serverUri));
         },
+        
         
         setTime: function(){
             var that = this;

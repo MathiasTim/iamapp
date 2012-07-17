@@ -9,7 +9,6 @@ body.dates_second_level .ui-body-c {
 
 body.dates_first_level #main,
 body.dates_second_level #main {
-    overflow-y: scroll;
 }
 
 body.dates_first_level #date_content,
@@ -27,7 +26,7 @@ body.dates_first_level .headline h1 {
    font-size: 4em;
    line-height: 1;
    letter-spacing: -0.06em;
-   text-shadow: 1px 1px 1px #000000;
+   text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
    padding-bottom: 0.15em;
 }
 

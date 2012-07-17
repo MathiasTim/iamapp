@@ -1,6 +1,10 @@
 <div id="tbl_content">
     <div class="background-image">
-        <img src="src/img/tablet/tablet_on.png" />
+        <% if (resolution == "high") { %>
+            <img src="src/img/tablet/high/tablet_on.png" />
+        <% } else { %>
+            <img src="src/img/tablet/low/tablet_on.png" />
+        <% } %>
     </div>
     <div class="inner-content">
         <div class="header clearfix">

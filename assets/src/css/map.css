@@ -16,14 +16,12 @@ body.map_second_level .ui-body-c {
 
 body.map_first_level #inner-content,
 body.map_second_level #inner-content {
-    background: rgba(200,200,200,0.4);
-    background-image: -moz-linear-gradient(top,  rgba(255,255,255,0.8) 0%, rgba(241,241,241,0.8) 100%); 
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.8)), color-stop(100%,rgba(241,241,241,0.8)));
-    background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
-    background-image: -o-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%);
-    background-image: -ms-linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
-    background-image: linear-gradient(top,  rgba(255,255,255,0.8) 0%,rgba(241,241,241,0.8) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#99f1f1f1',GradientType=0 ); 
+    background: -moz-linear-gradient(65deg, rgba(232,232,232,0.5) 0%, rgba(255,255,255,0.8) 70%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(232,232,232,0.5)), color-stop(70%,rgba(255,255,255,0.8)));
+    background: -webkit-linear-gradient(65deg, rgba(232,232,232,0.5) 0%,rgba(255,255,255,0.8) 70%);
+    background: -o-linear-gradient(65deg, rgba(232,232,232,0.5) 0%,rgba(255,255,255,0.8) 70%);
+    background: -ms-linear-gradient(65deg, rgba(232,232,232,0.5) 0%,rgba(255,255,255,0.8) 70%);
+    background: linear-gradient(65deg, rgba(232,232,232,0.5) 0%,rgba(255,255,255,0.8) 70%);
     -webkit-border-radius: 0.6em;
     -moz-border-radius: 0.6em;
     border-radius: 0.6em;
@@ -69,7 +67,7 @@ body.map_first_level #mapnavi-top .button a,
 body.map_first_level #mapnavi-bottom .button a,
 body.map_second_level #mapnavi-top .button a,
 body.map_second_level #mapnavi-bottom .button a {
-    background: rgba(255,255,255,0.6);
+    background: rgba(232,232,232,0.6);
     -webkit-border-top-right-radius: 0.6em;
     -moz-border-top-right-radius: 0.6em;
     border-top-right-radius: 0.6em;
@@ -79,12 +77,25 @@ body.map_second_level #mapnavi-bottom .button a {
     display: block;
     padding: 10px 0;
     text-decoration: none;
+    color: #000;
 }
 
+body.map_first_level #mapnavi-top .button a.active,
 body.map_second_level #mapnavi-top .button a.active {
-    background: rgba(245,245,245,0.9);
+    background: rgba(255,255,255,0.8);
 }
 
+body.map_first_level #mapnavi-bottom .button.home a span,
+body.map_second_level #mapnavi-bottom .button.home a span {
+    background: url('../img/map/icon_home.png') no-repeat center center;
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+}
+body.map_first_level #mapnavi-bottom .button.home a,
+body.map_second_level #mapnavi-bottom .button.home a {
+    line-height: 0;
+}
 
 body.map_second_level #mapnavi-inner .button {
     text-align: center;

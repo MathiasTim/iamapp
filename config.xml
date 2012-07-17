@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	id		= "com.phonegap.getting.started"
-	version 	= "1.0.0">
+	id		= "com.hsaugsburg.iam.desk"
+	version 	= "0.7.0">
 
 	<name>IAMDesk</name>
 
@@ -10,7 +10,7 @@
 		
 	</description>
 
-	<author href="hs-augsburg.de"
+	<author href="iamdesk.de"
 		email="mathias.maier@hs-augsburg.de">
 		Mathias Maier
 	</author>
@@ -25,7 +25,8 @@
     <icon src="icon_72.png" gap:platform="android" gap:density="mdpi" />
     <icon src="icon_114.png" gap:platform="android" gap:density="hdpi" />
     
-	<gap:splash src="splash.png" />
+	<gap:splash src="splash.png" width="640" height="960" />
+	<gap:splash src="splash.png" gap:platform="android" gap:density="mdpi" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 

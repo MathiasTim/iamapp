@@ -33,7 +33,8 @@ define([
 		
 		// set Slider Img width
 		sliderWidth = $("#sliderProject").width();
-		$("#sliderProject img").css("width", sliderWidth / 3.7);
+		$("#sliderProject img").css("width", sliderWidth / 4.5);
+		$("#sliderProject img").css("height", sliderWidth / 4.5);
 		
 		// Left and Right Slider Arrow 	
 		$("a#arrLeftClick_Projects").click(function() {
@@ -44,6 +45,8 @@ define([
 			slider2.next();
 			return true;
 		})
+		
+		setTimeout(function() { $(".descrInner").fitText(3.5) }, 10);
 	}
 	
 	// Slider für Projekt Übersicht
@@ -156,6 +159,8 @@ define([
 		$("#slider_moreinfo").click(function() {
 	    	$("#overlay_projectinfo").fadeIn();
 	    });
+	    
+	    setTimeout(function() { $(".descrInner").fitText(3.5) }, 10);
 	}
 	
 	// Set Slider Info 
@@ -167,7 +172,7 @@ define([
 		$("#profect_info_header").html(info_header);
 		$("#project_info_text").html(info_text);
 		$("#profect_info_authors").html(info_author);
-		
+		$(".descrInner").html(info_header);
 		$("#project_info_icon").html("<img src='"+serverUri+pathBigPics+info_icon+"'>");
 	}
 	

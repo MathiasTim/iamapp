@@ -74,7 +74,7 @@
 	<div class="descr">
     	<div class="descrInner">MedienSlider</div>
     </div>
-    <div class="counter">
+    <!--<div class="counter">
     	<div class="counterInner">
 			<a onclick="history.back();">
 					<img src="src/img/slider/slider_back.png">
@@ -83,11 +83,21 @@
 					<img src="src/img/slider/slider_home.png">
 			</a>
 		</div>
+	</div>-->
+	<div id="slider_back">
+		<a onclick="history.back();">
+			<img src="src/img/slider/back.png">
+		</a>
 	</div>
 	
+	<div id="slider_home">
+		<a href="#home">
+			<img src="src/img/slider/home.png">
+		</a>
+	</div>
     <div class="sliderContainer">
-	<a  style="cursor: pointer" id="arrLeftClick_Project"><img src="src/img/dvd/arrLeft.png" class="arrLeft"></img></a>
-	<a  style="cursor: pointer" id="arrRightClick_Project"><img src="src/img/dvd/arrRight.png" class="arrRight"></img></a>
+	<a  style="cursor: pointer" id="arrLeftClick_Project"><img src="src/img/slider/arrow_left.png" class="arrLeft arr_project"></img></a>
+	<a  style="cursor: pointer" id="arrRightClick_Project"><img src="src/img/slider/arrow_right.png" class="arrRight arr_project"></img></a>
 	
 	<div id="slider" class="slider" style="width: 100%; height: 100%;">
 	  <ul>
