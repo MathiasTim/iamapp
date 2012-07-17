@@ -61,6 +61,37 @@ div.ui-content{
       height:100%;
       width:100%;
   }  
+  
+
+  /*=================================================== */
+  /*                 INFO WRAPPER                       */
+  /*=================================================== */  
+  #info-wrapper{
+      background-color:rgba(255, 255, 255, 0.0);
+      overflow:hidden;
+      position:fixed;
+      z-index:999999;
+      height:100%;
+      width:100%;
+      display:none;
+  } 
+     
+  #info-layer{
+      margin:5%;
+      padding:5%;
+      background-color:rgba(255, 255, 255, 0.9);
+      border-radius:5px;
+      overflow:hidden;
+      position:fixed;
+      z-index:999999;
+      height:72%;
+      width:80%;
+  }  
+  
+  .no_internet_connection{
+      font-size:5em;
+      font-family:verdana;
+  }      
 
 
   /*=================================================== */

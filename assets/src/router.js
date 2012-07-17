@@ -10,7 +10,8 @@ define([
         myScroll : null,
         windowHeight : $(window).height(),
         windowWidth : $(window).width(),
-        renderedFirst : false,        
+        renderedFirst : false,   
+        activateSound : true,              
         
         initialize: function(){            
 
@@ -83,6 +84,9 @@ define([
         ///////////////////////////////////////////
         home: function(){    
 
+            // activate firstLevel sound again
+            this.activateSound = true;
+            
             // $$.changePage(this.homeView.render(),{ transition: "slide"});   // not ready yet
             Util.bodyClass('home', this.bodyClasses); // need to set (and unset any other) body class for default css
             
@@ -96,7 +100,7 @@ define([
                 this.renderedFirst = true;
             }
             
-            homeView.render();
+            homeView.render(this.locateAudioWrapper);
             
             this.myScroll = new iScroll('scroller', { zoom:true, zoomMax: 2, hScrollbar: false, vScrollbar: false, bounce:false });
         },
@@ -107,7 +111,10 @@ define([
         laptopFirstLevel: function(){
 
             // play sound
-            this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/laptop_klick.mp3" type="audio/mp3" /></audio>');
+            if(this.activateSound){
+                this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/laptop_klick.mp3" type="audio/mp3" /></audio>');
+                this.activateSound = false;
+            }
                         
             Util.bodyClass('laptop_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             laptopView.laptopFirstLevel();
@@ -134,7 +141,10 @@ define([
         cameraFirstLevel: function(){
             
             // play sound
-            this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/kamera_klick.mp3" type="audio/mp3" /></audio>');
+            if(this.activateSound){
+                this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/kamera_klick.mp3" type="audio/mp3" /></audio>');
+                this.activateSound = false;
+            }
 
             Util.bodyClass('camera_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             cameraView.cameraFirstLevel();
@@ -162,7 +172,10 @@ define([
         smartphoneFirstLevel: function(){
             
             // play sound
-            this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/smartphone_klick.mp3" type="audio/mp3" /></audio>');
+            if(this.activateSound){
+                this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/smartphone_klick.mp3" type="audio/mp3" /></audio>');
+                this.activateSound = false;
+            }
             
             Util.bodyClass('smartphone_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             smartphoneView.smartphoneFirstLevel();
@@ -212,7 +225,10 @@ define([
         mapFirstLevel: function(){
             
             // play sound
-            this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/flyer_klick.mp3" type="audio/mp3" /></audio>');
+            if(this.activateSound){
+                this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/flyer_klick.mp3" type="audio/mp3" /></audio>');
+                this.activateSound = false;
+            }            
             
             Util.bodyClass('map_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             mapView.mapFirstLevel(); 
@@ -258,7 +274,10 @@ define([
         calculatorFirstLevel: function(){
             
             // play sound
-            this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/block_klick.mp3" type="audio/mp3" /></audio>');
+            if(this.activateSound){
+                this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/block_klick.mp3" type="audio/mp3" /></audio>');
+                this.activateSound = false;
+            }                   
 
             Util.bodyClass('calculator_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             calculatorView.calculatorFirstLevel();
@@ -285,7 +304,10 @@ define([
         dvdFirstLevel: function(){
             
             // play sound
-            this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/block_klick.mp3" type="audio/mp3" /></audio>');
+            if(this.activateSound){
+                this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/block_klick.mp3" type="audio/mp3" /></audio>');
+                this.activateSound = false;
+            }                    
 
             Util.bodyClass('dvd_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             dvdView.dvdFirstLevel();
@@ -312,7 +334,10 @@ define([
         drawingsFirstLevel: function(){
             
             // play sound
-            this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/block_klick.mp3" type="audio/mp3" /></audio>');
+            if(this.activateSound){
+                this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/block_klick.mp3" type="audio/mp3" /></audio>');
+                this.activateSound = false;
+            }               
 
             Util.bodyClass('drawings_first_level', this.bodyClasses); // need to set (and unset any other) body class for default css
             drawingsView.drawingsFirstLevel();
