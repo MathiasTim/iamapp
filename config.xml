@@ -15,7 +15,7 @@
 		Mathias Maier
 	</author>
     <preference name="prerendered-icon" value="true" />
-    <preference name="stay-in-webview" value="false" />
+    <preference name="stay-in-webview" value="true" />
     
     <icon src="icon.png" gap:role="default" />
     <icon src="icon_57.png" gap:platform="ios" width="57" height="57" />
