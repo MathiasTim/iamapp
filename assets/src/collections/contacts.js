@@ -4,7 +4,7 @@ define([
 
     var collection = Backbone.Collection.extend({
         model: contactsModel,
-        url: 'src/data/contacts.json'
+        url: 'assets/src/data/contacts.json'
         //url: 'http://iamapp.multimedia.hs-augsburg.de/json/requests/index.php?q=smartphone'
     });
       
