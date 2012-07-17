@@ -22,5 +22,5 @@ define([
                 
     });   
       
-    return collection; 
+    return collection;
 });
