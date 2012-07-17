@@ -19,6 +19,7 @@ define([
             
             $('#main').css('width', 'auto');
             $('#main').css('height', 'auto');
+            $('#scroller').css('height', 'auto');
             
             
             // fyi:

@@ -305,7 +305,7 @@ define([
             
             // play sound
             if(this.activateSound){
-                this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/block_klick.mp3" type="audio/mp3" /></audio>');
+                this.locateAudioWrapper.html('<audio autoplay="autoplay"><source src="src/sounds/dvd_klick.mp3" type="audio/mp3" /></audio>');
                 this.activateSound = false;
             }                    
 

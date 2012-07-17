@@ -45,8 +45,8 @@ define([
 			slider2.next();
 			return true;
 		})
-		
-		setTimeout(function() { $(".descrInner").fitText(3.5) }, 10);
+		$(".descrInner").fitText(3.5);
+		//setTimeout(function() { $(".descrInner").fitText(3.5) }, 10);
 	}
 	
 	// Slider für Projekt Übersicht
@@ -98,6 +98,7 @@ define([
 		
 		// set Slider Img width
 		sliderWidth = $("#sliderProject").width();
+		
 		$("#sliderProject img").css("width", sliderWidth / 3.7);
 	}
 	
@@ -160,7 +161,8 @@ define([
 	    	$("#overlay_projectinfo").fadeIn();
 	    });
 	    
-	    setTimeout(function() { $(".descrInner").fitText(3.5) }, 10);
+	    $(".descrInner").fitText(3.5);
+	    //setTimeout(function() { $(".descrInner").fitText(3.5) }, 10);
 	}
 	
 	// Set Slider Info 

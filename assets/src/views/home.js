@@ -68,6 +68,7 @@ define([
             // set windowHeight for iScroll once
             this.locateMainElement.css('width', this.windowWidth+'px');
             this.locateMainElement.css('height', this.windowHeight+'px');
+            $('#scroller').css('height', this.windowHeight+'px');
             
             $(this.el).html( this.deskTemplate );
         },

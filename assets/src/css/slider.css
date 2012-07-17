@@ -286,7 +286,7 @@ a.projectSquare img {
 .infoBack {
 	position: absolute;
 	right: 2%;
-	bottom: 17%;
+	bottom: 48%;
 	text-decoration: none;
 	color: #333 !important;
 	cursor: pointer;
@@ -383,11 +383,11 @@ a.projectSquare img {
 }
 
 #slider_info {
-	bottom: 2%;
+    bottom: 4%;
     cursor: pointer;
-    height: 10%;
+    height: 7%;
     position: absolute;
-    right: 5%;
+    right: 3%;
     width: 5%;
 }
 
@@ -400,7 +400,7 @@ a.projectSquare img {
 }
 
 #sliderOverlay_back {
-	height: 142%;
+	height: 100%;
 }
 
 #slider_moreinfo {
