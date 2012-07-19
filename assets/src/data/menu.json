@@ -1,6 +1,6 @@
 [
     {
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "icon_path": "/sites/default/files/",
         "category": "camera",
         "menu": [
@@ -37,7 +37,7 @@
         ]
     },
     {
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "icon_path": "/sites/default/files/",
         "category": "dvd",
         "menu": [
@@ -49,7 +49,7 @@
         ]
     },
     {
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "icon_path": "/sites/default/files/",
         "category": "laptop",
         "menu": [
@@ -76,7 +76,7 @@
         ]
     },
     {
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "icon_path": "/sites/default/files/",
         "category": "smartphone",
         "menu": [
@@ -93,7 +93,7 @@
         ]
     },
     {
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "icon_path": "/sites/default/files/",
         "category": "tablet",
         "menu": [
@@ -110,7 +110,7 @@
         ]
     },
     {
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "icon_path": "/sites/default/files/",
         "category": "taschenrechner",
         "menu": [
@@ -132,9 +132,9 @@
         ]
     },
     {
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "icon_path": "/sites/default/files/",
-        "category": "drawings",
+        "category": "zeichenblock",
         "menu": [
             [
                 "Analog-Druck",

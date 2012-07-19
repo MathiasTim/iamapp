@@ -4,8 +4,8 @@ define([
 
     var collection = Backbone.Collection.extend({
         model: menuModel,
-        //url: 'src/data/menu.json'
-        url: 'http://iamapp.multimedia.hs-augsburg.de/json/requests/index.php?q=menu'
+        url: 'src/data/menu.json'
+        //url: 'http://iamdesk.de/json/requests/index.php?q=menu'
     });
  
     collection = new collection();         
@@ -22,5 +22,5 @@ define([
                 
     });   
       
-    return collection;
+    return collection; 
 });

@@ -2,7 +2,7 @@
     {
         "id": 3,
         "subject_description": "",
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
         "big_pics": "/sites/default/files/styles/large/public/",
         "projects": [

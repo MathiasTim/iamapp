@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "icon": "http://iamapp.multimedia.hs-augsburg.de/sites/default/files/test.jpg",
+        "icon": "http://iamdesk.de/cms/sites/default/files/test.jpg",
         "title": "Testtermin1",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "start": "2012-07-05 18:30:00",
@@ -9,7 +9,7 @@
     },
     {
         "id": 2,
-        "icon": "http://iamapp.multimedia.hs-augsburg.de/sites/default/files/icon_printdesign.png",
+        "icon": "http://iamdesk.de/cms/sites/default/files/icon_printdesign.png",
         "title": "BLubb",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "start": "2012-06-21 10:08:00",
@@ -17,7 +17,7 @@
     },
     {
         "id": 3,
-        "icon": "http://iamapp.multimedia.hs-augsburg.de/sites/default/files/icon_printdesign.png",
+        "icon": "http://iamdesk.de/cms/sites/default/files/icon_printdesign.png",
         "title": "blaaaa",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "start": "2012-08-08 08:30:00",
@@ -25,7 +25,7 @@
     },
     {
         "id": 4,
-        "icon": "http://iamapp.multimedia.hs-augsburg.de/sites/default/files/test.jpg",
+        "icon": "http://iamdesk.de/cms/sites/default/files/test.jpg",
         "title": "24h Termin",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "start": "2012-07-12 18:30:00",
@@ -33,7 +33,7 @@
     },
     {
         "id": 5,
-        "icon": "http://iamapp.multimedia.hs-augsburg.de/sites/default/files/test.jpg",
+        "icon": "http://iamdesk.de/cms/sites/default/files/test.jpg",
         "title": "laaaaaaaaaanger Termin",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "start": "2012-07-22 18:30:00",

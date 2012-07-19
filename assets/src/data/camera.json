@@ -2,7 +2,7 @@
     {
         "id": 24,
         "subject_description": "Impressum Sub",
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
         "big_pics": "/sites/default/files/styles/large/public/",
         "projects": [
@@ -24,7 +24,7 @@
     {
         "id": 19,
         "subject_description": "",
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
         "big_pics": "/sites/default/files/styles/large/public/",
         "projects": [
@@ -46,7 +46,7 @@
     {
         "id": 17,
         "subject_description": "Apps bla blubb....",
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "server_uri": "http://iamdesk.de/cms",
         "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
         "big_pics": "/sites/default/files/styles/large/public/",
         "projects": [
