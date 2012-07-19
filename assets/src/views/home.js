@@ -1,6 +1,6 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'collections/home', 'text!templates/home/desk.html'
-], function($, $$, _, Backbone, Util, CollectionHome, templateDesk) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'text!templates/home/desk.html'
+], function($, $$, _, Backbone, Util, templateDesk) {
         
     var View = Backbone.View.extend({
        

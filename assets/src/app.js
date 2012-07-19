@@ -10,10 +10,12 @@ define([
         
         // check if online/offline   
         // bind eventlistener 
+        /*
         $(window).bind({
             'online': showInfoLayer,
             'offline': showInfoLayer
-        });
+        }); 
+        */
          
         // set jqueryMobile default-settings false
         // otherwise backbone doesn´t work 
