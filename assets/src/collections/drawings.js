@@ -4,8 +4,8 @@ define([
 
     var collection = Backbone.Collection.extend({
         model: drawingsModel,
-        url: 'src/data/drawings.json'
-        //url: 'http://iamapp.multimedia.hs-augsburg.de/json/requests/index.php?q=dvd'
+        //url: 'src/data/drawings.json'
+        url: 'http://iamapp.multimedia.hs-augsburg.de/json/requests/index.php?q=zeichenblock'
     });
       
     return collection;

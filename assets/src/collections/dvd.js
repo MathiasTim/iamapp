@@ -4,8 +4,8 @@ define([
 
     var collection = Backbone.Collection.extend({
         model: dvdModel,
-        url: 'src/data/dvd.json'
-        //url: 'http://iamapp.multimedia.hs-augsburg.de/json/requests/index.php?q=dvd'
+        //url: 'src/data/dvd.json'
+        url: 'http://iamapp.multimedia.hs-augsburg.de/json/requests/index.php?q=dvd'
     });
       
     return collection;
