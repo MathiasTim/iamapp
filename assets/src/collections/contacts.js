@@ -4,8 +4,8 @@ define([
 
     var collection = Backbone.Collection.extend({
         model: contactsModel,
-        url: 'src/data/contacts.json'
-        //url: 'http://iamdesk.de/json/requests/index.php?q=smartphone'
+        //url: 'src/data/contacts.json'
+        url: 'http://iamdesk.de/json/requests/index.php?q=contacts'
     });
       
     return collection;

@@ -4,8 +4,8 @@ define([
 
     var collection = Backbone.Collection.extend({
         model: calculatorModel,
-        url: 'src/data/calculator.json'
-        //url: 'http://iamdesk.de/json/requests/index.php?q=smartphone'
+        //url: 'src/data/calculator.json'
+        url: 'http://iamdesk.de/json/requests/index.php?q=taschenrechner'
     });
       
     return collection;
