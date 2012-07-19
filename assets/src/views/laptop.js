@@ -142,7 +142,6 @@ define([
                 }); 
                 
             } else {
-                alert('laptop exists');
                 this.renderSecondLevel(id);
             }             
             
@@ -229,7 +228,7 @@ define([
             _.each(project.media, function(value){ 
                   
                   //console.log(Util.splitMedia(value));                  
-                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value)} );
+                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
                   
             });             
             
@@ -237,12 +236,12 @@ define([
             
 			$(this.el).html(Slider.slider2Init());    
             $(this.sliderProject).append(this.templateThirdLevelListItems);	 
+            Slider.setInfo(pathBigPics, serverUri);
            
 			$(this.el).append(Slider.sliderPageSize());	 
             	 
             $(this.el).append(Slider.slider2Set());	 
 			$(this.el).append(Slider.setInfo(pathBigPics, serverUri));
-
         },      
         
 
@@ -348,7 +347,6 @@ define([
             var lpt_minutes = lpt_now.getMinutes();
             var lpt_hours = ((lpt_hours < 10) ? "0" + lpt_hours : lpt_hours);
             var lpt_minutes = ((lpt_minutes < 10) ? "0" + lpt_minutes : lpt_minutes);
-            console.log(lpt_day + " "+ lpt_day_txt + " "+ lpt_hours + ":" + lpt_minutes);
             $lpt_time.html(lpt_day_txt + " " + lpt_hours + ":" + lpt_minutes);
             
             this.timeout = setTimeout(function(){

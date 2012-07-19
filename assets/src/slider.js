@@ -2,8 +2,8 @@
 // projectslider: overall functions
 ///////////////////////////////////////////////////////
 define([
-    'jquery', 'jqueryMobile', 'swipe', 'swipeup', 'text!templates/slider/slider.html', 'text!templates/slider/sliderProject.html'
-], function($, $$, GetSwipe, SwipeUp, templateSlider, templateSliderProject) {
+    'jquery', 'jqueryMobile', 'jqueryFittext', 'swipe', 'swipeup', 'text!templates/slider/slider.html', 'text!templates/slider/sliderProject.html'
+], function($, $$, $$$, GetSwipe, SwipeUp, templateSlider, templateSliderProject) {
 	
 	info_header: 	'#project_info_header';
 	info_icon: 		'#project_info_icon'; 
@@ -160,9 +160,7 @@ define([
 		$("#slider_moreinfo").click(function() {
 	    	$("#overlay_projectinfo").fadeIn();
 	    });
-	    
-	    $(".descrInner").fitText(3.5);
-	    //setTimeout(function() { $(".descrInner").fitText(3.5) }, 10);
+
 	}
 	
 	// Set Slider Info 

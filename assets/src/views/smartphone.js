@@ -207,15 +207,15 @@ define([
             _.each(project.media, function(value){ 
                   
                   //console.log(Util.splitMedia(value));                  
-                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value)} );
+                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {project: project, media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
                   
             });             
             
 			
 			// render site
-            
 			$(this.el).html(Slider.slider2Init());    
             $(this.sliderProject).append(this.templateThirdLevelListItems);	 
+            Slider.setInfo(pathBigPics, serverUri);
             //this.initPageSize();
 
 			//this.setDrawings();  

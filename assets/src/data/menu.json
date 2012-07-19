@@ -1,1 +1,161 @@
-[{"server_uri" : "http://iamapp.multimedia.hs-augsburg.de","icon_path" : "/sites/default/files/","category" : "camera","menu" : [["Abstrakt | Eperimentell", 24, "cam_icon_4.png"],["Composing | Digiart", 25, "cam_icon_5.png"],["Mensch | Emotion", 20, "cam_icon_1.png"],["Natur | Landschaft", 21, "cam_icon_2.png"],["Sonstiges", 26, "cam_icon_6.png"],["Stilleben | Architektur", 23, "cam_icon_3.png"]]},{"server_uri" : "http://iamapp.multimedia.hs-augsburg.de","icon_path" : "/sites/default/files/","category" : "dvd","menu" : [["Kurzfilme", 3, "ok.png"]]},{"server_uri" : "http://iamapp.multimedia.hs-augsburg.de","icon_path" : "/sites/default/files/","category" : "laptop","menu" : [["3D-Projekte", 6, "lpt_ordner.png"],["Games", 5, "lpt_ordner_0.png"],["Interaktion", 8, "lpt_ordner_1.png"],["Web", 4, "lpt_ordner_2.png"],["WebGL", 7, "lpt_ordner_3.png"]]},{"server_uri" : "http://iamapp.multimedia.hs-augsburg.de","icon_path" : "/sites/default/files/","category" : "smartphone","menu" : [["App-Entwicklung", 17, "apps.png"],["Impressum", 18, "hs.png"],["Kontakt", 19, "kontakte.png"]]},{"server_uri" : "http://iamapp.multimedia.hs-augsburg.de","icon_path" : "/sites/default/files/","category" : "tablet","menu" : [["Print-Design", 13, "icon_printdesign.png"],["Webdesign", 14, "icon_webdesign_0.png"]]},{"server_uri" : "http://iamapp.multimedia.hs-augsburg.de","icon_path" : "/sites/default/files/","category" : "taschenrechner","menu" : [["Computergrafik", 22, "calc_cg.png"],["CSA", 16, "calc_csa.png"],["Mathe", 15, "calc_math.png"]]},{"server_uri" : "http://iamapp.multimedia.hs-augsburg.de","icon_path" : "/sites/default/files/","category" : "zeichenblock","menu" : [["Analog-Druck", 12, "zb_s_06.png"],["Scribbles", 9, "zb_s_03.png"],["Storyboards", 11, "zb_s_05.png"],["Zeichnungen", 10, "zb_s_04.png"]]}]
+[
+    {
+        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "icon_path": "/sites/default/files/",
+        "category": "camera",
+        "menu": [
+            [
+                "Abstrakt | Eperimentell",
+                24,
+                "cam_icon_4.png"
+            ],
+            [
+                "Composing | Digiart",
+                25,
+                "cam_icon_5.png"
+            ],
+            [
+                "Mensch | Emotion",
+                20,
+                "cam_icon_1.png"
+            ],
+            [
+                "Natur | Landschaft",
+                21,
+                "cam_icon_2.png"
+            ],
+            [
+                "Sonstiges",
+                26,
+                "cam_icon_6.png"
+            ],
+            [
+                "Stilleben | Architektur",
+                23,
+                "cam_icon_3.png"
+            ]
+        ]
+    },
+    {
+        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "icon_path": "/sites/default/files/",
+        "category": "dvd",
+        "menu": [
+            [
+                "Kurzfilme",
+                3,
+                "ok.png"
+            ]
+        ]
+    },
+    {
+        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "icon_path": "/sites/default/files/",
+        "category": "laptop",
+        "menu": [
+            [
+                "3D-Projekte",
+                6,
+                "lpt_ordner.png"
+            ],
+            [
+                "Games",
+                5,
+                "lpt_ordner_0.png"
+            ],
+            [
+                "Interaktion",
+                8,
+                "lpt_ordner_1.png"
+            ],
+            [
+                "Web",
+                4,
+                "lpt_ordner_2.png"
+            ]
+        ]
+    },
+    {
+        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "icon_path": "/sites/default/files/",
+        "category": "smartphone",
+        "menu": [
+            [
+                "App-Entwicklung",
+                17,
+                "apps_0.png"
+            ],
+            [
+                "Impressum",
+                18,
+                "hs_0.png"
+            ]
+        ]
+    },
+    {
+        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "icon_path": "/sites/default/files/",
+        "category": "tablet",
+        "menu": [
+            [
+                "Print-Design",
+                13,
+                "icon_printdesign.png"
+            ],
+            [
+                "Webdesign",
+                14,
+                "icon_webdesign_0.png"
+            ]
+        ]
+    },
+    {
+        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "icon_path": "/sites/default/files/",
+        "category": "taschenrechner",
+        "menu": [
+            [
+                "Computergrafik",
+                22,
+                "calc_cg.png"
+            ],
+            [
+                "CSA",
+                16,
+                "calc_csa_0.png"
+            ],
+            [
+                "Mathe",
+                15,
+                "calc_math.png"
+            ]
+        ]
+    },
+    {
+        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
+        "icon_path": "/sites/default/files/",
+        "category": "drawings",
+        "menu": [
+            [
+                "Analog-Druck",
+                12,
+                "zb_s_06.png"
+            ],
+            [
+                "Scribbles",
+                9,
+                "zb_s_03.png"
+            ],
+            [
+                "Storyboards",
+                11,
+                "zb_s_05.png"
+            ],
+            [
+                "Zeichnungen",
+                10,
+                "zb_s_04.png"
+            ]
+        ]
+    }
+]

@@ -1,6 +1,6 @@
 [
     {
-        "id": 18,
+        "id": 22,
         "subject_description": "Impressum Sub",
         "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
         "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
@@ -22,29 +22,7 @@
         ]
     },
     {
-        "id": 19,
-        "subject_description": "",
-        "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
-        "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
-        "big_pics": "/sites/default/files/styles/large/public/",
-        "projects": [
-            {
-                "title": "Adapp",
-                "media": [
-                    "image://slideshow-slider-2.jpg",
-                    "image://slideshow-slider-3.jpg",
-                    "image://desk_0.jpg"
-                ],
-                "authors": "Martin Kolb<br/>Mathias Maier",
-                "uri": "adapp.fornax.uberspace.de",
-                "icon_uri": "logo4.png",
-                "term": "2011",
-                "project_description": "Eine Anwendung fÃ¼r mobile EndgerÃ¤te (Handys und Tablets mit OS Android, auch als Mobile Website fÃ¼r andere OS), die Angebote, Rabatte, Sonderangebote, etc.. dem Konsumenten gebÃ¼ndelt und zielgerichtet anbietet."
-            }
-        ]
-    },
-    {
-        "id": 17,
+        "id": 15,
         "subject_description": "Apps bla blubb....",
         "server_uri": "http://iamapp.multimedia.hs-augsburg.de",
         "small_pics": "/sites/default/files/styles/square_thumbnail/public/",

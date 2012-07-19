@@ -30,7 +30,7 @@ define([
 
           var id,
               content; 
-                  
+
           if(value.match("image://")){
               id = value.split("image://")[1];
               

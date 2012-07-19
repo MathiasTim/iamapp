@@ -85,7 +85,7 @@ define([
         
         
         drawingsSecondLevel: function(id){
-           
+
             // cast string into integer
             id = parseInt(id);
             
@@ -177,8 +177,39 @@ define([
             id = parseInt(id);
             id2 = parseInt(id2);
             
-            // render loadingScreen
-            $(this.el).html(Util.loadingScreen());
+            // fyi:
+            // by convention, we make a private 'that' variable. 
+            // 'this' is used to make the object available to the private methods
+            var that = this;            
+
+            if(!this.dataAlreadyExist){
+                
+                this.collection = new CollectionDrawings();   
+                
+                // just fetch the data from the server once         
+                this.collection.fetch({
+                    
+                    success: function(collection) {
+                        
+                        that.renderThirdLevel(id, id2);
+                        that.dataAlreadyExist = true;  
+                        
+                    },
+                    
+                    error: function(){
+                        console.log('something went wrong --> fetching data failed');
+                    }
+                    
+                }); 
+                
+            } else {
+                this.renderThirdLevel(id, id2);
+            }
+            
+            
+        },
+        
+        renderThirdLevel: function(id, id2){
             
             // find the entry
             var project = this.collection.where({id: id});
@@ -187,7 +218,6 @@ define([
             var pathBigPics = project[0].attributes.big_pics;
             var pathSmallPics = project[0].attributes.small_pics;
             var serverUri = project[0].attributes.server_uri;
-           
             // find the project
             project = project[0].attributes.projects[id2];    
             
@@ -205,24 +235,24 @@ define([
              
             // media loop                  
             _.each(project.media, function(value){ 
-                  
                   //console.log(Util.splitMedia(value));                  
-                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value)} );
-                  
+                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {project: project, media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
             });             
             
             // render site
             
-			$(this.el).html(Slider.slider2Init());    
-            $(this.sliderProject).append(this.templateThirdLevelListItems);	 
+            $(this.el).html(Slider.slider2Init());    
+            $(this.sliderProject).append(this.templateThirdLevelListItems);  
             //this.initPageSize();
 
-			this.setDrawings();  
-            	 
-            $(this.el).append(Slider.slider2Set());	 
-
-
-        }  
+            Slider.setInfo(pathBigPics, serverUri); 
+            this.setDrawings();  
+            $(this.el).append(Slider.slider2Set());  
+            
+        }
+        
+        
+          
                 
         
         
