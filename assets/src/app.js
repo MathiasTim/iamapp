@@ -2,7 +2,7 @@
 // initialize router & change default settings
 ///////////////////////////////////////////////////////
 define([
-    'jquery', 'jqueryMobile', 'jqueryFittext', 'underscore', 'backbone', 'router', 'util', 'iscroll'
+    'order!jquery', 'order!jqueryMobile', 'order!jqueryFittext', 'order!underscore', 'order!backbone', 'order!router', 'order!util', 'order!iscroll'
 
 ], function($, $$, $$$, _, Backbone, Router, Util, iscroll) {
 

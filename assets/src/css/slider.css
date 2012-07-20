@@ -83,7 +83,8 @@ a.projectSquare img {
 
 #slider ul {
 	width: 100%;
-	margin-top: 24.5%;
+	margin-top: 20.5%;
+    padding-bottom: 5%;
 	height: 65%;
 }
 
@@ -370,7 +371,7 @@ a.projectSquare img {
 	width: 100%;
 	display: none;
 	background: url(../img/calculator/calc_bg_pattern.png);
-	z-index: 10000;
+	z-index: 10100;
 	text-shadow: none;
 }
 
@@ -416,22 +417,22 @@ a.projectSquare img {
 	height: 100%;
 }
 
-#slider_home {
-	position: absolute;
-	top: 37%;
-	width: 5%;
+#slider_home {   
+    position: absolute; 
 	height: 5%;
-	left: 94%;
-	z-index: 10000;
+    left: 92%;
+    top: 7%;
+    width: 5%;
+    z-index: 10000;
 }
 
 #slider_back {
-	position: absolute;
-	top: 28%;
-	width: 5%;
 	height: 5%;
-	left: 94%;
-	z-index: 10000;
+    left: 83%;
+    position: absolute;
+    top: 7%;
+    width: 5%;
+    z-index: 10000;
 }
 
 #slider_back img, #slider_home img {
@@ -451,7 +452,7 @@ a.projectSquare img {
 }
 
 .slider_page {
-	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255,1) 6%, rgba(255,255,255,1) 93%, rgba(255,255,255,0) 95%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 5.9%, #FFFFFF 6%, #FFFFFF 97%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 90%) repeat scroll 0 0 transparent;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(5%,rgba(255,255,255,0)), color-stop(6%,rgba(255,255,255,1)), color-stop(93%,rgba(255,255,255,1)), color-stop(95%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 5%,rgba(255,255,255,1) 6%,rgba(255,255,255,1) 93%,rgba(255,255,255,0) 95%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
 	background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 5%,rgba(255,255,255,1) 6%,rgba(255,255,255,1) 93%,rgba(255,255,255,0) 95%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */

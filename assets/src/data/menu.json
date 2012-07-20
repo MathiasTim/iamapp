@@ -42,6 +42,11 @@
         "category": "dvd",
         "menu": [
             [
+                "Animationsfilme",
+                27,
+                "home.png"
+            ],
+            [
                 "Kurzfilme",
                 3,
                 "ok.png"

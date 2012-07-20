@@ -169,6 +169,8 @@ define([
 		var info_author = 	$(".project_info_hidden_author").html();
 		var info_text = 	$(".project_info_hidden_text").html();
 		var info_icon = 	$(".project_info_hidden_icon").html();
+		var info_date = 	$(".project_info_hidden_date").html();
+		
 		$("#profect_info_header").html(info_header);
 		$("#project_info_text").html(info_text);
 		$("#profect_info_authors").html(info_author);

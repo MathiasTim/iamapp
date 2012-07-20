@@ -202,7 +202,7 @@ define([
         },
         
         calculatorThirdLevel: function(id, id2){
-            
+
             // cast string into integer
             id = parseInt(id);
             id2 = parseInt(id2);
