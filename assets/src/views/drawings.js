@@ -1,6 +1,6 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/drawings', 'text!templates/drawings/drawings.html', 'text!templates/drawings/firstLevelListItems.html', 'text!templates/drawings/secondLevelListItems.html', 'text!templates/drawings/thirdLevel.html', 'text!templates/drawings/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionDrawings, templateDrawings, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/info', 'collections/drawings', 'text!templates/drawings/drawings.html', 'text!templates/drawings/firstLevelListItems.html', 'text!templates/drawings/secondLevelListItems.html', 'text!templates/drawings/thirdLevel.html', 'text!templates/drawings/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionInfo, CollectionDrawings, templateDrawings, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
        
@@ -15,14 +15,24 @@ define([
         collection: '',
         dataAlreadyExist: false,
 
-        /*
+        
         events: {
-            "click .remove"     : "removeCollection",
+            "click .drawings_info"     : "info",
         }, 
-        */
+        
                
         initialize: function(){           
               
+        },
+        
+        info: function() {
+            var model = CollectionInfo.where({category: "zeichenblock"});
+            var locateInfoWrapper = $('#info-wrapper');
+            var locateInfoLayer = locateInfoWrapper.find('#info-layer');
+            locateInfoLayer.html(model[0].attributes.info);
+            var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+            locateInfoClose.show();
+            locateInfoWrapper.show();
         },
         
         setDrawings: function() {
@@ -132,11 +142,13 @@ define([
                  
                  // loop 
                  this.collection.each( function(model){                       
-           			
-           			that.templateSecondLevelListItems += "<li>";
-           			
-                    if(model.get('id') === id){                            
-                        
+           		
+                    if(model.get('id') === id){  
+                    	
+	                // Counter SliderContainer
+	                var i = 0;		
+	           		that.templateSecondLevelListItems += "<li>";     
+           		
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
@@ -145,14 +157,14 @@ define([
 	                        i++;
 	                        if (i == 6) {
 	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        	i = 0;
 	                        }
                         });  
                         
               			that.templateSecondLevelListItems += "</li>";
                     }
-    
                   
-                 });                       
+                 });                        
                  
                                    
                  // render MediaSlider
@@ -213,41 +225,52 @@ define([
             
             // find the entry
             var project = this.collection.where({id: id});
-
-            // pathes
-            var pathBigPics = project[0].attributes.big_pics;
-            var pathSmallPics = project[0].attributes.small_pics;
-            var serverUri = project[0].attributes.server_uri;
-            // find the project
-            project = project[0].attributes.projects[id2];    
             
-            // clear templates
-            this.templateThirdLevel = '';
-            this.templateThirdLevelListItems = '';
-         
-            // unique data   
-            this.templateThirdLevel += _.template(templateThirdLevel, {project: project} );            
-            
-            // fyi:
-            // by convention, we make a private 'that' variable. 
-            // 'this' is used to make the object available to the private methods
-            var that = this;
+            if(typeof(project[0])!="undefined"){
+                // pathes
+                var pathBigPics = project[0].attributes.big_pics;
+                var pathSmallPics = project[0].attributes.small_pics;
+                var serverUri = project[0].attributes.server_uri;
+                // find the project
+                project = project[0].attributes.projects[id2];    
+                
+                // clear templates
+                this.templateThirdLevel = '';
+                this.templateThirdLevelListItems = '';
              
-            // media loop                  
-            _.each(project.media, function(value){ 
-                  //console.log(Util.splitMedia(value));                  
-                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {project: project, media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
-            });             
+                // unique data   
+                this.templateThirdLevel += _.template(templateThirdLevel, {project: project} );            
+                
+                // fyi:
+                // by convention, we make a private 'that' variable. 
+                // 'this' is used to make the object available to the private methods
+                var that = this;
+                 
+                // media loop                  
+                _.each(project.media, function(value){ 
+                      //console.log(Util.splitMedia(value));                  
+                      that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {project: project, media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
+                
+                });             
+                
+                // render site
+                
+                $(this.el).html(Slider.slider2Init());    
+                $(this.sliderProject).append(this.templateThirdLevelListItems);  
+                //this.initPageSize();
+    
+                Slider.setInfo(pathBigPics, serverUri); 
+                this.setDrawings();  
+                $(this.el).append(Slider.slider2Set());
+            } else {
+                var locateInfoWrapper = $('#info-wrapper');
+                var locateInfoLayer = locateInfoWrapper.find('#info-layer');
+                locateInfoLayer.html("sorry, keine Inhalte gefunden");
+                var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+                locateInfoClose.show();
+                locateInfoWrapper.show();
+            }
             
-            // render site
-            
-            $(this.el).html(Slider.slider2Init());    
-            $(this.sliderProject).append(this.templateThirdLevelListItems);  
-            //this.initPageSize();
-
-            Slider.setInfo(pathBigPics, serverUri); 
-            this.setDrawings();  
-            $(this.el).append(Slider.slider2Set());  
             
         }
         

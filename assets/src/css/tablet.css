@@ -16,6 +16,7 @@ body.tablet_first_level #tbl_content {
 
 body.tablet_first_level #tbl_content .background-image {
     position: absolute;
+    width: 100%;
 }
 
 body.tablet_first_level #tbl_content .background-image img {

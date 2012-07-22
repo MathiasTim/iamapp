@@ -1,6 +1,6 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/calculator', 'text!templates/calculator/calculator.html', 'text!templates/calculator/firstLevelListItems.html', 'text!templates/calculator/secondLevelListItems.html', 'text!templates/calculator/thirdLevel.html', 'text!templates/calculator/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionCalculator, templateCalculator, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/info', 'collections/calculator', 'text!templates/calculator/calculator.html', 'text!templates/calculator/firstLevelListItems.html', 'text!templates/calculator/secondLevelListItems.html', 'text!templates/calculator/thirdLevel.html', 'text!templates/calculator/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionInfo, CollectionCalculator, templateCalculator, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
        
@@ -167,11 +167,13 @@ define([
                  
                  // loop 
                  this.collection.each( function(model){                       
-           			
-           			that.templateSecondLevelListItems += "<li>";
-           			
-                    if(model.get('id') === id){                            
-                        
+           		
+                    if(model.get('id') === id){  
+                    	
+	                // Counter SliderContainer
+	                var i = 0;		
+	           		that.templateSecondLevelListItems += "<li>";     
+           		
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
@@ -180,14 +182,14 @@ define([
 	                        i++;
 	                        if (i == 6) {
 	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        	i = 0;
 	                        }
                         });  
                         
               			that.templateSecondLevelListItems += "</li>";
                     }
-    
                   
-                 });                      
+                 });                     
                  
                  // render Medien Slider
             	 $(this.el).html(Slider.sliderInit());    
@@ -242,46 +244,64 @@ define([
             
             // find the entry
             var project = this.collection.where({id: id});
-
-            // pathes
-            var pathBigPics = project[0].attributes.big_pics;
-            var pathSmallPics = project[0].attributes.small_pics;
-            var serverUri = project[0].attributes.server_uri;
-            // find the project
-            project = project[0].attributes.projects[id2];    
             
-            // clear templates
-            this.templateThirdLevel = '';
-            this.templateThirdLevelListItems = '';
-         
-            // unique data   
-            this.templateThirdLevel += _.template(templateThirdLevel, {project: project} );            
-            
-            // fyi:
-            // by convention, we make a private 'that' variable. 
-            // 'this' is used to make the object available to the private methods
-            var that = this;
-             
-            // media loop                  
-            _.each(project.media, function(value){ 
-                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {project: project, media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
-                  
-            });             
-            
-            // render site
-            $(this.el).html(Slider.slider2Init());    
-            $(this.sliderProject).append(this.templateThirdLevelListItems);  
-            Slider.setInfo(pathBigPics, serverUri);
-            
-            //this.initPageSize();
-
-            this.setCalculator();                 
-            $(this.el).append(Slider.slider2Set());  
+            if(typeof(project[0])!="undefined"){
+                // pathes
+                var pathBigPics = project[0].attributes.big_pics;
+                var pathSmallPics = project[0].attributes.small_pics;
+                var serverUri = project[0].attributes.server_uri;
+                // find the project
+                project = project[0].attributes.projects[id2];    
+                
+                // clear templates
+                this.templateThirdLevel = '';
+                this.templateThirdLevelListItems = '';
+                
+                // unique data   
+                this.templateThirdLevel += _.template(templateThirdLevel, {project: project} );            
+                
+                // fyi:
+                // by convention, we make a private 'that' variable. 
+                // 'this' is used to make the object available to the private methods
+                var that = this;
+                 
+                // media loop                  
+                _.each(project.media, function(value){ 
+                      that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {project: project, media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
+                      
+                });             
+                
+                // render site
+                $(this.el).html(Slider.slider2Init());    
+                $(this.sliderProject).append(this.templateThirdLevelListItems);  
+                Slider.setInfo(pathBigPics, serverUri);
+                
+                //this.initPageSize();
+    
+                this.setCalculator();                 
+                $(this.el).append(Slider.slider2Set());
+            } else {
+                var locateInfoWrapper = $('#info-wrapper');
+                var locateInfoLayer = locateInfoWrapper.find('#info-layer');
+                locateInfoLayer.html("sorry, keine Inhalte gefunden");
+                var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+                locateInfoClose.show();
+                locateInfoWrapper.show();
+            }
         },
 		  
 		  /* ############## CLICK EVENTS ############## */
-		 infoClicked 			: function(event){  console.log("info clicked"); },
-		 backwardClicked 		: function(event){  console.log("zurueck clicked"); }        
+		 infoClicked: function(){  
+		     var model = CollectionInfo.where({category: "taschenrechner"});
+             var locateInfoWrapper = $('#info-wrapper');
+             var locateInfoLayer = locateInfoWrapper.find('#info-layer');
+             locateInfoLayer.html(model[0].attributes.info);
+             var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+             locateInfoClose.show();
+             locateInfoWrapper.show();
+		 },
+		 
+		 backwardClicked: function(event){  console.log("zurueck clicked"); }        
         
    
         

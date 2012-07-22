@@ -16,7 +16,11 @@ define([
             'offline': showInfoLayer
         }); 
         */
-         
+        
+        //bind event to close info layer
+        var locateInfoClose = $('#info-wrapper .info-layer-close');
+        locateInfoClose.bind('click', closeinfo);
+
         // set jqueryMobile default-settings false
         // otherwise backbone doesn´t work 
         $$.ajaxEnabled = false;
@@ -41,7 +45,16 @@ define([
         } else{
             locateInfoWrapper.hide();
         }
-        
+    };
+    
+   
+
+    
+    var closeinfo = function() {
+        var locateInfoWrapper = $('#info-wrapper');
+        var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+        locateInfoClose.hide();
+        locateInfoWrapper.hide();
     };
 
     return {

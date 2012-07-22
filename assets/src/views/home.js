@@ -13,7 +13,8 @@ define([
         
         events: {
             "click .apfel"     : "changeImage",
-            "click .kaffee"     : "changeImage"
+            "click .kaffee"     : "changeImage",
+            "click .stellenanzeige"		:"stellenanzeige"
         }, 
         
         initialize: function(){
@@ -74,6 +75,7 @@ define([
         },
         
         changeImage: function(event){
+
             var locateClickedElement = $(event.target);
             var whichElement = locateClickedElement.attr('class');
 
@@ -99,7 +101,19 @@ define([
                 }
             }
             
-        }        
+        },
+        
+        // fades in and out the stellenanzeige
+        stellenanzeige: function(event){
+
+	    	$(".stellenanzeige_container").fadeIn();
+	    	
+	    	$(".stellenanzeige_container").click(function() {
+	    		$(".stellenanzeige_container").fadeOut();
+	    		
+	    	});
+    }
+         
         
     });
     

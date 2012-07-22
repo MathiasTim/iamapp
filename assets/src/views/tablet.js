@@ -1,6 +1,6 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/tablet', 'text!templates/tablet/firstLevel.html', 'text!templates/tablet/firstLevelListItems.html', 'text!templates/tablet/secondLevelListItems.html', 'text!templates/tablet/thirdLevel.html', 'text!templates/tablet/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionTablet, templateFirstLevel, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/info', 'collections/tablet', 'text!templates/tablet/firstLevel.html', 'text!templates/tablet/firstLevelListItems.html', 'text!templates/tablet/secondLevelListItems.html', 'text!templates/tablet/thirdLevel.html', 'text!templates/tablet/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionInfo, CollectionTablet, templateFirstLevel, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
        
@@ -17,12 +17,25 @@ define([
         tabletHeight: '1332', // px-Auflösung des Tablet Bildes
 
         events: {
-            "click .home" : "resetTimeout",
+            "click .tablet_home": "resetTimeout",
+            "click .tablet_info": "info",
         }, 
         
         initialize: function(){ 
               
         },
+        
+        info: function() {
+            var model = CollectionInfo.where({category: "tablet"});
+            var locateInfoWrapper = $('#info-wrapper');
+            var locateInfoLayer = locateInfoWrapper.find('#info-layer');
+            locateInfoLayer.html(model[0].attributes.info);
+            var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+            locateInfoClose.show();
+            locateInfoWrapper.show();
+        },
+        
+        
         
         tabletFirstLevel: function(){ 
             
@@ -127,26 +140,30 @@ define([
             
             var that = this;
             // loop 
-            var i = 0;
-            this.collection.each( function(model){                       
-                if(model.get('id') === id){ 
-                    that.templateSecondLevelListItems += "<li>";
-                    var subId = 0;
-                    _.each(model.attributes.projects, function(value){ 
-                        if(Util.resolutionType === 'high'){
-                            var iconPath = model.attributes.big_pics;
-                        } else{
-                            var iconPath = model.attributes.small_pics;
-                        }
-                        that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, id:id, subId:subId++, serverUri:model.attributes.server_uri, iconPath:iconPath } );                     
-                        i++;
-                        if (i == 6) {
-                            that.templateSecondLevelListItems += "</li><li>";
-                        }
-                    });
-                    that.templateSecondLevelListItems += "</li>";
-                }
-            });
+                 this.collection.each( function(model){                       
+           		
+                    if(model.get('id') === id){  
+                    	
+	                // Counter SliderContainer
+	                var i = 0;		
+	           		that.templateSecondLevelListItems += "<li>";     
+           		
+                        var subId = 0;
+                        
+                        _.each(model.attributes.projects, function(value){ 
+                              that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.big_pics, id:id, subId:subId++ } );                     
+	                        
+	                        i++;
+	                        if (i == 6) {
+	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        	i = 0;
+	                        }
+                        });  
+                        
+              			that.templateSecondLevelListItems += "</li>";
+                    }
+                  
+                 });   
             
             // render Medien Slider
             $(this.el).html(Slider.sliderInit());    
@@ -184,8 +201,6 @@ define([
          
             // unique data   
             this.templateThirdLevel += _.template(templateThirdLevel, {project: project } );            
-            
-            console.log(project);
             
             // fyi:
             // by convention, we make a private 'that' variable. 

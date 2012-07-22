@@ -5,7 +5,7 @@ define([
     var collection = Backbone.Collection.extend({
         model: contactsModel,
         //url: 'src/data/contacts.json'
-        url: 'http://iamdesk.de/json/requests/index.php?q=contacts'
+        url: 'http://iamdesk.de/json/requests/index.php?q=contact'
     });
       
     return collection;

@@ -1,7 +1,7 @@
 function setSmartphone() {
 				var vinWidth = $("body").width();
 				var vinHeight = $("body").height();
-				var pageWidth = vinHeight * 1.45 + "px";
+				var pageWidth = vinHeight * 1.35 + "px";
 				
 				$("img.full").css("height", vinHeight * 0.944);
 				$("#smartphone_page").css("width", pageWidth);
@@ -15,8 +15,8 @@ function setSmartphone() {
 }	
 
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/smartphone', 'text!templates/smartphone/smartphone.html', 'text!templates/smartphone/firstLevelListItems.html', 'text!templates/smartphone/secondLevelListItems.html', 'text!templates/smartphone/thirdLevel.html', 'text!templates/smartphone/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionSmartphone, templateSmartphone, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/info', 'collections/smartphone', 'text!templates/smartphone/smartphone.html', 'text!templates/smartphone/firstLevelListItems.html', 'text!templates/smartphone/secondLevelListItems.html', 'text!templates/smartphone/thirdLevel.html', 'text!templates/smartphone/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionInfo, CollectionSmartphone, templateSmartphone, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
        
@@ -34,16 +34,35 @@ define([
         collection: '',
         dataAlreadyExist: false,
 
-        /*
         events: {
-            "click .remove"     : "removeCollection",
+            "click .smartphone_info"     : "info",
+            "click .smartphone_impressum" : "impressum",
         }, 
-        */
                
         initialize: function(){           
               
         },
-                
+        
+        info: function() {
+            var model = CollectionInfo.where({category: "smartphone"});
+            var locateInfoWrapper = $('#info-wrapper');
+            var locateInfoLayer = locateInfoWrapper.find('#info-layer');
+            locateInfoLayer.html(model[0].attributes.info);
+            var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+            locateInfoClose.show();
+            locateInfoWrapper.show();
+        },
+        
+        impressum: function() {
+            var model = CollectionInfo.where({category: "impressum"});
+            var locateInfoWrapper = $('#info-wrapper');
+            var locateInfoLayer = locateInfoWrapper.find('#info-layer');
+            locateInfoLayer.html(model[0].attributes.info);
+            var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+            locateInfoClose.show();
+            locateInfoWrapper.show();
+        },
+        
         smartphoneFirstLevel: function(){                 
             var winWidth;	
 			var winHeight;
@@ -136,11 +155,13 @@ define([
                  
                  // loop 
                  this.collection.each( function(model){                       
-           			
-           			that.templateSecondLevelListItems += "<li>";
-           			
-                    if(model.get('id') === id){                            
-                        
+           		
+                    if(model.get('id') === id){  
+                    	
+	                // Counter SliderContainer
+	                var i = 0;		
+	           		that.templateSecondLevelListItems += "<li>";     
+           		
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
@@ -149,14 +170,14 @@ define([
 	                        i++;
 	                        if (i == 6) {
 	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        	i = 0;
 	                        }
                         });  
                         
               			that.templateSecondLevelListItems += "</li>";
                     }
-    
                   
-                 });                    
+                 });                      
                                    
                  
                  // render Medien Slider

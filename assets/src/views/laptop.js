@@ -1,6 +1,6 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider',  'collections/menu', 'collections/laptop', 'text!templates/laptop/laptop.html', 'text!templates/laptop/firstLevelListItems1.html', 'text!templates/laptop/firstLevelListItems2.html','text!templates/laptop/secondLevelListItems.html', 'text!templates/laptop/thirdLevel.html', 'text!templates/laptop/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionLaptop, templateLaptop, templateFirstLevelListItems1, templateFirstLevelListItems2, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider',  'collections/menu', 'collections/info', 'collections/laptop', 'text!templates/laptop/laptop.html', 'text!templates/laptop/firstLevelListItems1.html', 'text!templates/laptop/firstLevelListItems2.html','text!templates/laptop/secondLevelListItems.html', 'text!templates/laptop/thirdLevel.html', 'text!templates/laptop/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionInfo, CollectionLaptop, templateLaptop, templateFirstLevelListItems1, templateFirstLevelListItems2, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
         
@@ -158,11 +158,13 @@ define([
                  
                  // loop 
                  this.collection.each( function(model){                       
-           			
-           			that.templateSecondLevelListItems += "<li>";
-           			
-                    if(model.get('id') === id){                            
-                        
+           		
+                    if(model.get('id') === id){  
+                    	
+	                // Counter SliderContainer
+	                var i = 0;		
+	           		that.templateSecondLevelListItems += "<li>";     
+           		
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
@@ -171,12 +173,12 @@ define([
 	                        i++;
 	                        if (i == 6) {
 	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        	i = 0;
 	                        }
                         });  
                         
               			that.templateSecondLevelListItems += "</li>";
                     }
-    
                   
                  });                      
                  
@@ -361,7 +363,15 @@ define([
 		  
 		  /* ############## CLICK EVENTS ############## */
 
-		 infoClicked 			: function(event){  console.log("info clicked"); },
+		 infoClicked 			: function(event){  
+		     var model = CollectionInfo.where({category: "laptop"});
+             var locateInfoWrapper = $('#info-wrapper');
+             var locateInfoLayer = locateInfoWrapper.find('#info-layer');
+             locateInfoLayer.html(model[0].attributes.info);
+             var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+             locateInfoClose.show();
+             locateInfoWrapper.show();
+		 },
 		 backwardClicked 		: function(event){  console.log("zurueck clicked"); }
 		 
 

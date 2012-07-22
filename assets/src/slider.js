@@ -15,7 +15,7 @@ define([
 		
 		// Init Projektübersicht Slider
 		var slider2 = new Swipe(document.getElementById('sliderProject'), {
-			callback: count
+			callback: count_projects
 		});
 		
 		// center container
@@ -47,6 +47,14 @@ define([
 		})
 		$(".descrInner").fitText(3.5);
 		//setTimeout(function() { $(".descrInner").fitText(3.5) }, 10);
+		
+		var listLength = $("#sliderProject li").length;
+		if (listLength == 1) {
+			$(".arrRight").css("display", "none");
+		}
+		else {
+			$(".arrRight").css("display", "block");
+		}
 	}
 	
 	// Slider für Projekt Übersicht
@@ -55,9 +63,45 @@ define([
     	return templateSlider;
     };
 
+	var count_projects = function(event, index, elem) {
+		var listLength = $("#sliderProject li").length;
+		
+		var i = index + 1
+		
+		if (i == 1) {
+			$(".arrLeft").fadeOut();
+		}
+		else {
+			$(".arrLeft").fadeIn();
+		}
+		
+		if (i == listLength) {
+			$(".arrRight").fadeOut();
+		}
+		else {
+			$(".arrRight").fadeIn();
+		}
+	};
+
 	// Callback Funktion für sliden des Sliders
 	var count = function(event, index, elem){
+		var listLength = $("#slider li").length;
+		
 		var i = index + 1
+		
+		if (i == 1) {
+			$(".arrLeft").fadeOut();
+		}
+		else {
+			$(".arrLeft").fadeIn();
+		}
+		
+		if (i == listLength) {
+			$(".arrRight").fadeOut();
+		}
+		else {
+			$(".arrRight").fadeIn();
+		}
 		//$(".counterInner").html("Seite "+i+" von "+listLength);
 		
 		/*$(".vimeo-player").each(function() {
@@ -102,8 +146,36 @@ define([
 		$("#sliderProject img").css("width", sliderWidth / 3.7);
 	}
 	
+	var test = function() {
+		($('.swipeDiv img').each( function() {
+			var img_height = $(this).height();
+			var img_width = $(this).width();
+			
+			var scale = img_width / img_height;
+			if (scale > 1.8) {
+				var sliderWidth = $("#slider").width();
+				var newsliderWidth = sliderWidth  * 0.8;
+				$(".swipeDiv img").width(newsliderWidth);
+				
+				$(".swipeDiv").width($("#slider").width())
+			} 
+			else {
+				// Slider Images in Slider einpassen
+				var sliderHeight = $("#slider ul").height();
+				var newsliderHeight = sliderHeight  + "px"
+				$(".swipeDiv img").height(newsliderHeight);
+			}
+		}))
+	}
+	
+	
+	
 	// Set Slider 2 
 	var slider2Set = function() {
+		
+		setTimeout(test, 100);
+		
+			
 		// Init Projekt Slider
 		var slider = new Swipe(document.getElementById('slider'), {
 			callback: count
@@ -124,7 +196,7 @@ define([
 		
 		// set Slider Img width
 		sliderWidth = $("#sliderProject").width();
-		$("#sliderProject img").css("width", sliderWidth / 3.7);
+		//$("#sliderProject img").css("width", sliderWidth / 3.7);
 		
 		// Left and Right Slider Arrow 	
 		$("a#arrLeftClick_Project").click(function() {
@@ -136,10 +208,11 @@ define([
 			return true;
 		})
 		
+			
 		// Slider Images in Slider einpassen
 		var sliderHeight = $("#slider ul").height();
 		var newsliderHeight = sliderHeight  + "px"
-		$(".swipeDiv img").height(newsliderHeight);
+		//$(".swipeDiv img").height(newsliderHeight);
 		
 		$("#projectGallery").live('swipeup',function() {
             $("#overlay_projectinfo").fadeIn();
@@ -160,7 +233,24 @@ define([
 		$("#slider_moreinfo").click(function() {
 	    	$("#overlay_projectinfo").fadeIn();
 	    });
-
+	
+		var listLength = $("#slider li").length;
+		
+		if (listLength == 1) {
+			$(".arrRight").css("display", "none");
+		}
+		else {
+			$(".arrRight").css("display", "block");
+		}
+	}
+	
+	var setFittext = function() {
+		$(".descrInner").fitText(3.5);
+		
+		if ($("iframe")) {
+			var sliderWidth = $("#slider").width();
+			$(".swipeDiv").width(sliderWidth);
+		}
 	}
 	
 	// Set Slider Info 
@@ -170,12 +260,18 @@ define([
 		var info_text = 	$(".project_info_hidden_text").html();
 		var info_icon = 	$(".project_info_hidden_icon").html();
 		var info_date = 	$(".project_info_hidden_date").html();
+		var info_uri = 		$(".project_info_hidden_uri").html()
+	
+		if (info_date == 2002) { info_date = ""}
 		
+		$("#project_info_uri").html(info_uri);
+		$("#project_info_date").html(info_date);
 		$("#profect_info_header").html(info_header);
 		$("#project_info_text").html(info_text);
 		$("#profect_info_authors").html(info_author);
 		$(".descrInner").html(info_header);
 		$("#project_info_icon").html("<img src='"+serverUri+pathBigPics+info_icon+"'>");
+		setTimeout(setFittext, 100);
 	}
 	
     return {

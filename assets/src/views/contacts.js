@@ -30,11 +30,17 @@ define([
         setContacts: function() {
         	vinWidth = $("body").width();
 			vinHeight = $("body").height();
-			pageWidth = vinHeight * 1.45 + "px";
+			pageWidth = vinHeight * 1.35 + "px";
 			
 			$("img.full").css("height", vinHeight * 0.944);
 			$("#smartphone_page").css("width", pageWidth);
 			var rowCount = $('#smartphone_links div').length;
+        },
+        
+        setText: function() {
+           $(".linkSmartphone").fitText(1.0);
+           $(".trigger").fitText(2.0);
+           $("h4").fitText(2.0);
         },
         
         initialize: function(){
@@ -42,6 +48,8 @@ define([
             this.template = _.template(template, {} ); 
             this.contactsList();
         },
+        
+        
         
         contactsList: function(){
             // fyi:
@@ -94,11 +102,13 @@ define([
             $(this.ul).append(this.contactsListItem).listview('refresh');   // refresh is almost the same like 'create', the difference is that the markup already exists
             this.setContacts();
             this.toggleContainer();
+            this.setText();
            
            //fit texts
-           $(".linkSmartphone").fitText(1.0);
-           $(".toggle_container").fitText(1.0);
-           $(".trigger").fitText(2.0);
+           
+           
+           
+
         }
         
     });

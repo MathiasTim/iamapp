@@ -1,6 +1,6 @@
 define([
-    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/dvd', 'text!templates/dvd/dvd.html', 'text!templates/dvd/firstLevelListItems.html', 'text!templates/dvd/secondLevelListItems.html', 'text!templates/dvd/thirdLevel.html', 'text!templates/dvd/thirdLevelListItems.html'
-], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionDVD, templateDVD, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
+    'jquery', 'jqueryMobile', 'underscore', 'backbone', 'util', 'slider', 'collections/menu', 'collections/info', 'collections/dvd', 'text!templates/dvd/dvd.html', 'text!templates/dvd/firstLevelListItems.html', 'text!templates/dvd/secondLevelListItems.html', 'text!templates/dvd/thirdLevel.html', 'text!templates/dvd/thirdLevelListItems.html'
+], function($, $$, _, Backbone, Util, Slider, CollectionMenu, CollectionInfo, CollectionDVD, templateDVD, templateFirstLevelListItems, templateSecondLevelListItems, templateThirdLevel, templateThirdLevelListItems) {
         
     var View = Backbone.View.extend({
        
@@ -18,14 +18,22 @@ define([
         collection: '',
         dataAlreadyExist: false,
 
-        /*
         events: {
-            "click .remove"     : "removeCollection",
+            "click .dvd_info"     : "info",
         }, 
-        */
                
         initialize: function(){           
               
+        },
+        
+        info: function() {
+            var model = CollectionInfo.where({category: "dvd"});
+            var locateInfoWrapper = $('#info-wrapper');
+            var locateInfoLayer = locateInfoWrapper.find('#info-layer');
+            locateInfoLayer.html(model[0].attributes.info);
+            var locateInfoClose = locateInfoWrapper.find('#info-layer-close');
+            locateInfoClose.show();
+            locateInfoWrapper.show();
         },
         
         setDVD: function() {
@@ -147,16 +155,16 @@ define([
                  var that = this;   
                  this.templateSecondLevelListItems = ''; 
                  
-                 // Counter SliderContainer
-                 var i = 0;
                  
                  // loop 
                  this.collection.each( function(model){                       
-           			
-           			that.templateSecondLevelListItems += "<li>";
-           			
-                    if(model.get('id') === id){                            
-                        
+           		
+                    if(model.get('id') === id){  
+                    	
+	                // Counter SliderContainer
+	                var i = 0;		
+	           		that.templateSecondLevelListItems += "<li>";     
+           		
                         var subId = 0;
                         
                         _.each(model.attributes.projects, function(value){ 
@@ -165,12 +173,12 @@ define([
 	                        i++;
 	                        if (i == 6) {
 	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        	i = 0;
 	                        }
                         });  
                         
               			that.templateSecondLevelListItems += "</li>";
                     }
-    
                   
                  });                      
                  
@@ -185,12 +193,10 @@ define([
             	 $(this.el).append(Slider.sliderSet());
                  
                  
-                 
             
         },
         
         dvdThirdLevel: function(id, id2){
-            
             // cast string into integer
             id = parseInt(id);
             id2 = parseInt(id2);
@@ -238,6 +244,8 @@ define([
             	 
             $(this.el).append(Slider.slider2Set());	 
 			$(this.el).append(Slider.setInfo(pathBigPics, serverUri));
+    	   
+    	   
 
         }  
                 

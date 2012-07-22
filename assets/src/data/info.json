@@ -1,0 +1,34 @@
+[
+    {
+        "category": "camera",
+        "info": "<p>Der Ausflug in die Fotografie ist nur sehr kurz und nicht verpflichtend, aber mit Sicherheit lohnenswert. Wert wird dabei vor allem auf einen bewussten Umgang mit der künstlerischen Technik gelegt. Die Devise lautet nicht einfach los zu ziehen und so viele Fotos zu schießen bis ein gutes dabei ist, sondern bewusst ein Motiv und die passenden Einstellungen auszuwählen. Gerne wird dabei der Schritt zurück zur Analogfotographie gewählt.</p>"
+    },
+    {
+        "category": "dvd",
+        "info": "<p>DVD rein und Film ab. Auch jegliche Art der bewegten Bilder sind Teil des Studiengangs Interaktiven Medien. Angefangen bei der Idee “Wie die Bilder laufen lernten” übt man sich in der Erstellung kleiner Zeichentrickfilmchen, um sich dann aber auch schnell an aufwändigere Filmprojekte zu wagen. Egal ob Realfilm, Zeichnung oder 3D, den Möglichkeiten werden keine Grenzen gesetzt.</p>"
+    },
+    {
+        "category": "laptop",
+        "info": "<p>Das wohl wichtigste Werkzeug und ständiger Begleiter im Leben eines IAMlers ist sein Laptop bzw. PC. <br/><br/>Ein großer und wichtiger Teilbereich des Studiums bewegt sich im Bereich des Webs. Angefangen mit HTML und CSS, wird es mit JavaScript schon etwas komplexer und geht mit den höheren Programmiersprachen Java und Python dann schließlich richtig in die große Welt der dynamischen Webseiten. Auch die Datenverwaltung mit XML, JSON oder SQL spielt eine wichtige Rolle.<br/>Ein anderer Teilbereich gibt einen Einblick in die 3D-Modellierung und 3D-Animation.</p>"
+    },
+    {
+        "category": "smartphone",
+        "info": "<p>Die mobile Revolution nimmt einen immer größeren Stellenwert ein. Und so entstehen in den diversen Semesterprojekten auch immer häufiger iOS oder Android Apps.<br /><br />Und welche Fragen sind natürlich noch wichtig? ;)<br />Wer hat das hier eigentlich verbrochen? Und an wen muss ich mich wenden wenn ich mehr Information möchte?</p>"
+    },
+    {
+        "category": "tablet",
+        "info": "<p>Die mobile Revolution nimmt einen immer größeren Stellenwert ein. Und so entstehen in den diversen Semesterprojekten auch immer häufiger iOS oder Android Apps.<br />Neben den Apps eignet sich ein Tablet aber auch hervorragend um Bilder von diversen Designs zu präsentieren.</p>"
+    },
+    {
+        "category": "taschenrechner",
+        "info": "<p>Mathe - etwas das viele nicht mögen, aber doch unvermeidbar zum Studiengang gehört. Einerseits werden die mathematischen Grundlagen im Vektorrechnen aufgefrischt, die dann beim Exkurs in die Welt von WebGL ihre praktische Anwendung finden und andererseits wird das logische Denkvermögen geschult, um grundlegende Kenntnisse aus der technischen, praktischen und theoretischen Informatik zu erlernen.</p>"
+    },
+    {
+        "category": "zeichenblock",
+        "info": "<p>Auch im digitalen Zeitalter ist es manchmal sehr sinnvoll die Basis von Grund auf zu erlernen und sich auch mit den analogen Möglichkeiten zu beschäftigen.<br />Vor allem Zettel und Bleistift werden immer ein wichtiger Bestandteil bleiben. Es ist eigentlich nie sinnvoll einfach darauf los zu werkeln ohne sich vorher eine grobe Skizze aufzuzeichnen. Dabei müssen keine Kunstwerke entstehen, das Verbildlichen der Idee ist das Entscheidende.</p>"
+    },
+    {
+        "category": "impressum",
+        "info": "<p>mathias maier<br>martin kolb<br>katja weinmüller<br>simone ebeling<br>kathrin wende<br>martin semsch<br>maximilian salcher<br>kilian semsch<br><br> IAM 6 SS12</p>"
+    }
+]
