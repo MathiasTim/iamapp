@@ -1,28 +1,331 @@
 [
     {
-        "id": 18,
-        "subject_description": "Impressum Sub",
+        "id": 8,
+        "subject_description": "",
         "server_uri": "http://iamdesk.de/cms",
         "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
         "big_pics": "/sites/default/files/styles/large/public/",
         "projects": [
             {
-                "title": "Adapp",
+                "title": "BMW Maps",
                 "media": [
-                    "image://slideshow-slider-2.jpg",
-                    "image://slideshow-slider-3.jpg",
-                    "image://desk_0.jpg"
+                    "image://1.jpg",
+                    "image://2.jpg",
+                    "image://3.jpg",
+                    "image://4.jpg",
+                    "image://5.jpg"
                 ],
-                "authors": "Martin Kolb<br/>Mathias Maier",
-                "uri": "adapp.fornax.uberspace.de",
-                "icon_uri": "logo4.png",
+                "authors": "Christian Kandler",
+                "uri": "-",
+                "icon_uri": "teaser.jpg",
+                "term": "2010",
+                "project_description": "â€žBMW Maps - Interaktionskonzept und Design einer crossmedialen Anwendung<br/>zur individuellen Reiseplanungâ€œ in Zusammenarbeit mit<br/>BMW Group Forschung und Technik GmbH."
+            },
+            {
+                "title": "Impressions",
+                "media": [
+                    "image://0_1.jpg",
+                    "image://1_3.jpg",
+                    "image://2_3.jpg"
+                ],
+                "authors": "Katja WeinmÃ¼ller<br />Kathrin Wende<br />Martin Semsch<br />Kilian Semsch <br />Maximilian Salcher",
+                "uri": "www.impressions2011.de",
+                "icon_uri": "teaser_6.jpg",
                 "term": "2011",
-                "project_description": "Eine Anwendung fÃ¼r mobile EndgerÃ¤te (Handys und Tablets mit OS Android, auch als Mobile Website fÃ¼r andere OS), die Angebote, Rabatte, Sonderangebote, etc.. dem Konsumenten gebÃ¼ndelt und zielgerichtet anbietet."
+                "project_description": "Impressions wurde als interaktives, partizipatives Informationsterminal fÃ¼r die Frauen-Fussball WM in der \"City of Peace\", Augsburg realisiert.<br/>Der Besuch konnte sich sowohl Ã¼ber das laufende kulturelle Rahmenprogramm informieren, als auch seine persÃ¶nliche Erfahrung in einem digitalen GÃ¤stebuch hinterlassen.<br/>Umsetzung in Flash AS3 & Web2PY."
+            },
+            {
+                "title": "Contrust",
+                "media": [
+                    "image://contrust_01.jpg",
+                    "image://contrust_02.jpg",
+                    "image://contrust_03_0.jpg",
+                    "image://contrust_04.jpg",
+                    "vimeo://v/15810602"
+                ],
+                "authors": "Bernhard Leitner",
+                "uri": "http://www.lacontra.de/",
+                "icon_uri": "teaser_8.jpg",
+                "term": "2010",
+                "project_description": "Wie kann man einem Betrachter einen Eindruck einer Szene am besten vermitteln? Kann man Ã¼berhaupt einen Eindruck eines Moments wiedergeben? Contrust befasst sich mit 360Â° Videopanoramas anhand von vier gegensÃ¤tzlichen Themengebieten, die zeigen, dass ein neues Zeitalter der BewegtbildprÃ¤sentationen schon begonnen hat."
+            },
+            {
+                "title": "Casual Game mit AR Schnittstelle",
+                "media": [
+                    "image://papierwuerfel.jpg",
+                    "image://screenshot_rg.jpg"
+                ],
+                "authors": "MatthÃ¤us Baur ",
+                "uri": "www.makiart.de",
+                "icon_uri": "teaser_13.jpg",
+                "term": "2002",
+                "project_description": "Ein mit Markern versehener PapierwÃ¼rfel wird hierbei von einer Kamera erfasst und vom System mit einem Labyrinth versehen. Der Spieler muss nun durch Kippen und drehen des WÃ¼rfels eine Kugel durch das Labyrinth manÃ¶vrieren und innerhalb einer bestimmten Zeit mÃ¶glichst viele Punkte einsammeln.<br/>"
+            },
+            {
+                "title": "runKlotzen",
+                "media": [
+                    "image://5_test1.JPG",
+                    "image://10_innenleben2.jpg",
+                    "image://14_kloetzchen2.jpg",
+                    "image://15_spiel1.jpg",
+                    "image://18_praesentation2.jpg"
+                ],
+                "authors": " Melanie Friedrich<br />Christian Kandler<br />Birgit Seebauer",
+                "uri": "www.runklotzen.de",
+                "icon_uri": "teaser_20.jpg",
+                "term": "2009",
+                "project_description": "An die Buzzer! Fertig! runKlotzen - das Brettspiel der etwas anderen Art. Virtuelle und reale Elemente verschmelzen in einem interaktiven WÃ¼rfel zu einem aktiongeladenen Zeitvertreib. Bis zu vier Spieler bewegen ihre farbigen Spielfiguren aus Holz Ã¼ber die projizierte SpielflÃ¤che.<br/>Das Ziel: mÃ¶glichst viele HolzklÃ¶tzchen in die nÃ¤chste Ebene zu retten, um schlieÃŸlich als Sieger hervorzutreten. Manche Figuren erhalten hierzu eine Freikarte, andere werden kurzzeitig auÃŸer Gefecht gesetzt und mÃ¶glicherweise sieht sich der Spieler plÃ¶tzlich mit einer anderen Farbe konfrontiert. Doch Vorsicht, die Zeit lÃ¤uft. Also: nicht kleckern, sondern runKlotzen!"
+            },
+            {
+                "title": "Piratenpartei - Deutschland wird orange",
+                "media": [
+                    "image://1_9.jpg",
+                    "image://2_9.jpg",
+                    "image://3_6.jpg"
+                ],
+                "authors": "Sonja Kowarschick",
+                "uri": "http://www.sueddeutsche.de/politik/einfluss-der-piratenpartei-in-deutschland-land-der-freibeuter-1.1",
+                "icon_uri": "teaser_27.jpg",
+                "term": "2012",
+                "project_description": "Wo sind die Politneulinge besonders aktiv? Wo sind die meisten Mitglieder? Eine interaktive Infografik auf www.sueddetusche.de"
+            },
+            {
+                "title": "CHARTSY",
+                "media": [
+                    "image://1_10.jpg",
+                    "image://2_10.jpg",
+                    "image://3_7.jpg"
+                ],
+                "authors": "Sonja Kowarschick",
+                "uri": "http://sonja-kowa.de/",
+                "icon_uri": "teaser_28.jpg",
+                "term": "2012",
+                "project_description": "Konzeption und Implementierung einer JavaScript-Bibliothek zur interaktiven Datenvisualisierung.<br/>Mit CHARTSY lassen sich Kuchen-, Balken- und Linien-Diagramme in den verschiedensten Varianten generieren und kombinieren. Die Bibliothek ist sehr flexibel und kann mit vielen Einstellungs-Parameter ideal auf die eigenen BedÃ¼rfnisse angepasst werden. Eingegeben werden die Daten Ã¼ber eine JSON-Struktur. Durch Pop-Ups, die den Diagrammen hinterlegt werden kÃ¶nnen, ist es mÃ¶glich noch weitere Informationen, wie erklÃ¤rende Texte, zu hinterlegen. <br/>Die Bibliothek wurde fÃ¼r SÃ¼ddeutsche Zeitung Digitale Medien GmbH angefertigt und wird in Zukunft auf dem Internetauftritt der SÃ¼ddeutschen Zeitung â€” SÃ¼ddeutsche.de â€” in Aktion zu sehen sein. "
+            },
+            {
+                "title": "What The Face",
+                "media": [
+                    "image://1_19.jpg",
+                    "image://2_20.jpg",
+                    "image://3_17.jpg"
+                ],
+                "authors": "Nadine Vogt<br />Marlitt Messmann<br />Evelin Kremer<br />Franziska KÃ¤stle<br />Johanna KrÃ¼nes<br />Cathrin Weihermann<br />Philippe Steinmayr<br />Aren Danielian",
+                "uri": "www.whattheface.de",
+                "icon_uri": "teaser_43.jpg",
+                "term": "2012",
+                "project_description": "In Zeiten von Social Networks, Cross Media, Dauerberieselung und Werbung an jeder Ecke sind wir durch die permanente Informationsflut geradezu abgestumpft. Diese aktuellen UmstÃ¤nde in der Medienwelt reprÃ¤sentiert What The Face auf Ã¼berspitzte Weise. Hier findet die GegenÃ¼berstellung von Aufmerksamkeit heischender Masse und einzelnem Individuum auf einer direkten Ebene statt. Eine Wand aus 40 anonymisierten Gesichtern wirkt durch extreme emotionale Reaktionen auf den Besucher ein. Die Gesichter wollen seine Aufmerksamkeit und ihn regelrecht in Beschlag nehmen. Die Gesichterwand entsteht dabei mittels Projektion dreidimensionaler Gesichter auf vorgeformte Masken.<br/>"
             }
         ]
     },
     {
-        "id": 19,
+        "id": 6,
+        "subject_description": "",
+        "server_uri": "http://iamdesk.de/cms",
+        "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
+        "big_pics": "/sites/default/files/styles/large/public/",
+        "projects": [
+            {
+                "title": "EyePlant",
+                "media": [
+                    "image://0_0.jpg",
+                    "image://1_2.jpg",
+                    "image://2_2.jpg",
+                    "image://3_1.jpg"
+                ],
+                "authors": "Maximilian Salcher",
+                "uri": "mx.salcher@gmx.de",
+                "icon_uri": "teaser_5.jpg",
+                "term": "2010 - 2011",
+                "project_description": "Konzeption und Umsetzung einer 3D-Rendergrafik in Autodeskt Maya. Das Projekt zeigt das fiktieve Produkt \"EyePlant\", eine bio-technische Webcam zum selberzÃ¼chten."
+            },
+            {
+                "title": "Characterlab",
+                "media": [
+                    "image://preview.jpg",
+                    "vimeo://v/46094848"
+                ],
+                "authors": "Rainer Wagner",
+                "uri": "crash-design.net",
+                "icon_uri": "teaser_11.jpg",
+                "term": "2002",
+                "project_description": "Erste Gehversuche in Sachen Charakteranimation mit 3DsMax und dem BiPad."
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "subject_description": "",
+        "server_uri": "http://iamdesk.de/cms",
+        "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
+        "big_pics": "/sites/default/files/styles/large/public/",
+        "projects": [
+            {
+                "title": "Breakball",
+                "media": [
+                    "image://Unbenannt-1.jpg",
+                    "image://Unbenannt-2.jpg",
+                    "image://Unbenannt-3.jpg"
+                ],
+                "authors": "Philipp Gresse<br />Benjamin Herrmann<br />Christian Kandler<br />Maximilian Salcher<br />Yanyan Xu",
+                "uri": "-",
+                "icon_uri": "breakball_teaser.jpg",
+                "term": "2009 - 2010",
+                "project_description": "Ausgangsziel bei diesem Masterprojekt war die Ausarbeitung eines<br/>Benutzungskonzeptes fÃ¼r Ã¶ffentliche Bildschirme in Verbindung mit Mobiltelefonen.<br/>Leitgedanke beim Ausarbeiten des Projektes war dabei stets ein mÃ¶glicher Einsatz<br/>an den Bildschirmen der MÃ¼nchner U-Bahnhaltestellen.<br/>Als Spielkonzept wurde eine auf mehrere simultane Mitspieler ausgelegte Variante<br/>des Klassikers â€žBreakoutâ€œ ausgewÃ¤hlt."
+            },
+            {
+                "title": "Dominion - control the universe",
+                "media": [
+                    "image://0.jpg",
+                    "image://1_1.jpg",
+                    "image://2_1.jpg",
+                    "image://3_0.jpg"
+                ],
+                "authors": "Maximilian Salcher",
+                "uri": "mx.salcher@gmx.de",
+                "icon_uri": "teaser_4.jpg",
+                "term": "2010 - 2011",
+                "project_description": "Dominion is a turnbased multiplayer strategy<br/>game. Expand your terretory to set up<br/>a powerful strikeforce. Use your tactical<br/>advantage and dominate your opponents.<br/>ItÂ´s all about conquering the right planets<br/>for your chapter. Every planet has unique<br/>features like population, energy, defence<br/>or mobility. Different planetary setups<br/>grant you multiple strategys to overwhelm<br/>your enemy.<br/>Launch assaultsquads from your planets<br/>to attack and occupy further worlds.<br/>Expand your terretory to outnumber your<br/>opponent"
+            },
+            {
+                "title": "Evonic-Online",
+                "media": [
+                    "image://evonic02.jpg",
+                    "image://evonic06.jpg",
+                    "image://evonic07.jpg",
+                    "image://evonic13.jpg",
+                    "vimeo://v/46094209"
+                ],
+                "authors": "Jeannette Haberland<br />Moritz Meyers",
+                "uri": "www.evonic-online.de.vu",
+                "icon_uri": "teaser_9.jpg",
+                "term": "2002",
+                "project_description": "In diesem Spiel steuert der Spieler eine Armee virtueller Charaktere. Ziel ist es einen Gegner, mit dem man Ã¼ber das Internet verbunden ist, zu besiegen. Anders als bei herkÃ¶mmlichen PC-Spielen steuert der Spieler die Charaktere nicht mit Maus oder Tastatur, sonder mit Spielkarten welche er vor sich auf dem Tisch auslegt. Mit Hilfe der Technik Augmented Reality und einer Kamera werden diese Karten erfasst und analysiert. Die Charaktere werden relativ zu den getrackten Karten platziert. Durch den Blick durch ein Head-Mounted Display entsteht fÃ¼r den Spieler der Eindruck, das Duell fÃ¤nde direkt vor ihm auf dem Tisch statt."
+            },
+            {
+                "title": "LittleLegends",
+                "media": [
+                    "image://badezimmer02.jpg",
+                    "image://littlelegends01.jpg",
+                    "image://wohnzimmer03.jpg"
+                ],
+                "authors": "Melanie Schmidt",
+                "uri": "http://2souls-media.de/",
+                "icon_uri": "teaser_14.jpg",
+                "term": "2002",
+                "project_description": "Einen Drachen streicheln? Und das auf einem Handy? Das Ziel der Bachelorarbeit ist es ein virtuelles Haustier in moderner 3D-Grafik fÃ¼r ein Handy mit touch-OberflÃ¤che zu entwickeln.<br/>Entwicklungsumgebung: JavaME und dessen Mobile 3D Graphics API (m3g, JSR-184)"
+            },
+            {
+                "title": "Quintarium",
+                "media": [
+                    "image://quinscreen_18_4_2008_12_48_41.jpg",
+                    "image://quinscreen_18_4_2008_12_51_3.jpg",
+                    "image://quinscreen_18_4_2008_12_59_44.jpg",
+                    "image://quintarium_cover_promo.jpg"
+                ],
+                "authors": "RenÃ© BÃ¼hling",
+                "uri": "www.quinworlds.de",
+                "icon_uri": "teaser_18.jpg",
+                "term": "2008",
+                "project_description": "Aktuelle Bestseller wie Â»Myst OnlineÂ«, Â»World of WarcraftÂ« und Â»Second LifeÂ« bestimmen das momentane Marktgeschehen in der Computerspiel-Branche. Vor dem Hintergrund dieser Entwicklung des klassischen Adventures hin zum Rollenspiel verbindet das Â»QuintariumÂ« erzÃ¤hlerische Inhalte mit modularer Onlinetechnologie. Das Spiel fokussiert gewaltfreie Inhalte, was es von vielen aktuellen Titeln mit kriegerischem Kontext abhebt. Dennoch handelt es sich nicht um ein Spiel fÃ¼r Kinder, sondern eher um ein kinderfreundliches Spiel. Die Zielgruppe liegt im Bereich der 9- bis 49-jÃ¤hrigen. Die Masterarbeit spricht auch wirtschaftliche Ãœberlegungen wie die Entwicklung einer Vermarktungsstrategie an, die es bei Tilgung der Produktionskosten den Spielern dennoch erlaubt, kostenlos zu spielen. Die umgesetzte Software umfasst einen spielbaren Prototyp, der die Basis fÃ¼r zukÃ¼nftige Weiterentwicklungen darstellt. Der modulare Charakter, der sich ohnehin aus der Spielwelt als Kosmos paralleler Welten ergibt, wird aus technischen und vermarktungsrelevanten Gesichtspunkten in den Vordergrund gestellt. Nach kostenloser Registrierung auf der Spielwebseite www.quintarium.de und dem Download des Spielclients erhalten die Spieler Aktualisierungen, Erweiterungen und neue Inhalte automatisch durch das integrierte Online-Update, so dass das mÃ¼hsame manuelle Suchen, Herunterladen und Installieren von Patches fÃ¼r den Anwender entfÃ¤llt."
+            },
+            {
+                "title": "JumpNRun - â€žAS3-BOTâ€œ",
+                "media": [
+                    "image://Unbenannt-1_2.jpg",
+                    "image://Unbenannt-2_0.jpg",
+                    "image://Unbenannt-4.jpg"
+                ],
+                "authors": " Markus Benndorff<br />Albert Demeter",
+                "uri": "http://www.albertdemeter.de/as3bot/",
+                "icon_uri": "teaser_21.jpg",
+                "term": "2011 - 2012",
+                "project_description": "Ziel des Spiels ist es, in jedem Level alle ZahnrÃ¤der einzusammeln, um die<br/>TÃ¼re zum nÃ¤chsten Level zu Ã¶ffnen. Pro Level hat der Spieler drei Leben zur<br/>VerfÃ¼gung. BerÃ¼hrt er einen der Gegner, verliert er ein Leben. Es ist auch zu<br/>beachten, dass die Gegner nicht zerstÃ¶rt werden kÃ¶nnen.<br/>FÃ¤llt der Spieler allerdings von einer der Plattformen, werden alle Leben auf<br/>einmal abgezogen. Hat er kein Leben mehr Ã¼brig, muss das aktuelle Level<br/>von vorne gestartet werden."
+            },
+            {
+                "title": "Catwalk",
+                "media": [
+                    "image://Unbenannt-1_3.jpg",
+                    "image://Unbenannt-2_1.jpg",
+                    "image://Unbenannt-3_1.jpg",
+                    "image://Unbenannt-4_0.jpg"
+                ],
+                "authors": "Katja WeinmÃ¼ller<br />Kathrin Wende",
+                "uri": "-",
+                "icon_uri": "teaser_22.jpg",
+                "term": "2010 - 2011",
+                "project_description": "Bei Catwalk handelt es sich um ein Jump'n'Run Spiel aus der Vogelperspektive.<br/>Die Aufgabe des Benutzers besteht darin, die Katze innerhalb einer bestimmten Zeit in das<br/>Ziel zu lenken. Dabei muss er Punkte sammeln und zahlreichen Hindernissen ausweichen. Wenn er ein Hindernis beruÂ¨hrt, werden ihm Punkte abgezogen und er kann er in dieser Zeit keine wichtigen Items sammeln!<br/>AuÃŸerdem ist eine bestimmte Anzahl von Punkten nÃ¶tig um das Level erfolgreich abschlieÃŸen zu kÃ¶nnen. Eine Erleichterung verschafft sich der Spieler, in dem er bestimmte Items einsammelt, die die Katze dicker und somit schneller werden lassen, was dem Benutzer einen Zeitvorsprung verschafft.<br/>Insgesamt kann der Benutzer drei Levels meistern. Diese unterscheiden sich in Zeit, Anzahl der Items und Hindernissen.<br/>Katzenillustrationen und ein gewisser Comic-Stil verleihen dem Spiel eine witzige und unterhaltsame Komponente."
+            },
+            {
+                "title": "Knipfel",
+                "media": [
+                    "image://knipfel_1.png",
+                    "image://knipfel_2.png",
+                    "image://knipfel_3.png",
+                    "image://knipfel_4.png"
+                ],
+                "authors": "Sebastian Huber",
+                "uri": "-",
+                "icon_uri": "teaser_29.jpg",
+                "term": "2005",
+                "project_description": "Das Spiel mit dem Namen Knipfel orientiert sich grÃ¶ÃŸtenteils an dem bekannten WÃ¼rfelspiel Kniffel. Ziel ist es, mit 5 WÃ¼rfeln innerhalb 3 Versuchen pro WÃ¼rfelphase alle vorgegebenen WÃ¼rfel-Kombinationen darzustellen und dabei mÃ¶glichst viele Punkte zu sammeln."
+            },
+            {
+                "title": "Starloop",
+                "media": [
+                    "image://1_16.jpg",
+                    "image://2_16.jpg",
+                    "image://3_13.jpg"
+                ],
+                "authors": "Philipp GrÃ¼nauer ",
+                "uri": "-",
+                "icon_uri": "teaser_35.jpg",
+                "term": "2007",
+                "project_description": "Starloop ist ein Kooperatives 2-Spieler Geschicklichkeitsspiel.<br/>Die Spieler bewegen sich in einem â€žWeltraum-Hamsterradâ€œ, wobei die Schwerkraft von der Mitte des Rades ausgeht, d.h. man kann auch an der Decke laufen. Ziel ist es, Ã¼ber verschiedene Aktionen eine MÃ¶glichst hohe Punktzahl zu erreichen.<br/>Es wurde in Adobe Flash erstellt und mit Actionscript 3 implementiert, basierend auf der Model-View-Controller Architektur.<br/>Die Spielfiguren und das â€žHamsterradâ€œ sind in Autodesk Maya erstellt worden, Icons in Adobe Illustrator, die Nachbearbeitung in Adobe Photoshop."
+            },
+            {
+                "title": "Bolo Reloaded",
+                "media": [
+                    "image://1_17.jpg",
+                    "image://2_17.jpg",
+                    "image://3_14.jpg",
+                    "image://4_9.jpg"
+                ],
+                "authors": "Sonja Kowarschick",
+                "uri": "-",
+                "icon_uri": "teaser_36.jpg",
+                "term": "2007",
+                "project_description": "Im Rahmen der Vorlesung Multimedia-Programmierung ein Break-Out-Spiel entwickelt. Um das Ganze modular und flexibel zu halten, wurde das Spiel in Flash und Flex nach dem Model-View-Controller-Prinzip (MVC-Prinzip) implementiert. "
+            },
+            {
+                "title": "Splitted Senses",
+                "media": [
+                    "image://old_screenshot2.jpg",
+                    "image://old_screenshot3.jpg",
+                    "image://old_version.jpg"
+                ],
+                "authors": "Dootz Florian ",
+                "uri": "-",
+                "icon_uri": "teaser_42.jpg",
+                "term": "2010",
+                "project_description": "Bei dem Spiel 'Splitted Senses' handelt es sich um einen Puzzle Platformer. Es besteht aus einer in vier Abschnitte aufgeteilten SpielflÃ¤che. In jeder dieser SpielflÃ¤chen befindet sich eine Spielfigur und ein Zielpunkt. AuÃŸerdem kÃ¶nnen sich innerhalb dieser SpielflÃ¤chen tÃ¶dliche und harmlose Spielsteine befinden. Mit den Pfeiltasten steuert man alle vier Spielfiguren zur selben Zeit.<br/>Ziel des Spiels ist es, alle vier Figuren zum jeweiligen Zielpunkt zu bringen. WÃ¤hrend man die gefÃ¤hrlichen Objekte nicht berÃ¼hren darf, sind die harmlosen Objekte oft wichtige, zielfÃ¼hrende SchlÃ¼ssel."
+            },
+            {
+                "title": "MÃ¶Âšrmlings - Im Land der KÃ¤ÂŠsekuchen 1.0",
+                "media": [
+                    "image://moermlingbild_1.png",
+                    "image://moermlingbild_2.png",
+                    "image://moermlingbild_3.png"
+                ],
+                "authors": "Stefanie Mayer",
+                "uri": "www.stefale.de",
+                "icon_uri": "teaser.png",
+                "term": "2010",
+                "project_description": "Hilf den MÃ¶Âšrmlings einen sicheren Weg aus dem Level zu finden in dem du ihnen besondere FÃ¤ÂŠhigkeiten zu weist. Das Spiel MÃ¶Âšrmlings basiert auf dem Spielprinzip von Lemmings. Es wurde als Fash-Applikation im Rahmen der MMPROG Vorlesung erstellt."
+            }
+        ]
+    },
+    {
+        "id": 4,
         "subject_description": "",
         "server_uri": "http://iamdesk.de/cms",
         "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
@@ -32,47 +335,68 @@
                 "title": "Adapp",
                 "media": [
                     "image://slideshow-slider-2.jpg",
-                    "image://slideshow-slider-3.jpg",
-                    "image://desk_0.jpg"
+                    "image://slideshow-slider-3.jpg"
                 ],
-                "authors": "Martin Kolb<br/>Mathias Maier",
-                "uri": "adapp.fornax.uberspace.de",
+                "authors": "Martin Kolb<br />Mathias Maier",
+                "uri": "-",
                 "icon_uri": "logo4.png",
                 "term": "2011",
                 "project_description": "Eine Anwendung fÃ¼r mobile EndgerÃ¤te (Handys und Tablets mit OS Android, auch als Mobile Website fÃ¼r andere OS), die Angebote, Rabatte, Sonderangebote, etc.. dem Konsumenten gebÃ¼ndelt und zielgerichtet anbietet."
-            }
-        ]
-    },
-    {
-        "id": 17,
-        "subject_description": "Apps bla blubb....",
-        "server_uri": "http://iamdesk.de/cms",
-        "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
-        "big_pics": "/sites/default/files/styles/large/public/",
-        "projects": [
-            {
-                "title": "Walze",
-                "media": [
-                    "image://desk.jpg",
-                    "vimeo://v/31691856",
-                    "youtube://v/I13ieyILMc8"
-                ],
-                "uri": "http://walze.is/awesome/",
-                "icon_uri": "tool.png",
-                "term": "2011 - 2012",
-                "project_description": "WALZE is an audiovisual sequencer, which maps midi-patterns on circular paths as a visual analogy to sound-loops. Circles can be nested into each other to create polyrythmics und complex sound structures. </br> The smart circle-interface is used as visual projection at the same time. The audience experiences visuals which are not only matching the music, but actually creating it."
             },
             {
-                "title": "Walze 2",
+                "title": "Der â€žWahlmonitorâ€œ auf tagesschau.de",
                 "media": [
-                    "image://desk.jpg",
-                    "vimeo://v/31691856",
-                    "youtube://v/I13ieyILMc8"
+                    "image://ims_dkreitschmann_01.jpg",
+                    "image://ims_dkreitschmann_03_0.jpg",
+                    "image://ims_dkreitschmann_04_0.jpg",
+                    "image://ims_dkreitschmann_05.jpg"
                 ],
-                "uri": "http://walze.is/awesome/",
-                "icon_uri": "tool.png",
+                "authors": "Daniel Kreitschmann",
+                "uri": "danielkreitschmann.com",
+                "icon_uri": "teaser_15.jpg",
+                "term": "2002",
+                "project_description": "PÃ¼nktlich um 20:00 Uhr beginnt Deutschlands bekanntestes Nachrichtenformat mit dem Satz: â€žHier ist das Erste Deutsche Fernsehen mit der Tagesschau.â€œ Mit Ihrer Hauptsendung wird die Tagesschau seit 1952 ausgestrahlt. Seit 1996 ist die Tagesschau auch im Internet unter tagesschau.de zu finden und ergÃ¤nzt das Nachrichtenangebot aus dem Fernsehen.<br/>www.tagesschau.de/wahlarchiv/"
+            },
+            {
+                "title": "aniwhere",
+                "media": [
+                    "image://Unbenannt-1_1.jpg",
+                    "image://aniwhere-logo.tif_.jpg"
+                ],
+                "authors": "Erich Seifert",
+                "uri": "aniwai.com",
+                "icon_uri": "teaser_17.jpg",
+                "term": "2009",
+                "project_description": "Mit aniwhere holt man sich das gesammelte Reisewissen aufs Handy. Die Mobilanwendung ist Teil von aniwai.com, einem globalen Internet-Reisenetzwerk von Weltenbummlern. Dadurch kÃ¶nnen minutenaktuelle Informationen von Globetrottern rund um den Globus mobil genutzt werden. Egal ob SehenswÃ¼rdigkeiten, Reisetipps oder Fotos, alles lÃ¤sst sich unterwegs auf einer digitalen Karte im Handy abrufen. Auch der eigene Standort, SchnappschÃ¼sse und Mitteilungen kÃ¶nnen direkt vor Ort an die aniwai.com-Community versandt werden, um Daheimgebliebene oder Freunde auf dem Laufenden zu halten. Seine weltweite VerfÃ¼gbarkeit und die Integration in das weltumspannende aniwai.com-Reisenetzwerk machen aniwhere zum kompakten Helfer fÃ¼r die InformationsbedÃ¼rfnisse moderner Nomaden."
+            },
+            {
+                "title": "YumClub.de",
+                "media": [
+                    "image://1_4.jpg",
+                    "image://2_4.jpg",
+                    "image://3_2.jpg",
+                    "image://4_0.jpg"
+                ],
+                "authors": "Daniel Breining<br />Matthias MÃ¶rtl",
+                "uri": "http://www.yumclub.de/augsburg/",
+                "icon_uri": "teaser_23.jpg",
                 "term": "2011 - 2012",
-                "project_description": "WALZE is an audiovisual sequencer, which maps midi-patterns on circular paths as a visual analogy to sound-loops. Circles can be nested into each other to create polyrythmics und complex sound structures. </br> The smart circle-interface is used as visual projection at the same time. The audience experiences visuals which are not only matching the music, but actually creating it."
+                "project_description": "Bei der Studienarbeit handelt es sich um eine interaktive Homepage einer Augsburger Diskothek. Zum Einsatz<br/>kamen HTML5 und Javascript. Ziel war es, die neuesten technischen Standards mit modernem<br/>Design und FunktionalitÃ¤t zu vereinen um eine Ansprechende und informative Seite fÃ¼r den User bereitzustellen.<br/>Die Homepage wurde fÃ¼r die praktische Anwendung entworfen und optimiert, da sie tatsÃ¤chlichen Einsatz kommt."
+            },
+            {
+                "title": "SVG-Generator.de",
+                "media": [
+                    "image://1_5.jpg",
+                    "image://2_5.jpg",
+                    "image://3_3.jpg",
+                    "image://4_1.jpg",
+                    "image://6.jpg"
+                ],
+                "authors": "Simon Heimler",
+                "uri": "http://www.fannon.de/",
+                "icon_uri": "teaser_24.jpg",
+                "term": "2009",
+                "project_description": "Der SVG Generator ist eine in HTML5/JavaScript umgesetzte Webapplikation, die plattformunabhÃ¤ngig in modernen Browsern lÃ¤uft. Die Anwendung erlaubt es dem User, Vektorgrafiken in dem standardisierten Format SVG zu generieren, die im Browser berechnet und sofort dargestellt werden. Es stehen verschiedene Algorithmen zur Auswahl und viele Parameter kÃ¶nnen frei angepasst werden. Die Grafik kann anschlieÃŸend als SVG Datei herunterladen werden. Dieses Format lÃ¤sst sich in vielen professionellen Grafikprogrammen importieren und weiterverwenden."
             }
         ]
     }

@@ -8,6 +8,10 @@ define([
         divFolder : '.lpt_folders',
         divMenu : '.lpt_menu2',                
         
+        // Slider IDs
+        sliderContainer : '#sliderProject .slide_container',
+        sliderProject : '#slider ul',
+
         // variables
         menu1: false,
         menu2: false,
@@ -15,7 +19,8 @@ define([
         busy2: false,
         dataAlreadyExist: false,
         laptopWidth: '2048', 	// px-Auflösung Laptop 
-        laptopHeight: '1490', 	// px-Auflösung Laptop        
+        laptopHeight: '1490', 	// px-Auflösung Laptop
+        collection: '',
                 
         events: {
             "click .lpt_taskbar_start"     			: "showMenu1",
@@ -169,7 +174,6 @@ define([
                         
                         _.each(model.attributes.projects, function(value){ 
                               that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.big_pics, id:id, subId:subId++ } );                     
-	                        
 	                        i++;
 	                        if (i == 6) {
 	                        	that.templateSecondLevelListItems += "</li><li>";
@@ -186,7 +190,7 @@ define([
             	 $(this.el).html(Slider.sliderInit());    
                 
                  // render                     
-                 $(this.sliderContainer).html(that.templateSecondLevelListItems);
+                 $(this.sliderContainer).html(this.templateSecondLevelListItems);
             	 
             	 $(this.el).append(Slider.sliderPageSize());	 
             	 
@@ -202,7 +206,7 @@ define([
             
             // render loadingScreen
             $(this.el).html(Util.loadingScreen());
-            
+
             // find the entry
             var project = this.collection.where({id: id});
 
@@ -225,25 +229,23 @@ define([
             // by convention, we make a private 'that' variable. 
             // 'this' is used to make the object available to the private methods
             var that = this;
-             
+             var i = 1;
             // media loop                  
             _.each(project.media, function(value){ 
-                  
+                console.log(i++);
                   //console.log(Util.splitMedia(value));                  
-                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics)} );
-                  
+                  that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics),  project: project});
             });             
             
-            // render site
-            
+            // render site            
 			$(this.el).html(Slider.slider2Init());    
-            $(this.sliderProject).append(this.templateThirdLevelListItems);	 
+            $(this.sliderProject).append(that.templateThirdLevelListItems);	 
             Slider.setInfo(pathBigPics, serverUri);
            
 			$(this.el).append(Slider.sliderPageSize());	 
             	 
             $(this.el).append(Slider.slider2Set());	 
-			$(this.el).append(Slider.setInfo(pathBigPics, serverUri));
+			
         },      
         
 

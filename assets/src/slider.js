@@ -262,7 +262,10 @@ define([
 		var info_date = 	$(".project_info_hidden_date").html();
 		var info_uri = 		$(".project_info_hidden_uri").html()
 	
-		if (info_date == 2002) { info_date = ""}
+		if (info_date == 2002) { info_date = ""; }
+		if (info_author == "-") { info_author = "";	}
+		if (info_text == "-") { info_text = ""; }
+		if (info_uri == "-") { info_uri = ""; }
 		
 		$("#project_info_uri").html(info_uri);
 		$("#project_info_date").html(info_date);

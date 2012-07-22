@@ -41,7 +41,6 @@ define([
               } else {
                   imagePath = serverUri+pathBigPic+id;
               }
-              
               content = '<img src="' + imagePath + '" alt="' + id + '" />';
 
               return content;
