@@ -7,50 +7,30 @@
         "big_pics": "/sites/default/files/styles/large/public/",
         "projects": [
             {
-                "title": "Adapp",
+                "title": "City-Proof",
                 "media": [
-                    "image://slideshow-slider-2.jpg",
-                    "image://slideshow-slider-3.jpg",
-                    "image://desk_0.jpg"
+                    "image://Unbenannt-1_0.jpg",
+                    "image://Unbenannt2.jpg",
+                    "image://Unbenannt-3_0.jpg"
                 ],
-                "authors": "Martin Kolb<br/>Mathias Maier",
-                "uri": "adapp.fornax.uberspace.de",
-                "icon_uri": "logo4.png",
-                "term": "2011",
-                "project_description": "Eine Anwendung fÃ¼r mobile EndgerÃ¤te (Handys und Tablets mit OS Android, auch als Mobile Website fÃ¼r andere OS), die Angebote, Rabatte, Sonderangebote, etc.. dem Konsumenten gebÃ¼ndelt und zielgerichtet anbietet."
-            }
-        ]
-    },
-    {
-        "id": 14,
-        "subject_description": "Apps bla blubb....",
-        "server_uri": "http://iamdesk.de/cms",
-        "small_pics": "/sites/default/files/styles/square_thumbnail/public/",
-        "big_pics": "/sites/default/files/styles/large/public/",
-        "projects": [
-            {
-                "title": "Testprojekt Webdesign 1",
-                "media": [
-                    "image://desk.jpg",
-                    "vimeo://v/31691856",
-                    "youtube://v/I13ieyILMc8"
-                ],
-                "uri": "http://walze.is/awesome/",
-                "icon_uri": "1.jpg",
-                "term": "2011 - 2012",
-                "project_description": "WALZE is an audiovisual sequencer, which maps midi-patterns on circular paths as a visual analogy to sound-loops. Circles can be nested into each other to create polyrythmics und complex sound structures. </br> The smart circle-interface is used as visual projection at the same time. The audience experiences visuals which are not only matching the music, but actually creating it."
+                "authors": "Maximilian Salcher",
+                "uri": "mx.salcher@gmx.de",
+                "icon_uri": "teaser_3.jpg",
+                "term": "2010",
+                "project_description": "Ausarbeitung einer Corporate Identity inklusive Design eines Image/Produktkatalogs und des zugehÃ¶rigen Web-Auftritts, welcher die Thematik und Inhalte der konzipierten Firma veranschaulicht."
             },
             {
-                "title": "Testprojekt Webdesign 2",
+                "title": "Liebling",
                 "media": [
-                    "image://desk.jpg",
-                    "vimeo://v/31691856",
-                    "youtube://v/I13ieyILMc8"
+                    "image://1_21.jpg",
+                    "image://2_22.jpg",
+                    "image://3_19.jpg"
                 ],
-                "uri": "http://walze.is/awesome/",
-                "icon_uri": "tool.png",
-                "term": "2011 - 2012",
-                "project_description": "WALZE is an audiovisual sequencer, which maps midi-patterns on circular paths as a visual analogy to sound-loops. Circles can be nested into each other to create polyrythmics und complex sound structures. </br> The smart circle-interface is used as visual projection at the same time. The audience experiences visuals which are not only matching the music, but actually creating it."
+                "authors": "Jakob Nicklbauer<br />Dominik Liebherr",
+                "uri": "http://www.liebling.cc/",
+                "icon_uri": "teaser_45.jpg",
+                "term": "2009",
+                "project_description": "Mein Thema â€žLiebling - Imageclips & visuelle Installation fÃ¼r ein Modelabelâ€œ gliedert sich in einen theoretischen und einen praktischen Teil, die beide eng miteinander verwoben sind. Um eine Arbeitsgrundlage zu schaffen war es nÃ¶tig sich der Geschichte und der Ausgangssituation und ebenso der zukÃ¼nftigen Orientierung der Marke Liebling bewusst zu werden. Konzeptionell bedeutete dies, die Positionierung und die IdentitÃ¤t der Marke zu ermitteln, ihr SelbstverstÃ¤ndnis zu konkretisieren und mit allen Beteiligten abzustimmen. Darauf aufbauend wurde eine Corporate Identity und eine Corporate Design erstellt. Die gesamten theoretischen Ãœberlegungen manifestieren sich schlieÃŸlich in der praktischen Umsetzung von neuen KleidungsstÃ¼cken, Printprodukten, Werbeclips, einer Webseite und einem Messestand."
             }
         ]
     }

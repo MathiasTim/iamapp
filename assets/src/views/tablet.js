@@ -209,7 +209,7 @@ define([
              
             // media loop
             _.each(project.media, function(value){ 
-                    that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value), project: project} );
+                    that.templateThirdLevelListItems += _.template(templateThirdLevelListItems, {media: Util.splitMedia(value, serverUri, pathSmallPics, pathBigPics), project: project} );
             });
             
             // render site
