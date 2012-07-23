@@ -155,12 +155,12 @@ define([
 	                        
 	                        i++;
 	                        if (i == 6) {
-	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        	that.templateSecondLevelListItems += "<div style='clear: both'></li><li>";
 	                        	i = 0;
 	                        }
                         });  
                         
-              			that.templateSecondLevelListItems += "</li>";
+              			that.templateSecondLevelListItems += "<div style='clear: both'></li>";
                     }
                   
                  });   

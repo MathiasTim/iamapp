@@ -55,6 +55,12 @@ define([
 		else {
 			$(".arrRight").css("display", "block");
 		}
+		
+		$(".slide_container li").each(function() {
+			$(this).css("padding-left", function() {
+				return $(this).width() * 0.15;
+			});
+		});
 	}
 	
 	// Slider für Projekt Übersicht

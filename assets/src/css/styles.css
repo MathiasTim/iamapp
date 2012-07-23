@@ -1416,12 +1416,12 @@ a.linkDVD {
 
 	
 	
-}
-	#contacts_links ul {
+
+	/*#contacts_links ul {
 		position:absolute;
 		height: 50%;
 		width: 40%;
-	}
+	}*/
 	
 	#contacts_links ul li{
 		height: 20%;

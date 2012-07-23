@@ -169,12 +169,12 @@ define([
 	                        
 	                        i++;
 	                        if (i == 6) {
-	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        	that.templateSecondLevelListItems += "<div style='clear: both'></li><li>";
 	                        	i = 0;
 	                        }
                         });  
                         
-              			that.templateSecondLevelListItems += "</li>";
+              			that.templateSecondLevelListItems += "<div style='clear: both'></li>";
                     }
                   
                  });                      
@@ -185,10 +185,11 @@ define([
                 
                  // render                     
                  $(this.sliderContainer).html(that.templateSecondLevelListItems);
+    				
+    			 	        	 
+	           	 setTimeout(function() {$(this.el).append(Slider.sliderPageSize())}, 100)	 
             	 
-            	 $(this.el).append(Slider.sliderPageSize());	 
-            	 
-            	 $(this.el).append(Slider.sliderSet());
+            	 setTimeout(function() {$(this.el).append(Slider.sliderSet())}, 150);
             
         },
         

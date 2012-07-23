@@ -176,12 +176,12 @@ define([
                               that.templateSecondLevelListItems += _.template(templateSecondLevelListItems, { value: value, serverUri:model.attributes.server_uri, iconPath:model.attributes.big_pics, id:id, subId:subId++ } );                     
 	                        i++;
 	                        if (i == 6) {
-	                        	that.templateSecondLevelListItems += "</li><li>";
+	                        	that.templateSecondLevelListItems += "<div style='clear: both'></li><li>";
 	                        	i = 0;
 	                        }
                         });  
                         
-              			that.templateSecondLevelListItems += "</li>";
+              			that.templateSecondLevelListItems += "<div style='clear: both'></li>";
                     }
                   
                  });                      
