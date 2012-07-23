@@ -1400,18 +1400,19 @@ a.linkDVD {
 		padding-top: 0.6%;
 		color: #f70;
 		font-size: 5px;
-
+		position: relative;
+		z-index: 10;
 	}
 	
 	#contacts_bg {
 		position: absolute;
 		border-right: 5px solid black;
 		background-color: #333;
-		top: 14.7%;
-		left:8.9%;
-		height: 61.4%;
-		width: 30.8%;
-		
+		top: -1.6%;
+		left: 0.2%;
+		height: 93.3%%;
+		width: 40.8%;
+		z-index: 0;
 	}
 
 	
@@ -1453,11 +1454,15 @@ a.linkDVD {
 		left: 80%;
 		top: 76.2%;
 		height: 6.5%;
-		width: 4.7%;
-		background-image: url("../img/smartphone/info_icon.jpg");
+		/*width: 4.7%;
+		/*background-image: url("../img/smartphone/info_icon.jpg");
 		background-position: center;
-		background-size: cover;
+		background-size: cover;*/
 
+	}
+	
+	#smartphone_info img {
+		height: 100%;
 	}
 	
 	#smartphone_links div {

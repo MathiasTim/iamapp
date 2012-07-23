@@ -4,7 +4,7 @@ define([
         
     var View = Backbone.View.extend({
         
-        el: '#main', // target
+        el: '#main', // target 
         ul: '#contacts-listning',
         contactsListItem: '',
         contactsDetail: '',
