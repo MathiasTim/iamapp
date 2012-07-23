@@ -202,7 +202,7 @@ div.ui-content{
   
   body.home .postit{
       width: 12%;
-      top: 83%;
+      top: 80%;
       left: 20%;
   }  
 
@@ -235,7 +235,7 @@ div.ui-content{
 
   body.home .taschenrechner_block{
       width: 31%;
-      top: 53%;
+      top: 50%;
       left: 72%;
       z-index:2;
   }
