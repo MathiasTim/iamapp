@@ -1408,14 +1408,16 @@ a.linkDVD {
 		position: absolute;
 		border-right: 5px solid black;
 		background-color: #333;
-		top: -1.6%;
+		top: -1.9%;
 		left: 0.2%;
-		height: 93.3%%;
+		height: 93.4%%;
 		width: 40.8%;
 		z-index: 0;
 	}
 
-	
+	#contacts-listning {
+		margin-left: 0.5%;
+	}
 	
 
 	/*#contacts_links ul {
@@ -1458,7 +1460,7 @@ a.linkDVD {
 		/*background-image: url("../img/smartphone/info_icon.jpg");
 		background-position: center;
 		background-size: cover;*/
-
+		display: block;
 	}
 	
 	#smartphone_info img {
