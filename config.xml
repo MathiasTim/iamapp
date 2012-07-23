@@ -2,17 +2,36 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
 	id		= "com.hsaugsburg.iam.desk"
-	version 	= "0.7.0">
+	version 	= "0.9.0">
 
 	<name>IAMDesk</name>
 
 	<description>
-		
+		a app to promote course interactive media at HS-Augsburg, University of Applied Sciences.
 	</description>
-
-	<author href="iamdesk.de"
-		email="mathias.maier@hs-augsburg.de">
+	<author href="iamdesk.de">
 		Mathias Maier
+	</author>
+	<author href="iamdesk.de">
+		martin kolb
+	</author>
+	<author href="iamdesk.de">
+		katja weinmüller
+	</author>
+	<author href="iamdesk.de">
+		simone ebeling
+	</author>
+	<author href="iamdesk.de">
+		kathrin wende
+	</author>
+	<author href="iamdesk.de">
+		martin semsch 
+	</author>
+	<author href="iamdesk.de">
+		maximilian salcher
+	</author>
+	<author href="iamdesk.de">
+		kilian semsch
 	</author>
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="true" />
