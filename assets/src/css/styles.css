@@ -1452,11 +1452,11 @@ a.linkDVD {
 	}
 	
 	#smartphone_info {
-		position: absolute; 
-		left: 80%;
-		top: 76.2%;
-		height: 6.5%;
-		/*width: 4.7%;
+		position: absolute;
+		left: 79%;
+		top: 74.2%;
+		height: 9.5%;
+		width: 7.7%;
 		/*background-image: url("../img/smartphone/info_icon.jpg");
 		background-position: center;
 		background-size: cover;*/
@@ -1479,6 +1479,14 @@ a.linkDVD {
 		padding-left: 2%;
 		padding-right: 1%;
 
+	}
+	
+	#contacts_back_new {
+		position: absolute;
+		left: 79%;
+		top: 74%;
+		width: 11%;
+		height: 11%;
 	}
 	
 	a.linkSmartphone {
